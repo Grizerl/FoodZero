@@ -1,0 +1,203 @@
+@charset "UTF-8";
+@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
+:root {
+
+    --background-color-main: #233000;
+    --color-navbar-text: #FFFFFF;
+    --font-Rufina: 'Rufina';
+    --font-Lato: 'Lato';
+    --font-Inter: 'Inter';
+    --transition-all: all .25s ease-in-out;
+}
+
+*,*::after,*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 1.3rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.app {
+    background-color: var(--background-color-main);
+}
+
+.container {
+    max-width: 1283px;
+    margin: 0 auto;
+    padding: 0.5rem 0.8rem;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+
+.content-left,.content-right {
+    display: flex;
+    align-items: center;
+    color: var(--color-navbar-text);
+}
+
+.navbar-logo {
+    position: relative;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 1.7rem;
+    line-height: 48px;
+    letter-spacing: 0px;
+    padding-right: 20px;
+}
+
+.navbar-logo::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 30px;
+    height: 20px;
+    width: 110px;
+    border-top: 2px solid var(--color-navbar-text);
+    border-left: 2px solid var(--color-navbar-text);
+    border-right: 2px solid var(--color-navbar-text);
+}
+
+.navbar-logo::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -12px;
+    left: 30px;
+    height: 20px;
+    width: 110px;
+    border-left: 2px solid var(--color-navbar-text);
+    border-right: 2px solid var(--color-navbar-text);
+    border-bottom: 2px solid var(--color-navbar-text);
+}
+
+.adaptive-icon {
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.phone-number a {
+    font-family: var(--font-Inter);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 31.47px;
+    letter-spacing: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--color-navbar-text);
+}
+
+.btn-reservations {
+    background: transparent;
+    border: 2px solid #FFFFFF;
+    margin-left: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.btn-reservations a {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 48px;
+    letter-spacing: 0px;
+    color: var(--color-navbar-text);
+}
+/* Banner Section */
+.banner-content {
+    display: flex;
+    padding-top: 60px;
+    padding-bottom: 80px;
+    color: var(--color-navbar-text);
+}
+
+.banner-slogan {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 85px;
+    letter-spacing: 0px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.sc-scgFG {
+    max-width: 650px;
+}
+.banner-text {
+    font-family: var(--font-Lato);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 33.6px;
+    letter-spacing: 2%;
+    padding-bottom: 35px;
+}
+
+.banner-scroll {
+    display: inline-block;
+    position: relative;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 64px;
+    letter-spacing: 0px;
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
+.banner-scroll::after{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 75px;
+    width: 150px;
+    border: 1px dashed var(--color-navbar-text);
+    transform: translateY(30px);
+}
+
+.section-img {
+    text-align: right;
+    position: relative;
+    top: 40px;
+}
+
+.banner-img {
+    height: 100%;
+    width: 85%;
+    object-fit: cover;
+}
+
+.block-seasonings {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -50px;
+    right: 70px;
+}
+
+.block-seasonings figure {
+    padding: 0px 20px;
+}
