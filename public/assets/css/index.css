@@ -6,6 +6,9 @@
 
     --background-color-main: #233000;
     --color-navbar-text: #FFFFFF;
+    --color-title-menu: #000000;
+    --color-card-lead: #4D4D4D;
+    --background-cook: #EBF0E4;
     --font-Rufina: 'Rufina';
     --font-Lato: 'Lato';
     --font-Inter: 'Inter';
@@ -238,7 +241,6 @@ a {
 }
 
 .section-text {
-    max-width: 500px;
     font-family: var(--font-Lato);
     font-weight: 400;
     font-size: 19px;
@@ -254,3 +256,142 @@ a {
     padding-bottom: 45px;
 }
 
+/* Out Menu */
+.section-menu {
+    padding-top: 0;
+    padding-bottom: 100px;
+    background: var(--color-navbar-text);
+    color: var(--color-title-menu);
+}
+
+.menu-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headline-1 {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 120px;
+    letter-spacing: 0px;
+    
+}
+
+.menu-text {
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 33.6px;
+    letter-spacing: 1px;
+} 
+
+.text-light {
+    color: var(--color-card-lead);
+}
+
+.menu-list {
+    grid-template-columns: repeat(2,1fr);
+    gap: 40px;
+}
+
+.price-container {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 0px;
+    border-bottom: 3px dotted #000000;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.card-content {
+    padding-top: 15px;
+}
+
+.card-title {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 39px;
+    letter-spacing: 3px;
+    padding-bottom: 8px;
+}
+
+.card-lead {
+    font-family: var(--font-Lato);
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 33.6px;
+    letter-spacing: 1px;
+}
+
+/* Section excellent-cook */
+.section-excellent-cook {
+    background: var(--background-cook);
+}
+
+.d-flex {
+    display: flex;
+}
+
+.cook-container {
+    padding-top: 70px;
+    padding-bottom: 0;
+}
+
+.images-block {
+    padding: 30px 0px 0px;
+    position: relative;
+}
+
+.leaf,.img-wooden {
+    position: absolute;
+}
+
+.img-chef {
+    width: 80%;
+}
+
+.img-wooden{
+    top: 60px; 
+    width: 40%;
+    z-index: 9999;
+}
+
+.leaf {
+    width: 32%;
+    top: 0px;
+}
+.section-cook-title{
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 120px;
+    letter-spacing: 0px;
+    color: var(--color-title-menu);
+}
+
+.section-cook-text {
+    padding-top: 0;
+    padding-bottom: 55px;
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 33.6px;
+    letter-spacing: 1px;
+    color: var(--color-card-lead);
+}
+
+.max-text {
+    max-width: 500px;
+}
+
+.leaf-section {
+    height: 100%;
+    width: 60%;
+    object-fit: cover;
+}
