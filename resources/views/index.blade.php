@@ -145,4 +145,47 @@
         </div>
     </div>
 </section>
+<section>
+    <div class="section-layers">
+        <div>
+            <div class="container">
+                <div class="layers-container d-grid">
+                    <div class="layers-fish">
+                        <div class="vector-container">
+                            <figure>
+                                <img class="img-fish" src="/assets/images/layers/Vector.png" loading="lazy" alt="Vector">
+                            </figure>
+                        </div>
+                        <div class="w-100 text-centre">
+                            <h2 class="layers-title">Premium Quality</h2>
+                            <p class="layers-text max-width">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu</p>
+                        </div>
+                    </div>
+                    <div class="layers-carot">
+                        <div class="vector-container">
+                            <figure>
+                                <img class="img-carot" src="/assets/images/layers/Vector (1).png" loading="lazy" alt="Vector">
+                            </figure>
+                        </div>
+                        <div class="w-100 text-centre">
+                            <h2 class="layers-title">Seasonal Vegetables</h2>
+                            <p class="layers-text max-width">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu</p>
+                        </div>
+                    </div>
+                    <div class="layers-lemon">
+                        <div class="vector-container">
+                            <figure>
+                                <img class="img-lemon" src="/assets/images/layers/Vector (2).png" loading="lazy" alt="Vector">
+                            </figure>
+                        </div>
+                        <div class="w-100 text-centre">
+                            <h2 class="layers-title">Fresh Fruit</h2>
+                            <p class="layers-text max-width">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection

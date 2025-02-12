@@ -12,7 +12,7 @@
     --font-Rufina: 'Rufina';
     --font-Lato: 'Lato';
     --font-Inter: 'Inter';
-    --transition-all: all .25s ease-in-out;
+    --transition-all: all .3s ease-in-out;
 }
 
 *,*::after,*::before {
@@ -394,4 +394,82 @@ a {
     height: 100%;
     width: 60%;
     object-fit: cover;
+}
+
+/* Section layers */
+.w-100 {
+    text-align: center;
+    width: 100%;
+}
+
+.text-centre {
+    text-align: -webkit-center;
+}
+
+.section-layers {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: var(--color-navbar-text);
+}
+
+.layers-container {
+    padding-top: 80px;
+    padding-bottom: 90px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 50px;
+}
+
+.layers-fish,.layers-carot,.layers-lemon {
+    text-align: center;
+    color: var(--color-title-menu);
+}
+
+.vector-container {
+    display: inline-block;
+    margin: 10px 0px 5px;
+    padding: 40px 40px;
+    background: var(--background-cook);
+    border-radius: 50%;
+    transition: var(--transition-all);
+}
+
+.vector-container img {
+    transition: var(--transition-all);
+}
+
+.vector-container:hover {
+    background-color: var(--background-color-main);
+}
+
+.vector-container:hover .img-fish {
+    filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(500%) hue-rotate(10deg) brightness(120%);
+    transform: translate(0, -10px);
+}
+
+.vector-container:hover .img-carot {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(93%) saturate(500%) hue-rotate(-15deg) brightness(120%);
+    transform: translate(0, -10px);
+}
+
+.vector-container:hover .img-lemon {
+    filter: brightness(0) saturate(100%) invert(90%) sepia(100%) saturate(500%) hue-rotate(10deg) brightness(120%);
+    transform: translate(0, -10px);
+}
+
+.layers-title {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 64px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.layers-text {
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 17.5px;
+    line-height: 25.6px;
+    letter-spacing: 1px;
+    color: var(--color-card-lead);
 }
