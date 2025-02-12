@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link CSS -->
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
     <title>FoodZero-Restaurant and Food</title>
 </head>
 <body>
