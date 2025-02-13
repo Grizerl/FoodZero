@@ -188,4 +188,102 @@
         </div>
     </div>
 </section>
+<section>
+    <div class="section-fashion">
+        <div>
+            <div class="container">
+                <div>
+                    <div class="fashion-container d-flex">
+                        <div class="fashion-content">
+                            <div class="fashion-img">
+                                <div class="fashion-label">
+                                    <span>Fashion</span>
+                                </div>
+                                <img width="530" height="530" src="/assets/images/fashion blog/Feature Image.png" loading="lazy" class="fashion-foto" alt="Feature Image">
+                            </div>
+                            <div class="fashion-info-content d-flex">
+                                <figure>
+                                    <img width="60" height="60" class="avatar" src="/assets/images/fashion blog/Avatar.png" loading="lazy" alt="Avatar">
+                                </figure>
+                                <ul class="navbar-media-content d-flex">
+                                    <li class="media-item">Julie Christie</li>
+                                    <li class="media-item">October 17,2025</li>
+                                    <li class="media-item">3:33 pm</li>
+                                    <li class="media-item">2 comments</li>
+                                </ul>
+                            </div>    
+                            <div class="media-section">
+                                <h1 class="fashion-title max-text">Fruit and vegetables and protection against diseases</h1>
+                                <p class="fashion-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <div class="sc-FAfgd d-flex">
+                                    <a class="fashion-btn-arrow" href="#">Read More 
+                                        <a class="arrow">&rarr;</a>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fashion-content">
+                            <div class="fashion-img">
+                                <div class="fashion-label">
+                                    <span>Fashion</span>
+                                </div>
+                                <img width="530" height="530" src="/assets/images/fashion blog/Feature Image (1).png" loading="lazy" class="fashion-foto" alt="Feature Image">
+                            </div>
+                            <div class="fashion-info-content d-flex">
+                                <figure>
+                                    <img width="60" height="60" class="avatar" src="/assets/images/fashion blog/Avatar (2).png" loading="lazy" alt="Avatar">
+                                </figure>
+                                <ul class="navbar-media-content d-flex">
+                                    <li class="media-item">Dianne Russell</li>
+                                    <li class="media-item">October 17,2024</li>
+                                    <li class="media-item">3:33 pm</li>
+                                    <li class="media-item">2 comments</li>
+                                </ul>
+                            </div>    
+                            <div class="media-section">
+                                <h1 class="fashion-title max-text">Asparagus Spring Salad with Rocket, Goat's Cheese</h1>
+                                <p class="fashion-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <div class="sc-FAfgd d-flex">
+                                    <a class="fashion-btn-arrow" href="#">Read More 
+                                        <a class="arrow">&rarr;</a>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="section-reservation">
+        <div>
+            <div class="container">
+                <div class="reservation-container d-flex">
+                    <h1 class="headline-2">Make a Reservation</h1>
+                    <p class="lead">Get in touch with restaurant</p>
+                    <div class="form-group">
+                        <form action="#" class="reservation-form d-grid" method="post">
+                            <div>
+                                <input type="date" class="date-pole" name="date" value="2025-12-16">
+                                <input type="datetime" class="time-pole" name="time" placeholder="6:00 pm">
+                                <select class="quantity" name="quantity">
+                                    <option value="1 Person">1 Person</option>
+                                    <option value="2 Person">2 Person</option>
+                                    <option value="3 Person">3 Person</option>
+                                    <option value="4 Person">4 Person</option>
+                                    <option value="5 Person">5 Person</option>`
+                                </select>
+                            </div>
+                            <div class="w-100">
+                                <a class="btn-reservation" href="#">Book Now</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection
