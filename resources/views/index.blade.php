@@ -286,4 +286,46 @@
         </div>
     </div>
 </section>
+<section>
+    <div class="section-balance">
+        <div>
+            <div class="container">
+                <div class="energy-content d-flex">
+                    <div>
+                        <h1 class="energy-title max-text ">Calories Energy Balance</h1>
+                        <p class="energy-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="calories-images d-grid">
+                        <figure class="img-container">
+                            <h4 class="img-title">Starters</h4>
+                            <img src="/assets/images/calories-img/Image.png" alt="Starters">
+                            <a class="arrow sc-sfFGg">&rarr;</a>
+                        </figure>
+                        <figure class="img-container">
+                            <h4 class="img-title">Mains</h4>
+                            <img src="/assets/images/calories-img/Image (1).png" alt="Mains">
+                            <a class="arrow sc-sfFGg">&rarr;</a>
+                        </figure>
+                        <figure class="img-container">
+                            <h4 class="img-title">Soups</h4>
+                            <img src="/assets/images/calories-img/Image (2).png" alt="Soups">
+                            <a class="arrow sc-sfFGg">&rarr;</a>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="section-swiper">
+        <div>
+            <div class="container">
+                <div class="mySwiper">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection

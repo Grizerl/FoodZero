@@ -650,3 +650,66 @@ option {
     background: var(--background-color-main);
     color: var(--color-navbar-text);
 }
+
+/* Section balance */
+.section-balance {
+    padding-top: 50px;
+    padding-bottom: 60px;
+    background: var(--color-navbar-text);
+    color: var(--color-title-menu);
+}
+
+.energy-content {
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 8px;
+}
+
+.energy-title {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 55px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.energy-text {
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 33.6px;
+    letter-spacing: 2%;
+    text-align: center;
+    color: var(--color-card-lead);
+}
+
+.calories-images {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 70px;
+}
+
+.img-container {
+    display: inline-block;
+    max-width: max-content; 
+    position: relative;
+}
+
+.img-title {
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0px;
+}
+
+.sc-sfFGg {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
