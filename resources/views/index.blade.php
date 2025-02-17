@@ -321,8 +321,76 @@
     <div class="section-swiper">
         <div>
             <div class="container">
-                <div class="mySwiper">
-                    
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <div class="slide-text d-flex">
+                            <p>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Purus lorem id penatibus imperdiet. Turpis egestas ultricies 
+                                purus  Lorem ipsum dolor sit amet.
+                            </p>
+                            <img style="user-select: none;" src="/assets/images/slider-people/”.png" alt="”">
+                        </div>
+                        <div class="slide-people d-flex">
+                            <div class="d-flex" style="align-items: center;">
+                                <img width="200" height="200" src="/assets/images/slider-people/Dianne Russell.png" alt="Dianne Russell">
+                                <div>
+                                    <h3>Dianne Russell</h3>
+                                    <span>Bloger</span>
+                                </div>
+                            </div>
+                            <div class="number-slide">
+                                <a onclick="plusSlides(-1)" class="prev">&#10094</a>
+                                    1/3
+                                <a onclick="plusSlides(1)" class="next">&#10095</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="slide-text d-flex">
+                            <p>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Purus lorem id penatibus imperdiet. Turpis egestas ultricies 
+                                purus  Lorem ipsum dolor sit amet.
+                            </p>
+                            <img style="user-select: none;" src="/assets/images/slider-people/”.png" alt="”">
+                        </div>
+                        <div class="slide-people d-flex">
+                            <div class="d-flex" style="align-items: center;">
+                                <img width="200" height="200" src="/assets/images/slider-people/John Doe.png" alt="John Doe">
+                                <div>
+                                    <h3>John Doe</h3>
+                                    <span>Bloger</span>
+                                </div>
+                            </div>
+                            <div class="number-slide">
+                                <a onclick="plusSlides(-1)" class="prev">&#10094</a>
+                                    2/3
+                                <a onclick="plusSlides(1)" class="next">&#10095</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="slide-text d-flex">
+                            <p>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Purus lorem id penatibus imperdiet. Turpis egestas ultricies 
+                                purus  Lorem ipsum dolor sit amet.
+                            </p>
+                            <img style="user-select: none;" src="/assets/images/slider-people/”.png" alt="”">
+                        </div>
+                        <div class="slide-people d-flex">
+                            <div class="d-flex" style="align-items: center;">
+                                <img width="200" height="200" src="/assets/images/slider-people/Julie Christie.png" alt="Julie Christie">
+                                <div>
+                                    <h3>Julie Christie</h3>
+                                    <span>Bloger</span>
+                                </div>
+                            </div>
+                            <div class="number-slide">
+                                <a onclick="plusSlides(-1)" class="prev">&#10094</a>
+                                    3/3
+                                <a onclick="plusSlides(1)" class="next">&#10095</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
