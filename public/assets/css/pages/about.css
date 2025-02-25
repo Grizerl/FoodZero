@@ -1,0 +1,340 @@
+@charset "UTF-8";
+@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
+:root {
+    --color-navbar-text: #FFFFFF;
+    --color-title-menu: #000000;
+    --color-card-lead: #4D4D4D;
+    --background-cook: #EBF0E4;
+    --background-player: #233000;
+    --font-Rufina: 'Rufina';
+    --font-Lato: 'Lato';
+    --font-Inter: 'Inter';
+    --transition-all: all .3s ease-in-out;
+}
+
+.section_about_banner {
+    min-height: 90vh;
+}
+
+.background-img {
+    position: absolute;
+    inset: 0;
+    background: #00000075 url(../../images/about/Wooden.png) center / cover no-repeat;
+}
+
+.sc_FDFf {
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.background-content {
+    padding-right: 10rem;
+    color: var(--color-navbar-text);
+}
+
+.background-title {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 110px;
+    line-height: 152px;
+    letter-spacing: 0px;
+}
+
+.background-text {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 40px;
+    letter-spacing: 0px;
+}
+
+.max-text {
+    max-width: 550px;
+}
+
+/* Section about */
+.section_about {
+    padding-top: 70px;
+    background: var(--color-navbar-text);
+}
+
+.about-content {
+    padding-top: 60px;
+    padding-bottom: 70px;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.our_story {
+    color: var(--color-title-menu);
+}
+
+.story_title {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 120px;
+    letter-spacing: 0px;
+}
+
+.story_lead {
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33.6px;
+    letter-spacing: 0px;
+    color: var(--color-card-lead);
+}
+
+.tomato {
+    position: absolute;
+    top: 0;
+}
+
+/* Aside info */
+ .aside-content {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+.member_content {
+    align-items: center;
+    justify-content: space-around;
+}
+
+.text-centre {
+    text-align: center;
+}
+
+.role {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 35px;
+    letter-spacing: 0px;
+}
+
+.name {
+    padding-bottom: 10px;
+    display: block;
+    font-family:var(--font-Lato);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 55px;
+    letter-spacing: 2%;
+}
+
+.slogan {
+    max-width: 450px;
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33.6px;
+    letter-spacing: 2%;
+    color: var(--color-card-lead);
+} 
+
+.sc-FvGAS {
+    text-align: right;
+}
+
+.bottom_container {
+    position: relative;
+    bottom: 100px;
+}
+
+/* Section Video */
+.background-foto {
+    position: relative;
+    height: 75vh;
+    background: url(../../images/about/FreeFood.png) center / cover no-repeat;
+}
+
+.background-foto::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 75vh;
+    width: 100%;
+    background: var(--background-player);
+    opacity: 0.50;
+}
+
+.sc-FhaFD {
+    align-items: center;
+    justify-content: center;
+}
+
+.video_content {
+    position: relative;
+    text-align: center;
+    color: var(--color-navbar-text);
+    z-index: 9999;
+}
+
+.video_name {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 120px;
+    letter-spacing: 0px;
+}
+
+.video_description {
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33.6px;
+    letter-spacing: 2%;
+}
+
+.video_play_btn {
+    border: none;
+    background: transparent;
+    padding-top: 40px;
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+
+/* Section stage */
+.section_process {
+    position: relative;
+    background: var(--color-navbar-text);
+}
+
+.rosemary {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.rosemary_second {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-bottom: 30px;
+}
+
+.process_container {
+    padding-top: 80px;
+    padding-bottom: 100px
+}
+
+.headline_content {
+    padding-bottom: 60px;
+}
+
+.headline {
+    text-align: center;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 120px;
+    letter-spacing: 0px;
+}
+
+.stage {
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.slice_stage {
+    height: 100%;
+    width: 90%;
+    object-fit: cover;
+}
+
+.stage_number {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 105.6px;
+    letter-spacing: 0px;
+    color: var(--color-title-menu);
+}
+
+.stage_description {
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 33.6px;
+    letter-spacing: 2%;
+    color: var(--color-card-lead);
+}
+
+/* Section reservation */
+.section-reservation {
+    padding-top: 60px;
+    padding-bottom: 70px;
+    background: var(--background-cook);
+}
+.reservation-container {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+.headline-2 {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 120px;
+    letter-spacing: 5px;
+    color: var(--color-title-menu);
+}
+
+.lead {
+    font-family: var(--font-Lato);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 33.6px;
+    letter-spacing: 2%;
+    text-align: center;
+    color: var(--color-card-lead);
+}
+
+.reservation-form {
+    grid-template-columns: repeat(1,1fr);
+}
+
+.date-pole,.time-pole,.quantity {
+    width: 380px;
+    height: 55px;
+    margin-top: 50px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 70px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: 1.5px solid #000000;
+    background-color: transparent;
+    font-family: var(--font-Lato);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 33.6px;
+    letter-spacing: 2px;
+    color: var(--color-title-menu);
+}
+
+option {
+    background-color: var(--background-cook);
+}
+
+.btn-reservation {
+    padding-top: 12px;
+    padding-right: 50px;
+    padding-bottom: 12px;
+    padding-left: 50px;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 48px;
+    letter-spacing: 1.5px;
+    background: var(--background-color-main);
+    color: var(--color-navbar-text);
+}

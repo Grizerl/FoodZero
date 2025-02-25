@@ -1,0 +1,227 @@
+@charset "UTF-8";
+@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
+:root {
+    --color-navbar-text: #FFFFFF;
+    --color-title-menu: #000000;
+    --color-card-lead: #4D4D4D;
+    --background-cook: #EBF0E4;
+    --font-Rufina: 'Rufina';
+    --font-Lato: 'Lato';
+    --font-Inter: 'Inter';
+    --transition-all: all .3s ease-in-out;
+}
+
+.section-menu-banner {
+    min-height: 90vh;
+}
+
+.background-img {
+    position: absolute;
+    inset: 0;
+    background: #00000075 url(../../images/menu/Dish.png) center no-repeat;
+    background-size: cover;
+}
+
+.sc-fzfGF {
+    align-items: center;
+}
+
+.banner-content {
+    padding-left: 10rem;
+    padding-bottom: 5rem;
+    color: var(--color-navbar-text);
+}
+
+.banner-slogan {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 110px;
+    letter-spacing: 0px;
+}
+
+.max-widt {
+    max-width: 600px;
+}
+
+.banner-lead {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 48px;
+    letter-spacing: 0px;
+}
+
+/* Section Menu */
+.section-menu {
+    position: relative;
+    background: var(--color-navbar-text);
+}
+
+.menu-content {
+    padding-bottom: 60px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.starters-content,.mains-content,.pastries-content {
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+.pastries-content {
+    position: relative;
+}
+
+.menu-title {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 65px;
+    line-height: 120px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.menu-lead {
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33.6px;
+    letter-spacing: 2%;
+    text-align: center;
+    color: var(--color-card-lead);
+}
+
+.blueberry,.avocado {
+    position: absolute;
+    top: 0;
+    right: 200px;
+}
+
+.menu-bottom {
+    grid-template-columns: repeat(2,1fr);
+    gap: 40px;
+    padding-top: 50px;
+}
+
+.dish-images {
+    height: 100%;
+    width: 90%;
+    object-fit: cover;
+}
+
+.d-block {
+    display: block;
+}
+
+.product-price {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-align: right;
+    border-bottom: 4px dotted #000000;
+}
+
+.dish-container {
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.dish-name {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 50px;
+    letter-spacing: 0px;
+} 
+
+.max-wid-title {
+    max-width: 400px;
+}
+
+.dish-description {
+    font-family:var(--font-Lato);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 50px;
+    letter-spacing: 2%;
+    color: var(--color-card-lead);
+}
+
+/* Section reservation */
+.section-reservation {
+    padding-top: 60px;
+    padding-bottom: 70px;
+    background: var(--background-cook);
+}
+.reservation-container {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+.headline-2 {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 120px;
+    letter-spacing: 5px;
+    color: var(--color-title-menu);
+}
+
+.lead {
+    font-family: var(--font-Lato);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 33.6px;
+    letter-spacing: 2%;
+    text-align: center;
+    color: var(--color-card-lead);
+}
+
+.reservation-form {
+    grid-template-columns: repeat(1,1fr);
+}
+
+.date-pole,.time-pole,.quantity {
+    width: 380px;
+    height: 55px;
+    margin-top: 50px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 70px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: 1.5px solid #000000;
+    background-color: transparent;
+    font-family: var(--font-Lato);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 33.6px;
+    letter-spacing: 2px;
+    color: var(--color-title-menu);
+}
+
+option {
+    background-color: var(--background-cook);
+}
+
+.btn-reservation {
+    padding-top: 12px;
+    padding-right: 50px;
+    padding-bottom: 12px;
+    padding-left: 50px;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 48px;
+    letter-spacing: 1.5px;
+    background: var(--background-color-main);
+    color: var(--color-navbar-text);
+}
