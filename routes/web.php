@@ -23,5 +23,6 @@ Route::prefix('Admin')->group(function () {
     Route::middleware('auth')->group(function() {
         Route::get('Dashboard', [App\Http\Controllers\Auth\AuthController::class, 'dashboard'])->name('dashboard');
         Route::post('Logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
+        Route::resource('menu', App\Http\Controllers\Admin\MenuController::class);
     });
 }); 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,8 @@ class HomeController extends Controller
 
     public function menu() 
     {
-        return view('pages.menu');
+        $item = Menu::all();
+        return view('pages.menu',compact('item'));
     }
 
     public function blog() 
