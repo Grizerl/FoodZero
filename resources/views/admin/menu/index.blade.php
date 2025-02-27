@@ -33,6 +33,9 @@
                      <th style="width: 8%" class="text-center">
                         Dish Description
                      </th>
+                     <th style="width: 10%">
+                        Dish Category
+                     </th>
                      <th style="width: 20%">
                         Action Button
                      </th>
@@ -50,8 +53,11 @@
                         <td class="project-state" style="width: 60%;">
                            {{ $option['description'] }}
                         </td>
+                        <td class="project-state" style="width: 50%; text-align: left;">
+                           {{ $option->category->name }}
+                        </td>
                         <td class="project-actions text-right" style="display: inline-flex;">
-                           <a class="btn btn-info btn-sm mr-2" href="">
+                           <a class="btn btn-info btn-sm mr-2" href="{{ route('menu.edit',$option['id']) }}">
                               <i class="fas fa-pencil-alt"></i>
                                  Edit 
                            </a>

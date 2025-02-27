@@ -13,5 +13,10 @@ class Menu extends Model
         'images',
         'description',
         'price',
+        'category_id',
     ];
+
+    public function category() {
+        return $this->belongsTo(Categories::class);
+    }
 }

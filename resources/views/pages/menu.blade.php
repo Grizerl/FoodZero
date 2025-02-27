@@ -8,7 +8,7 @@
 <section>
     <div class="section-menu-banner h-100">
         <div class="background-img d-flex sc-fzfGF">
-            <div class="banner-content">
+            <div class="background-content">
                 <h1 class="banner-slogan max-widt">View Our New Menu</h1>
                 <p class="banner-lead">The freshest ingredients for you every day</p>
             </div>
@@ -133,34 +133,5 @@
         </div>
     </div>
 </section>
-<section>
-    <div class="section-reservation">
-        <div>
-            <div class="container">
-                <div class="reservation-container d-flex">
-                    <h1 class="headline-2">Make a Reservation</h1>
-                    <p class="lead">Get in touch with restaurant</p>
-                    <div class="form-group">
-                        <form action="#" class="reservation-form d-grid" method="post">
-                            <div>
-                                <input type="date" class="date-pole" name="date" value="2025-12-16">
-                                <input type="datetime" class="time-pole" name="time" placeholder="6:00 pm">
-                                <select class="quantity" name="quantity">
-                                    <option value="1 Person">1 Person</option>
-                                    <option value="2 Person">2 Person</option>
-                                    <option value="3 Person">3 Person</option>
-                                    <option value="4 Person">4 Person</option>
-                                    <option value="5 Person">5 Person</option>`
-                                </select>
-                            </div>
-                            <div style="text-align: center;" class="w-100">
-                                <a class="btn-reservation" href="#">Book Now</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+@include('partials.form')
 @endsection

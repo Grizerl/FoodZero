@@ -112,6 +112,33 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
+            <i class="fa-solid fa-newspaper"></i>
+              <p>
+                Blog
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                    <p>
+                      Blog Collection
+                    </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                    <p>
+                      Create New Post
+                    </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="fa-solid fa-menorah"></i>
               <p>
                 Menu

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MenuRequest;
+use App\Models\Categories;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,7 @@ class MenuController extends Controller
      */
     public function index()
     {
+      
         $options= Menu::all();
         return view('admin.menu.index',compact('options'));
     }
@@ -23,7 +25,8 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('admin.menu.create');
+        $categories=Categories::all();
+        return view('admin.menu.create',compact('categories'));
     }
 
     /**
@@ -35,6 +38,7 @@ class MenuController extends Controller
             'name'=>$menuRequest->name,
             'description'=>$menuRequest->description,
             'price'=>$menuRequest->price,
+            'category_id' => $menuRequest->category_id,
             'images'=> '/'.$menuRequest->images,
         ]);
 
@@ -55,16 +59,32 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu)
     {
-        //
+        $categories=Categories::all();
+        return view('admin.menu.edit',compact('menu','categories'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Menu $menu)
+    public function update(MenuRequest $menuRequest, $id)
     {
-        //
+        $menu = Menu::findOrFail($id);
+    
+        if (!$menu) {
+            return redirect()->back()->with('error', 'Dish not found');
+        }
+
+        $menu->update([
+            'name' => $menuRequest->name,
+            'description' => $menuRequest->description,
+            'price' => $menuRequest->price,
+            'category_id' => $menuRequest->category_id,
+            'images' => $menuRequest->images ? (strpos($menuRequest->images, '/') === 0 ? $menuRequest->images : '/' . $menuRequest->images) : $menu->images,
+        ]);
+    
+        return redirect()->back()->with('success', 'Dish successfully updated');
     }
+    
 
     /**
      * Remove the specified resource from storage.
