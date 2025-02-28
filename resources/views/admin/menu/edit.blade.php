@@ -18,15 +18,15 @@
          @method('PATCH')
          <div class="form-group">
             <label for="Dish Name">Dish Name</label>
-            <input type="text" name="name" class="form-control" placeholder="Enter the Dish Name" value="{{ $menu['name'] }}">
+            <input type="text" name="name" class="form-control" placeholder="Enter the Dish Name" value="{{ old('name',$menu['name']) }}">
          </div>
          <div class="form-group">
             <label for="Dish Description">Dish Description</label>
-            <input type="text" name="description" class="form-control" placeholder="Enter the Dish Description" value="{{ $menu['description'] }}">
+            <input type="text" name="description" class="form-control" placeholder="Enter the Dish Description" value="{{ old('description',$menu['description']) }}">
          </div>
          <div class="form-group">
             <label for="Dish Price">Dish Price</label>
-            <input type="text" name="price" class="form-control" placeholder="Enter the Dish Price" value="{{ $menu['price'] }}">
+            <input type="text" name="price" class="form-control" placeholder="Enter the Dish Price" value="{{ old('price',$menu['price']) }}">
          </div>
          <div class="form-group mt-3">
             <label>Select a category</label>
@@ -41,7 +41,7 @@
          </div>
          <div class="form-group">
             <label for="Dish Photo">Dish Photo</label>
-            <input name="images" type="text" class="form-control" id="feature_image" value="{{ $menu['images'] }}" readonly>
+            <input name="images" type="text" class="form-control" id="feature_image" value="{{ old('images',$menu['images']) }}" readonly>
             <a href="" class="popup_selector" data-inputid="feature_image">Choose an image</a>
          </div>
    </div>
