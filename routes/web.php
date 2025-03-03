@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\HomeController;
-use App\Http\Middleware\CheckAuthentication;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\MenuController;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,13 +25,14 @@ Route::prefix('FoodZero')->group(function () {
 });
 
 Route::prefix('Admin')->group(function () {
-    Route::get('FormLogin',[App\Http\Controllers\Auth\AuthController::class, 'showform'])->name('showform');
-    Route::post('Login',[App\Http\Controllers\Auth\AuthController::class, 'login'])->name('login');
-   
-    Route::middleware('auth')->group(function() {
-        Route::get('Dashboard', [App\Http\Controllers\Auth\AuthController::class, 'dashboard'])->name('dashboard');
-        Route::post('Logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
-        Route::resource('menu', App\Http\Controllers\Admin\MenuController::class);
-        Route::resource('post',App\Http\Controllers\Admin\PostController::class);
+    Route::get('FormLogin', [AuthController::class, 'showform'])->name('showform');
+    Route::post('Login', [AuthController::class, 'login'])->name('login');
+
+    Route::middleware('auth')->group(function () {
+        Route::get('Dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
+        Route::resource('post', PostController::class);
+        Route::resource('menu', MenuController::class);
+        Route::resource('reservation', ReservationController::class);
+        Route::post('Logout', [AuthController::class, 'logout'])->name('logout');
     });
-}); 
+});

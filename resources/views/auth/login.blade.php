@@ -18,15 +18,15 @@
         @csrf
         <div class="input-group">
           <label for="email">Електронна пошта</label>
-            <input type="email" id="email" name="email" class="@error('message') is-invalid @enderror" placeholder="Enter your email">
-          @error('message')
+            <input type="email" id="email" name="email" class="@error('email') is-invalid @enderror" placeholder="Enter your email">
+          @error('email')
             <div class="alert-danger">{{ $message }}</div>
           @enderror
         </div>
         <div class="input-group">
           <label for="password">Пароль</label>
-            <input type="password" id="password" name="password" class="@error('message') is-invalid @enderror" placeholder="Enter your password">
-          @error('message')
+            <input type="password" id="password" name="password" class="@error('password') is-invalid @enderror" placeholder="Enter your password">
+          @error('password')
             <div class="alert-danger">{{ $message }}</div>
           @enderror
         </div>
