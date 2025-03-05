@@ -38,16 +38,16 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="" class="nav-link">Home</a>
+          <a href="{{ route('dashboard') }}" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="" class="nav-link">Menu</a>
+          <a href="{{ route('menu.index') }}" class="nav-link">Menu</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="" class="nav-link">Reservation</a>
+          <a href="{{ route('reservation.index') }}" class="nav-link">Reservation</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="" class="nav-link">Users</a>
+          <a href="{{ route('members.index') }}" class="nav-link">Users</a>
         </li>
       </ul>
       <!-- Right navbar links -->
@@ -182,7 +182,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('members.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
                     Registered users
@@ -190,7 +190,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('members.create') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
                     Add New Users

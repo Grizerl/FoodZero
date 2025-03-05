@@ -5,7 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\UsersController;
 use App\Models\Reservation;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,6 +35,7 @@ Route::prefix('Admin')->group(function () {
         Route::resource('post', PostController::class);
         Route::resource('menu', MenuController::class);
         Route::resource('reservation', ReservationController::class);
+        Route::resource('members',UsersController::class);
         Route::post('Logout', [AuthController::class, 'logout'])->name('logout');
     });
 });

@@ -16,61 +16,49 @@
          <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
                <div class="inner">
-                  <h3>23</h3>
+                  <h3>{{ $count_menu }}</h3>
                   <h4>Main Menu</h4>
                </div>
                <div class="icon">
                   <i class="fa-solid fa-newspaper"></i>
                </div>
-               <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+               <a href="{{ route('menu.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
          </div>
          <div class="col-lg-3 col-6">
             <div class="small-box bg-success">
                <div class="inner">
-                  <h3>18</h3>
+                  <h3>{{ $count_user }}</h3>
                   <h4>User Registration</h4>
                </div>
                <div class="icon">
                   <i class="fa-solid fa-list"></i>
                </div>
-               <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+               <a href="{{ route('members.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
          </div>
          <div class="col-lg-3 col-6">
             <div class="small-box bg-success ">
                <div class="inner">
-                  <h3>20</h3>
+                  <h3>{{$count_reservation}}</h3>
                   <h4>Appointment</h4>
                </div>
                <div class="icon">
                   <i class="fa-solid fa-tag"></i>
                </div>
-               <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+               <a href="{{ route('reservation.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
          </div>
          <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
                <div class="inner">
-                  <h3>23</h3>
-                  <h4>Main Menu</h4>
+                  <h3>{{$count_blog}}</h3>
+                  <h4>Post</h4>
                </div>
                <div class="icon">
                   <i class="fa-solid fa-handshake-angle"></i>
                </div>
-               <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-         </div>
-         <div class="col-lg-3 col-6">
-            <div class="small-box bg-info">
-               <div class="inner">
-                  <h3>23</h3>
-                  <h4>Main Menu</h4>
-               </div>
-               <div class="icon">
-                  <i class="fa-solid fa-handshake-angle"></i>
-               </div>
-               <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+               <a href="{{ route('post.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
          </div>
       </div>
