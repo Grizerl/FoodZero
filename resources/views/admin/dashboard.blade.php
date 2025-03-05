@@ -17,7 +17,7 @@
             <div class="small-box bg-info">
                <div class="inner">
                   <h3>{{ $count_menu }}</h3>
-                  <h4>Main Menu</h4>
+                  <h4>Navigation Menu</h4>
                </div>
                <div class="icon">
                   <i class="fa-solid fa-newspaper"></i>
@@ -29,7 +29,7 @@
             <div class="small-box bg-success">
                <div class="inner">
                   <h3>{{ $count_user }}</h3>
-                  <h4>User Registration</h4>
+                  <h4>Account Registration</h4>
                </div>
                <div class="icon">
                   <i class="fa-solid fa-list"></i>
@@ -53,7 +53,7 @@
             <div class="small-box bg-info">
                <div class="inner">
                   <h3>{{$count_blog}}</h3>
-                  <h4>Post</h4>
+                  <h4>Post Repository</h4>
                </div>
                <div class="icon">
                   <i class="fa-solid fa-handshake-angle"></i>

@@ -26,7 +26,7 @@
   <link href="/admin/dist/css/colorbox.css" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
+  <div class="wrapper">
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
       <img class="animation__shake" src="/admin/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
@@ -39,6 +39,9 @@
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="{{ route('dashboard') }}" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="{{ route('post.index') }}" class="nav-link">Blog</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="{{ route('menu.index') }}" class="nav-link">Menu</a>
@@ -61,17 +64,17 @@
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">Notifications</span>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i>
-          </a>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i>
+            </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i>
-          </a>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-users mr-2"></i>
+            </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i>
-          </a>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-file mr-2"></i>
+            </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -84,23 +87,23 @@
           </a>
         </li>
       </ul>
-      </nav>
-      <!-- Main Sidebar Container -->
+    </nav>
+    <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a class="brand-link ">
-        <img src="/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <a style="user-select: none;" class="brand-link ">
+          <img src="/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
           <span class="brand-text font-weight-light">{{Auth::user()->name}}</span>
       </a>
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="info">
+          <div style="user-select: none;" class="info">
             <a class="d-block ml-2">Administrator Console</a>
           </div>
         </div>
-      <nav class="mt-2">
+        <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
             <a href="{{ route('dashboard') }}" class="nav-link">
@@ -112,7 +115,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-            <i class="fa-solid fa-newspaper"></i>
+              <i class="fa-solid fa-newspaper"></i>
               <p>
                 Blog
                 <i class="right fas fa-angle-left"></i>
@@ -185,7 +188,7 @@
                 <a href="{{ route('members.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
-                    Registered users
+                    Registered Users
                   </p>
                 </a>
               </li>
@@ -193,7 +196,7 @@
                 <a href="{{ route('members.create') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
-                    Add New Users
+                    Create New User
                   </p>
                 </a>
               </li>
@@ -211,14 +214,14 @@
             <form action="{{ route('logout') }}" method="post">
               @csrf
                 <button style="border: none;" class="nav-link" type="submit">
-                  <i class="fa-solid fa-right-from-bracket"></i>
-                  <p>
-                    Exit Account
-                  </p> 
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <p>
+                      Exit Account
+                    </p> 
                 </button>
             </form>
           </li>
-      </nav>
+        </nav>
       </div>
     </aside>
     <!-- Content Wrapper. Contains page content -->
@@ -226,47 +229,29 @@
       @yield('content')
     </div>
   </div>
-<!-- ./wrapper -->
 <!-- jQuery -->
 <script src="/admin/plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
 <!-- Bootstrap 4 -->
 <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="/admin/plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="/admin/plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="/admin/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="/admin/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="/admin/plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="/admin/plugins/moment/moment.min.js"></script>
-<script src="/admin/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="/admin/plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/admin/dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="/admin/dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<!-- Loading the main JS for the AdminLTE dashboard panel -->
 <script src="/admin/admin.js"></script>
+<!-- Loading the jQuery Colorbox plugin for modal windows (minimized version) -->
 <script type="text/javascript" src="/admin/dist/js/jquery.colorbox-min.js"></script>
+<!-- Loading Font Awesome for icon usage on the page -->
 <script src="https://kit.fontawesome.com/46a432ef36.js" crossorigin="anonymous"></script>
+<!-- Loading the JS for the dashboard page functionality -->
 <script src="/admin/dist/js/pages/dashboard.js"></script>
+<!-- Loading the TinyMCE editor for text editors on the page -->
 <script src="https://cdn.tiny.cloud/1/u3xget8b6g00f5okf2wfwg4jua3611mxzrrt0smpk6js3e98/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+<!-- Duplicate loading of the jQuery Colorbox plugin (minimized version) for possible reuse -->
 <script type="text/javascript" src="/admin/dist/js/jquery.colorbox-min.js"></script>
+<!-- Loading the elFinder plugin for the file manager (used via standalone popup) -->
 <script type="text/javascript" src="/packages/barryvdh/elfinder/js/standalonepopup.min.js"></script>
+<!-- Repeating the loading of the main JS for the AdminLTE dashboard panel -->
 <script src="./admin/js/admin.js"></script>
 </body>
 </html>
+
+

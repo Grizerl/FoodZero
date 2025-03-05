@@ -59,7 +59,7 @@
                                  @method('DELETE')
                                  <button type="submit" class="btn btn-danger btn-sm delete-btn">
                                     <i class="fas fa-trash"></i>
-                                       Remove
+                                    Remove
                                  </button>
                            </form>
                         </td>

@@ -13,7 +13,7 @@
          @endif
    </div>
    <div class="card-body pb-0">
-   <form action="{{ route('members.update',$users['id']) }}" method="post">
+      <form action="{{ route('members.update',$users['id']) }}" method="post">
          @csrf
          @method('PATCH')
          <div class="form-group">
@@ -41,5 +41,5 @@
    <div class="card-footer">
       <button type="submit" class="btn btn-primary">Create user</button>
    </div>
-</form>
+      </form>
 @endsection

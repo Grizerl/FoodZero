@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PostRequest;
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -41,7 +40,7 @@ class PostController extends Controller
             ]
         );
 
-        return redirect()->back()->with('success', 'Post successfully created');
+        return redirect()->back()->with('success', 'Your post has been created successfully');
     }
 
     /**
@@ -67,9 +66,11 @@ class PostController extends Controller
     {
         $post=Post::findOrFail($id);
 
-        if(!$post) {
-            return redirect()->back()->with('success','Post not found');
+        if(!$post) 
+        {
+            return redirect()->back()->with('success','Unable to find the post');
         }
+
         $post->update(
             [
                 'title' => $postRequest->title,
@@ -79,7 +80,7 @@ class PostController extends Controller
                 'clients_img' => $postRequest->customer_photo,
             ]);
 
-        return redirect()->back()->with('success', 'Post successfully update');
+        return redirect()->back()->with('success', 'The post was successfully updated');
     }
 
     /**
@@ -88,6 +89,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect()->back()->with('success', 'Post successfully delete');
+        return redirect()->back()->with('success', 'Post deleted successfully');
     }
 }

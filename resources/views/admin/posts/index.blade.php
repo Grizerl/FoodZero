@@ -5,12 +5,15 @@
       @if(session('success'))
          <div class="alert alert-success" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&#10006;</button>
-               <h4><i class="icon fa fa-check"></i>{{session('success')}}</h4>
+               <h4>
+                  <i class="icon fa fa-check"></i>
+                     {{session('success')}}
+               </h4>
          </div>
       @endif
       <div class="card">
          <div class="card-header">
-            <h3 class="card-title">Posts Options</h3>
+            <h3 class="card-title">Post Management Options</h3>
             <div class="card-tools">
                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                   <i class="fas fa-minus"></i>
@@ -59,14 +62,14 @@
                         <td class="project-actions text-right" style="display: inline-flex;">
                            <a class="btn btn-info btn-sm mr-2" href="{{ route('post.edit',$posts['id']) }}">
                               <i class="fas fa-pencil-alt"></i>
-                                 Edit 
+                              Edit 
                            </a>
                            <form action="{{ route('post.destroy',$posts['id']) }}" method="post">
                               @csrf
                                  @method('DELETE')
                                  <button type="submit" class="btn btn-danger btn-sm delete-btn">
                                     <i class="fas fa-trash"></i>
-                                       Remove
+                                    Remove
                                  </button>
                            </form>
                         </td>

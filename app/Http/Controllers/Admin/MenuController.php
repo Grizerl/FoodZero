@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MenuRequest;
+use App\Http\Requests\Admin\MenuRulesRequest;
 use App\Models\Categories;
 use App\Models\Menu;
 use Illuminate\Http\Request;
@@ -15,7 +15,6 @@ class MenuController extends Controller
      */
     public function index()
     {
-      
         $options= Menu::all();
         return view('admin.menu.index',compact('options'));
     }
@@ -32,7 +31,7 @@ class MenuController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(MenuRequest $menuRequest)
+    public function store(MenuRulesRequest $menuRequest)
     {
         Menu::create([
             'name'=>$menuRequest->name,
@@ -42,8 +41,7 @@ class MenuController extends Controller
             'images'=> '/'.$menuRequest->images,
         ]);
 
-        return redirect()->back()->with('success','Dish successfully created');
-
+        return redirect()->back()->with('success','The dish has been successfully created.');
     }
 
     /**
@@ -66,12 +64,12 @@ class MenuController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(MenuRequest $menuRequest, $id)
+    public function update(MenuRulesRequest $menuRequest, $id)
     {
         $menu = Menu::findOrFail($id);
     
         if (!$menu) {
-            return redirect()->back()->with('error', 'Dish not found');
+            return redirect()->back()->with('error', 'Dish not available.');
         }
 
         $menu->update([
@@ -82,9 +80,8 @@ class MenuController extends Controller
             'images' => $menuRequest->images ? (strpos($menuRequest->images, '/') === 0 ? $menuRequest->images : '/' . $menuRequest->images) : $menu->images,
         ]);
     
-        return redirect()->back()->with('success', 'Dish successfully updated');
+        return redirect()->back()->with('success', 'The dish has been successfully updated.');
     }
-    
 
     /**
      * Remove the specified resource from storage.

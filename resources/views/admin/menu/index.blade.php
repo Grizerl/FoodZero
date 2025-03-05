@@ -59,14 +59,14 @@
                         <td class="project-actions text-right" style="display: inline-flex;">
                            <a class="btn btn-info btn-sm mr-2" href="{{ route('menu.edit',$option['id']) }}">
                               <i class="fas fa-pencil-alt"></i>
-                                 Edit 
+                              Edit 
                            </a>
                            <form action="{{ route('menu.destroy',$option['id']) }}" method="post">
                               @csrf
                                  @method('DELETE')
                                  <button type="submit" class="btn btn-danger btn-sm delete-btn">
                                     <i class="fas fa-trash"></i>
-                                       Remove
+                                    Remove
                                  </button>
                            </form>
                         </td>

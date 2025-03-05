@@ -45,7 +45,7 @@ class UsersController extends Controller
             'remember_token' => Str::random(60),
         ]);	
 
-        return redirect()->back()->with('success','User created success');
+        return redirect()->back()->with('success','The user was successfully created.');
     }
 
     /**
@@ -79,7 +79,7 @@ class UsersController extends Controller
         $user=User::findOrFail($id);
 
         if(!$user) {
-            return redirect()->back()->with('message','User not found');
+            return redirect()->back()->with('message','User could not be found');
         }
         
         $user->update([
@@ -88,7 +88,7 @@ class UsersController extends Controller
             'password' =>$validate['password'],
         ]);
 
-        return redirect()->back()->with('success','User update success');
+        return redirect()->back()->with('success','User update completed successfully.');
     }
 
     /**
@@ -98,6 +98,6 @@ class UsersController extends Controller
     {
         $user=User::findOrFail($id);
         $user->delete();
-        return redirect()->back()->with('success','User delete');
+        return redirect()->back()->with('success','User deleted successfully.');
     }
 }

@@ -13,7 +13,7 @@
          @endif
    </div>
    <div class="card-body pb-0">
-<form action="{{ route('members.store') }}" method="post">
+      <form action="{{ route('members.store') }}" method="post">
          @csrf
          <div class="form-group">
             <label for="Name">User Name</label>
@@ -40,5 +40,5 @@
    <div class="card-footer">
       <button type="submit" class="btn btn-primary">Create user</button>
    </div>
-</form>
+      </form>
 @endsection
