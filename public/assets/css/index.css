@@ -516,6 +516,7 @@ option {
     letter-spacing: 1.5px;
     background: var(--background-color-main);
     color: var(--color-navbar-text);
+    cursor: pointer;
 }
 
 /* Section balance */

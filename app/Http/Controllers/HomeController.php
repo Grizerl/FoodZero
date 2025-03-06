@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,19 @@ class HomeController extends Controller
 
     public function menu() 
     {
-        $item = Menu::all();
-        return view('pages.menu',compact('item'));
-    }
+        return view('pages.menu', [
+            'starters' => Menu::where('category_id', 1)->take(3)->get(),
+            'mains' => Menu::where('category_id', 2)->take(3)->get(),
+            'pastries_And_Drinks' => Menu::where('category_id', 3)->take(3)->get(),
+        ]);
+        
+    }    
+
+    public function fullMenu() 
+    {
+        $categories = Categories::with('menu')->get();
+        return view('pages.full-menu',compact('categories'));
+    }   
 
     public function blog() 
     {

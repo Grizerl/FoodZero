@@ -16,7 +16,7 @@
     </div>
 </section>
 <section>
-    <div class="section-menu">
+    <div class="section_all_menu">
         <div>
             <div class="container">
                 <div class="menu-content d-flex">
@@ -33,27 +33,15 @@
                                 <img class="dish-images" src="/assets/images/menu/starters/cheese.png" alt="Cheese">
                             </figure>
                             <div class="menu-right">
-                                <span class="product-price d-block">
-                                    20$
-                                </span>
-                                <div class="dish-container">
-                                    <h2 class="dish-name max-wid-title">Grilled Okra and Tomatoes</h2>
-                                    <p class="dish-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                                <span class="product-price d-block">
-                                    18$
-                                </span>
-                                <div class="dish-container">
-                                    <h2 class="dish-name">Cucumber Salad</h2>
-                                    <p class="dish-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                                <span class="product-price d-block">
-                                    12$
-                                </span>
-                                <div class="dish-container">
-                                    <h2 class="dish-name">Basil Pancakes</h2>
-                                    <p class="dish-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
+                                @foreach ($starters as $starter)
+                                    <span class="product-price d-block">
+                                        {{ $starter->price }}$
+                                    </span>
+                                    <div class="dish-container">
+                                        <h2 class="dish-name max-wid-title">{{ $starter->name}}</h2>
+                                        <p class="dish-description">{{ $starter->description }}</p>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -64,27 +52,15 @@
                         </div>
                         <div class="menu-bottom d-grid">
                             <div class="menu-right">
-                                <span class="product-price d-block">
-                                    20$
-                                </span>
-                                <div class="dish-container">
-                                    <h2 class="dish-name max-wid-title">Deep Sea Snow White Cod Fillet</h2>
-                                    <p class="dish-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                                <span class="product-price d-block">
-                                    22$
-                                </span>
-                                <div class="dish-container">
-                                    <h2 class="dish-name max-wid-title">Steak With Rosemary Butter</h2>
-                                    <p class="dish-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                                <span class="product-price d-block">
-                                    20$
-                                </span>
-                                <div class="dish-container">
-                                    <h2 class="dish-name max-wid-title">Steaks with Grilled Kimchi</h2>
-                                    <p class="dish-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
+                                @foreach ($mains as $main)
+                                    <span class="product-price d-block">
+                                        {{ $main->price }}$
+                                    </span>
+                                    <div class="dish-container">
+                                        <h2 class="dish-name max-wid-title">{{ $main->name}}</h2>
+                                        <p class="dish-description">{{ $main->description }}</p>
+                                    </div>
+                                @endforeach
                             </div>
                             <figure style="text-align: center;">
                                 <img class="dish-images" src="/assets/images/menu/Main/Beef.png" alt="Beef">
@@ -104,30 +80,21 @@
                                 <img class="dish-images" src="/assets/images/menu/Pastries&Drinks/cups.png" alt="Four cups">
                             </figure>
                             <div class="menu-right">
-                                <span class="product-price d-block">
-                                    158$
-                                </span>
-                                <div class="dish-container">
-                                    <h2 class="dish-name max-wid-title">Wine Pairing</h2>
-                                    <p class="dish-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                                <span class="product-price d-block">
-                                    168$
-                                </span>
-                                <div class="dish-container">
-                                    <h2 class="dish-name">Natural Wine Pairing</h2>
-                                    <p class="dish-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                                <span class="product-price d-block">
-                                    90$
-                                </span>
-                                <div class="dish-container">
-                                    <h2 class="dish-name">Whisky Flyer</h2>
-                                    <p class="dish-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
+                                @foreach ($pastries_And_Drinks as $dessertsAndDrinks)
+                                    <span class="product-price d-block">
+                                        {{ $dessertsAndDrinks->price }}$
+                                    </span>
+                                    <div class="dish-container">
+                                        <h2 class="dish-name max-wid-title">{{ $dessertsAndDrinks->name}}</h2>
+                                        <p class="dish-description">{{ $dessertsAndDrinks->description }}</p>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
+                    <button class="btm__menu">
+                        <a href="{{ route('fullMenu.page') }}">Complete menu</a>
+                    </button>
                 </div>
             </div>
         </div>

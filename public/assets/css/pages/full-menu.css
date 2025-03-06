@@ -7,52 +7,101 @@
     --color-title-menu: #000000;
     --color-card-lead: #4D4D4D;
     --background-cook: #EBF0E4;
+    --background-player: #233000;
     --font-Rufina: 'Rufina';
     --font-Lato: 'Lato';
     --font-Inter: 'Inter';
     --transition-all: all .3s ease-in-out;
 }
 
-.section-menu-banner {
-    min-height: 90vh;
+.section_explore_menu {
+   min-height: 90vh;
 }
 
-.background-img {
-    position: absolute;
+.background-image {
+    position: absolute; 
     inset: 0;
-    background: #00000075 url(../../images/menu/Dish.png) center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+    url(/assets/images/menu/full-menu/MixedFruit.png) center no-repeat;
     background-size: cover;
 }
 
-.sc-fzfGF {
+.sc-DdgA {
     align-items: center;
 }
 
-.background-content {
+.banner_text {
     padding-left: 10rem;
-    padding-bottom: 5rem;
     color: var(--color-navbar-text);
 }
 
-.banner-slogan {
-    padding-top: 15px;
-    padding-bottom: 20px;
+.banner_title {
     font-family: var(--font-Rufina);
     font-weight: 700;
-    font-size: 110px;
+    font-size: 100px;
+    line-height: 130px;
     letter-spacing: 0px;
 }
 
-.max-widt {
-    max-width: 600px;
-}
-
-.banner-lead {
+.banner_lead{
     font-family: var(--font-Rufina);
     font-weight: 700;
     font-size: 25px;
     line-height: 48px;
     letter-spacing: 0px;
+}
+
+.aside_baner_text {
+    position: absolute;
+    right: 40px;
+    flex-direction: column;
+    color: var(--color-navbar-text);
+}
+
+.sc-Fcsg {
+    padding-top: 40px;
+    padding-bottom: 8px;
+    border-bottom: 2px dotted var(--color-navbar-text);
+}
+
+.open_time {
+    padding-right: 8rem;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 48px;
+    letter-spacing: 0px;
+}
+
+.open_day {
+    padding-left: 5rem;
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 48px;
+    letter-spacing: 2%;
+}
+
+.sc-FDdg {
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.info_container {
+    padding-right: 5rem;
+    flex-direction: column;
+}
+
+.info_container > span {
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 33.6px;
+    letter-spacing: 2%;
+}
+
+.info_container:last-child {
+    padding-right: 0rem;
 }
 
 /* Section Menu */
@@ -61,13 +110,53 @@
     background: var(--color-navbar-text);
 }
 
+.section_menu_items {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
 .menu-content {
     padding-bottom: 60px;
     align-items: center;
     flex-direction: column;
 }
 
-.starters-content,.mains-content,.pastries-content {
+.menu_navbar {
+    align-items: center;
+}
+
+.menu_items {
+    padding: 0 35px;
+}
+
+.menu_links {
+    position: relative;
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 140%;
+    letter-spacing: 6%;
+    color: var(--color-title-menu);
+    z-index: 9999;
+}
+
+.menu_links::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--color-title-menu);
+    transform: scaleX(0);
+}
+
+.menu_links:hover.menu_links::after {
+    transform: scaleX(1); 
+    transition: var(--transition-all);
+}
+
+.category_items_content {
     padding-top: 60px;
     padding-bottom: 50px;
 }
@@ -99,6 +188,7 @@
     position: absolute;
     top: 0;
     right: 200px;
+    user-select: none;
 }
 
 .menu-bottom {
@@ -151,22 +241,4 @@
     line-height: 50px;
     letter-spacing: 2%;
     color: var(--color-card-lead);
-}
-
-.btm__menu {
-    margin-top: 3rem;
-    padding: 5px 50px;
-    border: none;
-    border-radius: 5px;
-    background: var(--background-color-main);
-    cursor: pointer;
-}
-
-.btm__menu a {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 48px;
-    letter-spacing: 1.5px;
-    color: var(--color-navbar-text);
 }
