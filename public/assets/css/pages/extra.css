@@ -3,29 +3,47 @@
 @import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
 :root {
-
-    --background-color-main: #233000;
-    --color-navbar-text: #FFFFFF;
-    --color-title-menu: #000000;
-    --color-card-lead: #4D4D4D;
-    --background-cook: #EBF0E4;
-    --background-span: #5E6600;
-    --box-color-label: #00000014;
-    --hover-adaptive: #9CAA00;
+    --color-background-section: #FFFFFF;
+    --color-text-lead: #4D4D4D;
+    --color-category-name: #070707;
     --font-Rufina: 'Rufina';
     --font-Lato: 'Lato';
     --font-Inter: 'Inter';
     --transition-all: all .3s ease-in-out;
 }
 
-.section_blog_banner {
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.al-centre {
+    align-items: center;
+}
+
+.just-centre {
+    justify-content: center;
+}
+
+.just-around {
+    justify-content: space-around;
+}
+
+.section_detail_banner {
     min-height: 90vh;
 }
 
 .background_img {
     position: absolute;
     inset: 0;
-    background: url(../../images/blog/Blue_flower.png) center / cover no-repeat;
+    background: url(../../../assets/images/blog/detail/Raw_Meat.png) center / cover no-repeat;
 }
 
 .background_img::after {
@@ -52,19 +70,87 @@
 }
 
 .banner_title {
+    max-width: 950px;
     font-family: var(--font-Rufina);
     font-weight: 700;
-    font-size: 90px;
-    line-height: 120px;
+    font-size: 75px;
+    line-height: 110px;
     letter-spacing: 0px;
 }
+/* Section Media Pole */
+.section_media_pole {
+    padding-top: 70px;
+    background: var(--color-background-section);
+}
 
-.banner_lead {
+.section_category {
+    padding-top: 2.5rem;
+}
+
+.category_items:last-child .category_links {
+    color: var(--color-category-name);
+}
+
+.category_links, .category_items {
+    padding: 0 5px;
     font-family:var(--font-Lato);
     font-weight: 400;
-    font-size: 19px;
-    line-height: 33.6px;
+    font-size: 21px;
+    line-height: 140%;
     letter-spacing: 2%;
+    text-align: center;
+    color: var(--color-text-lead);
+}
+
+.max-width {
+    max-width: 850px;
+}
+
+.text-container {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+}
+
+.main-text {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 48px;
+    letter-spacing: 0px;
+    color: var(--color-text-lead);
+}
+
+.media_img {
+    margin: 0 25px;
+}
+
+.aside-text {
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: var(--color-text-lead);
+}
+
+.max-text {
+    max-width: 1000px;
+}
+
+/* Aside Pole */
+.background_foto_in_media_pole {
+    height: 50vh;
+    background: url(../../../assets/images/blog/detail/Holding.png) center / cover no-repeat;
+}
+
+.foto_text {
+    font-family:var(--font-Lato);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 38px;
+    line-height: 140%;
+    letter-spacing: 0px;
+    color: var(--color-background-section);
 }
 
 /* Section fashion */
@@ -174,59 +260,6 @@
     cursor: pointer;
 }
 
-.max-text {
+.max_text {
     max-width: 500px;
 }
-
-/* Paginate */
-.paginate {
-    display: flex;
-    justify-content: center;
-    margin-top: 5rem;
-}
-
-.paginate .pagination {
-    display: flex;
-    padding-left: 0;
-    list-style: none;
-    border-radius: 5px;
-}
-
-.paginate .page-item {
-    margin: 0;
-}
-
-.paginate .page-item .page-link {
-    position: relative;
-    display: block;
-    padding: 8px 12px;
-    margin-left: -1px;
-    line-height: 1.25;
-    color: #007bff;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.paginate .page-item.active .page-link {
-    z-index: 1;
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-.paginate .page-item .page-link:hover {
-    z-index: 2;
-    color: #0056b3;
-    background-color: #e9ecef;
-    border-color: #dee2e6;
-}
-
-.paginate .page-item.disabled .page-link {
-    color: #6c757d;
-    pointer-events: none;
-    background-color: #fff;
-    border-color: #dee2e6;
-}
-

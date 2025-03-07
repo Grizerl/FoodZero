@@ -34,9 +34,9 @@ class PostController extends Controller
             [
                 'title' => $postRequest->title,
                 'description' => $postRequest->description,
-                'images' => $postRequest->blog_images,
+                'images' => '/'.$postRequest->blog_images,
                 'clients' => $postRequest->name,
-                'clients_img' => $postRequest->customer_photo,
+                'clients_img' => '/'.$postRequest->customer_photo,
             ]
         );
 
@@ -75,9 +75,9 @@ class PostController extends Controller
             [
                 'title' => $postRequest->title,
                 'description' => $postRequest->description,
-                'images' => $postRequest->blog_images,
+                'images' => $postRequest->blog_images ? (strpos($postRequest->blog_images, '/') === 0 ? $postRequest->blog_images : '/' . $postRequest->blog_images) : null,
                 'clients' => $postRequest->name,
-                'clients_img' => $postRequest->customer_photo,
+                'clients_img' => $postRequest->customer_photo ? (strpos($postRequest->customer_photo, '/') === 0 ? $postRequest->customer_photo : '/' . $postRequest->customer_photo) : null,
             ]);
 
         return redirect()->back()->with('success', 'The post was successfully updated');

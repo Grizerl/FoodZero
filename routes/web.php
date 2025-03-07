@@ -22,6 +22,7 @@ Route::prefix('FoodZero')->group(function () {
     Route::get('Menu', [HomeController::class, 'menu'])->name('menu.page');
     Route::get('Full-Menu', [HomeController::class, 'fullMenu'])->name('fullMenu.page');
     Route::get('Blog', [HomeController::class, 'blog'])->name('blog.page');
+    Route::get('Blog/{id}/Detail', [HomeController::class, 'show'])->name('post.details.page');
     Route::get('About', [HomeController::class, 'about'])->name('about.page');
     Route::get('Contact', [HomeController::class, 'contact'])->name('contact.page');
 });

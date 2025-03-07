@@ -6,11 +6,11 @@
     <!-- Link CSS -->
     <link rel="stylesheet" href="../assets/css/index.css">
     
-    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../../../assets/css/app.css">
 
     @yield('link.css')
     
-    <link rel="website icon" type="png" href="../../assets/images/Brand.png">
+    <link rel="website icon" type="png" href="../../../assets/images/Brand.png">
     <title>FoodZero-Restaurant and Food</title>
 </head>
 <body>
@@ -26,6 +26,6 @@
     
 <!-- Link JS -->
 <script src="../assets/js/index-slider.js"></script>
-<script src="../assets/js/adaptive-menu.js"></script>
+<script src="../../../assets/js/adaptive-menu.js"></script>
 </body>
 </html>

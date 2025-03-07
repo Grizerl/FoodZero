@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use App\Models\Menu;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -31,7 +32,15 @@ class HomeController extends Controller
 
     public function blog() 
     {
-        return view('pages.sectionBlog.blog');
+        $post=Post::paginate(8);
+        return view('pages.sectionBlog.blog',compact('post'));
+    }
+
+    public function show($id) 
+    {
+        $post=Post::findOrFail($id);
+        $related_posts=Post::inRandomOrder()->take(2)->get();
+        return view('pages.sectionBlog.post_detail',compact('post','related_posts'));
     }
 
     public function about() 
