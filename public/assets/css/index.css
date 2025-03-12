@@ -67,6 +67,7 @@
     display: flex;
     align-items: center;
     position: absolute;
+    right: 0;
     bottom: -50px;
     right: 70px;
 }
@@ -97,6 +98,7 @@
 }
 
 .img-cover {
+    width: 100%;
     object-fit: cover;
 }
 
@@ -350,15 +352,27 @@
     background:var(--color-navbar-text)
 }
 
+.sc-fDFF {
+    align-items: center;
+    justify-content: center;
+}
+
 .fashion-container {
+    display: flex;
     align-items: center;
     justify-content: space-around;
+    gap: 40px;
 }
 
 .fashion-img {
     display: inline-block;
     max-width: max-content;
     position: relative;
+}
+
+.fashion-img img {
+    object-fit: cover;
+    width: 100%;
 }
 
 .fashion-label {
@@ -387,6 +401,7 @@
 }
 
 .navbar-media-content {
+    flex-wrap: wrap;
     list-style-type: disc;
 }
 
@@ -460,6 +475,7 @@
     padding-bottom: 70px;
 }
 .headline-2 {
+    text-align: center;
     font-family: var(--font-Rufina);
     font-weight: 700;
     font-size: 75px;
@@ -480,6 +496,12 @@
 
 .reservation-form {
     grid-template-columns: repeat(1,1fr);
+}
+
+.sc-FVfd {
+    margin-bottom: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .date-pole,.time-pole,.quantity {
@@ -556,7 +578,7 @@ option {
     padding-top: 50px;
     padding-bottom: 50px;
     grid-template-columns: repeat(3,1fr);
-    gap: 100px;
+    gap: 50px;
 }
 
 .img-container {
@@ -574,6 +596,10 @@ option {
     height: 100%;
     background: var(--color-title-menu);
     opacity: 0.40;
+}
+
+.img-container > img {
+    width: 100%;
 }
 
 .img-title {
@@ -683,4 +709,84 @@ option {
 @keyframes fade {
     from{opacity: .4;}
     to{opacity: 1;}
+}
+
+@media screen and (max-width: 1150px) {
+    .banner-content {
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .sc-scgFG {
+        text-align: center;
+        max-width: 1000px;
+    }
+
+    .banner-slogan {
+        font-size: 82px;
+    }
+
+    .banner-text {
+        text-align: center;
+        font-size: 23px;
+    }
+
+    .banner-scroll {
+        display: none;
+    }
+
+    .block-seasonings {
+        position: absolute;
+        right: -50px;
+    }
+
+    .layers-container {
+        gap: 0px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .fashion-container,.menu-list,.sc-Adfg  {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .media-section,.cook-container,.sc-Adfg   {
+        text-align: center;
+    }
+
+    .sc-FAfgd, .cook-container{
+        justify-content: center;
+    }
+
+    .calories-images,.layers-container {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .menu-content {
+        position: relative;
+    }
+
+    .menu-content >img {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .images-block {
+        display: none;
+    }
+  
+    .img-cover {
+        object-fit: contain;
+    }
+
+    .section-text {
+        max-width: 1000px;
+    }
+
+    .slideshow-container {
+        padding: 0;
+    }
 }

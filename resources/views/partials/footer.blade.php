@@ -2,7 +2,8 @@
         <div class="section-foooter">
             <div>
                 <div class="container">
-                    <div class="footer-container d-grid">
+                    <div class="sc-CSFD d-flex">
+                        <div class="footer-container d-grid">
                         <div class="brand-container d-flex">
                             <h2 class="brand">
                                 Food
@@ -33,6 +34,7 @@
                                 <button class="email-button sc-Sub">Subscribe</button>
                             </div>
                             <p class="recipe-text">Join our subscribers and get best recipe delivered each week!</p>
+                        </div>
                         </div>
                     </div>
                 </div>

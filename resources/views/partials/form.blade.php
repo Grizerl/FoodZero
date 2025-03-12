@@ -8,7 +8,7 @@
                     <div class="form-group">
                     <form action="{{ route('reservation.store') }}" class="reservation-form d-grid" method="post">
                     @csrf
-                    <div style="margin-bottom: 50px;" class="d-flex">
+                    <div class="sc-FVfd d-flex">
                         <div>
                             <input type="text" class="date-pole @error('name') is-invalid @enderror" name="name" placeholder="Reservation name">
                             @error('name')

@@ -20,7 +20,7 @@
                         </h4>
                     </div>
                     <div class="section-img">
-                        <figure>
+                        <figure style="text-align: center;">
                             <img class="banner-img" src="/assets/images/ImageMeat.png" alt="Cooked meat on white ceramic plate">
                         </figure>
                         <div class="block-seasonings">
@@ -43,7 +43,7 @@
     <div class="section-diet-today">
         <div class="container">
             <div class="sc-Adfg text-white">
-                <div>
+                <div style="padding-right: 8px;">
                     <figure style="--width: 700; --height: 370">
                         <img class="img-cover" width="700" height="370" src="/assets/images/Image (13).png" loading="lazy" alt="Clam and vegetable soup">
                     </figure>
@@ -192,9 +192,9 @@
     <div class="section-fashion">
         <div>
             <div class="container">
-                <div>
-                    <div class="fashion-container d-flex">
-                        <div class="fashion-content">
+                <div class="sc-fDFF d-flex">
+                    <div class="fashion-container">
+                        <div style="padding-right: 5px;" class="fashion-content">
                             <div class="fashion-img">
                                 <div class="fashion-label">
                                     <span>Fashion</span>

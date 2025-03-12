@@ -237,6 +237,10 @@ a {
     border-bottom: 2px dotted var(--color-navbar-text);
 }
 
+.sc-CSFD {
+    justify-content: center;
+}
+
 .footer-container {
     grid-template-columns: repeat(3,1fr);
     color: var(--color-navbar-text);
@@ -338,4 +342,10 @@ a {
 
 .media-link {
     padding: 0 10px;
+}
+
+@media screen and (max-width: 950px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
