@@ -202,7 +202,7 @@ a {
 }
 
 .right-title {
-    width: 130%;
+    width: 100%;
     margin-bottom: 25px;
     padding-bottom: 10px;
     font-family: var(--font-Rufina);
@@ -344,8 +344,79 @@ a {
     padding: 0 10px;
 }
 
-@media screen and (max-width: 950px) {
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
+@media screen and (max-width: 1000px) {
+   .footer-container {
+        display: flex;
+        justify-content: space-evenly; 
+        flex-wrap: wrap;
     }
+
+    .brand {
+        text-align: center;
+        max-width: 1000px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .content-right {
+        display: none;
+    }
+
+    .content-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+    }
+
+    .brand {
+        width: 100%;
+    }
+
+    .sc-fsfd {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .recipe-email {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .burger-container {
+        flex-wrap: wrap;
+    }
+
+    .left-navbar,.right-title,.sc-navbar {
+        text-align: center;
+        list-style-type: none;
+    }
+
+    .sc-DdfF {
+        justify-content: center;
+    }
+
+    .sc-InpPole,.recipe-email {
+        width: 100%;
+    }
+
+    .date-pole, .time-pole, .quantity {
+        width: 90%;
+    }
+
+    .aside-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .media-icon {
+        padding-top: 10px;
+    }
+
 }

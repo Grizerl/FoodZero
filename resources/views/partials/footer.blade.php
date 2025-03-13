@@ -29,7 +29,7 @@
                         </div>
                         <div class="recipe-container">
                             <h4 class="footer-section-title">Never Miss a Recipe</h4>
-                            <div class="d-flex">
+                            <div class="sc-fsfd d-flex">
                                 <input type="email" class="recipe-email email-text" placeholder="Email Address">
                                 <button class="email-button sc-Sub">Subscribe</button>
                             </div>
@@ -44,7 +44,7 @@
             <div>
                 <div class="container">
                     <div class="aside-container d-flex">
-                        <span>© 2020 Zero Inc. All rights Reserved</span>
+                        <span>© 2025 Inc. All rights Reserved</span>
                         <div class="media-icon">
                             <ul class="d-flex">
                                 <li>

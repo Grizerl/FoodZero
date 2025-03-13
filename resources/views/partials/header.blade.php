@@ -36,7 +36,7 @@
             </div>
             <div class="container-right">
                     <h4 class="right-title">Contact</h4>
-                    <ul>
+                    <ul class="sc-navbar">
                         <li class="right-item">
                             <a class="right-link" href="tel:+1+86 852 346 000">+1+86 852 346 000</a>
                         </li>

@@ -293,13 +293,13 @@
         <div>
             <div class="container">
                 <div class="slideshow-container">
-                    <div class="mySlides fade">
+                    <div class="mySlides fade" style="position: relative;">
                         <div class="slide-text d-flex">
                             <p>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Purus lorem id penatibus imperdiet. Turpis egestas ultricies 
                                 purus  Lorem ipsum dolor sit amet.
                             </p>
-                            <img style="user-select: none;" src="/assets/images/slider-people/”.png" alt="”">
+                            <img style="user-select: none; position:absolute; right: 0;" src="/assets/images/slider-people/”.png" alt="”">
                         </div>
                         <div class="slide-people d-flex">
                             <div class="d-flex" style="align-items: center;">
@@ -316,13 +316,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mySlides fade">
+                    <div class="mySlides fade" style="position: relative;">
                         <div class="slide-text d-flex">
                             <p>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Purus lorem id penatibus imperdiet. Turpis egestas ultricies 
                                 purus  Lorem ipsum dolor sit amet.
                             </p>
-                            <img style="user-select: none;" src="/assets/images/slider-people/”.png" alt="”">
+                            <img style="user-select: none; position:absolute; right: 0;" src="/assets/images/slider-people/”.png" alt="”">
                         </div>
                         <div class="slide-people d-flex">
                             <div class="d-flex" style="align-items: center;">
@@ -339,13 +339,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mySlides fade">
+                    <div class="mySlides fade" style="position: relative;">
                         <div class="slide-text d-flex">
                             <p>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Purus lorem id penatibus imperdiet. Turpis egestas ultricies 
                                 purus  Lorem ipsum dolor sit amet.
                             </p>
-                            <img style="user-select: none;" src="/assets/images/slider-people/”.png" alt="”">
+                            <img style="user-select: none; position:absolute; right: 0;" src="/assets/images/slider-people/”.png" alt="”">
                         </div>
                         <div class="slide-people d-flex">
                             <div class="d-flex" style="align-items: center;">

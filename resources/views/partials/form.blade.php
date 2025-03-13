@@ -9,19 +9,19 @@
                     <form action="{{ route('reservation.store') }}" class="reservation-form d-grid" method="post">
                     @csrf
                     <div class="sc-FVfd d-flex">
-                        <div>
+                        <div class="sc-InpPole">
                             <input type="text" class="date-pole @error('name') is-invalid @enderror" name="name" placeholder="Reservation name">
                             @error('name')
                                 <div style="text-align: center; color: red; margin-top: 10px;" class="alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                       <div>
+                       <div class="sc-InpPole">
                          <input type="datetime-local" class="time-pole @error('data_time') is-invalid @enderror" name="data_time">
                             @error('data_time')
                                 <div style="text-align: center; color: red; margin-top: 10px;" class="alert-danger">{{ $message }}</div>
                             @enderror
                        </div>
-                       <div>
+                       <div class="sc-InpPole">
                         <select class="quantity @error('quantity') is-invalid @enderror" name="quantity">
                             <option value="1 Person" {{ old('quantity') == '1 Person' ? 'selected' : '' }}>1 Person</option>
                             <option value="2 Person" {{ old('quantity') == '2 Person' ? 'selected' : '' }}>2 Person</option>
