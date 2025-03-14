@@ -46,7 +46,7 @@
         <div>
             <div class="contact">
                 <div class="top_container d-flex">
-                    <figure style="text-align: left;">
+                    <figure class="sc-DSVdv">
                         <img class="fruit_img" src="/assets/images/contact/Yellow_fruit.png" alt="Yellow_fruit">
                     </figure>
                     <img class="orange" src="/assets/images/contact/Orange.png" alt="Orange">
@@ -65,7 +65,7 @@
                         </p>
                         <button class="btn_map"><a href="" class="map_text">View in maps</a></button>
                     </div>
-                    <figure style="text-align: right;">
+                    <figure class="sc-VDFcd">
                         <img class="fruit_img" src="/assets/images/contact/House.png" alt="House">
                     </figure>
                 </div>

@@ -15,7 +15,7 @@
 }
 
 .section_about_banner {
-    min-height: 90vh;
+    min-height: 89vh;
 }
 
 .background-img {
@@ -266,3 +266,105 @@
     color: var(--color-card-lead);
 }
 
+@media screen and (max-width:1440px) {
+    .background-content {
+        padding: 0;
+    }
+
+    .text-end {
+        text-align: end;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .bottom_container {
+        bottom: 0;
+    }
+
+    .slogan {
+        text-align: right;
+        font-size: 19px;
+    } 
+
+    .sc-FvGAS {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .member_content {
+        display: grid;
+    }
+
+    .background-title {
+        font-size: 100px;
+        line-height: 100px;
+    }
+
+    .member-img,.img-chef {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .slogan {
+        text-align: center;
+    }
+
+    .bottom_container {
+        margin-top: 30px;
+    }
+
+    .stage {
+        display: grid;
+    }
+
+    .stage > figure {
+        text-align: center;
+    }
+
+    .text-centre {
+        text-align: center;
+    }
+
+    .max-text {
+        max-width: 600px;
+    }
+
+    .stage_description {
+        padding-bottom: 10px;
+    }
+
+    .video_name {
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .video_description,.background-text {
+        font-size: 20px;
+    }
+
+    .about-content {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .text-end {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .section_about_banner {
+        min-height: 86vh;
+    }
+
+    .aside-content {
+        padding-top: 0;
+    }
+
+    .headline {
+        font-size: 45px;
+        line-height: 55px;
+    }
+}

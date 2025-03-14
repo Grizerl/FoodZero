@@ -36,7 +36,7 @@
                         </p>
                     </div>
                         <img class="tomato" src="/assets/images/about/Tomato.png" alt="Tomato">
-                    <figure>
+                    <figure class="text-end">
                         <img class="img-chef"  src="/assets/images/about/Chef.png" alt="Chef">
                     </figure>
                 </div>
@@ -110,7 +110,7 @@
                         <figure>
                             <img class="slice_stage" src="/assets/images/about/stage/Slice.png" alt="Slice meat">
                         </figure>
-                        <div>
+                        <div class="text-centre">
                             <h1 class="stage_number">01.Slice</h1>
                             <p class="stage_description max-text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -122,26 +122,26 @@
                         </div>
                     </div>
                     <div class="stage d-flex">
-                        <div>
-                            <h1 class="stage_number">03.Bake</h1>
-                            <p class="stage_description max-text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Purus lorem id penatibus imperdiet. 
-                            </p>
-                        </div>
-                        <figure>
-                            <img class="slice_stage" src="/assets/images/about/stage/Pickled.png" alt="Pickled meat">
-                        </figure>
-                    </div>
-                    <div class="stage d-flex">
-                        <figure>
-                            <img class="slice_stage" src="/assets/images/about/stage/Bake.png" alt="Bake meat">
-                        </figure>
-                        <div>
+                        <div class="text-centre">
                             <h1 class="stage_number">02.Pickled</h1>
                             <p class="stage_description max-text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Purus lorem id penatibus imperdiet.
+                            </p>
+                        </div>
+                        <figure>
+                            <img class="slice_stage" src="/assets/images/about/stage/Bake.png" alt="Bake meat">
+                        </figure>
+                    </div>
+                    <div class="stage d-flex">
+                        <figure>
+                            <img class="slice_stage" src="/assets/images/about/stage/Pickled.png" alt="Pickled meat">
+                        </figure>
+                        <div class="text-centre">
+                            <h1 class="stage_number">03.Bake</h1>
+                            <p class="stage_description max-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Purus lorem id penatibus imperdiet. 
                             </p>
                         </div>
                     </div>

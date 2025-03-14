@@ -19,7 +19,7 @@
 }
 
 .section_blog_banner {
-    min-height: 90vh;
+    min-height: 89vh;
 }
 
 .background_img {
@@ -230,3 +230,36 @@
     border-color: #dee2e6;
 }
 
+@media screen and (max-width: 650px) {
+    .fashion-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+    .banner_title {
+        font-size: 75px;
+    }
+
+    .banner_lead {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .banner_title {
+        font-size: 65px;
+        line-height: 90px;
+    }
+
+    .section_blog_banner {
+        min-height: 86vh;
+    }
+
+    .navbar-media-content {
+        list-style-type: none;
+    }
+
+    .fashion-title {
+        font-size: 26px;
+    }
+}

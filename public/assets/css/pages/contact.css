@@ -15,7 +15,7 @@
 }
 
 .section_contact {
-   min-height: 90vh;
+   min-height: 89vh;
 }
 
 .background-image {
@@ -119,6 +119,14 @@
     padding-bottom: 30px;
 }
 
+.sc-DSVdv {
+    text-align: left;
+}
+
+.sc-VDFcd {
+    text-align: right;
+}
+
 .bottom_container {
     align-items: center;
 }
@@ -173,3 +181,72 @@
     cursor: pointer;
 }
 
+@media screen and (max-width:810px) {
+    .banner_text {
+        padding: 0
+    }
+
+    .top_container, .bottom_container {
+        display: grid;
+    }
+
+    .orange {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .img_public_text, .img_text {
+        max-width: 600px;
+    }
+
+    .top_container figure,.bottom_container figure{
+        text-align: center;
+    }
+
+    .text_container {
+        text-align: center;
+        padding-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .open_time,.open_day,.info_container {
+        padding: 0;
+    }
+
+    .sc-Fcsg,.sc-FDdg {
+        justify-content: space-between;
+    }
+
+    .aside_baner_text {
+        position: relative;
+        right: 0;
+    }
+
+    .section_contact {
+        min-height: 86vh;
+    }
+
+    .banner_title {
+        font-size: 80px;
+        line-height: 100px;
+    }
+
+    .banner_lead {
+        font-size: 20px;
+        line-height: 40px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .banner_title {
+        font-size: 60px;
+        line-height: 87px;
+    }
+
+    .banner_lead {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
