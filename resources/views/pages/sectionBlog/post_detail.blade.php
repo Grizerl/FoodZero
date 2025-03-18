@@ -41,12 +41,12 @@
                             et pharetra tellus leo tempus tellus. 
                         </p>
                     </div>
-                    <div  class="d-flex al-centre just-around">
+                    <div  class="sc-Ccgg d-flex al-centre just-around">
                         <figure>
-                            <img width="550" height="600" class="media_img" loading="lazy" src="{{ $post['images'] }}" alt="{{ $post['title'] }}">
+                            <img class="adaptive-img" width="550" height="600" class="media_img" loading="lazy" src="{{ $post['images'] }}" alt="{{ $post['title'] }}">
                         </figure>
-                        <figure>
-                            <img width="550" height="600" class="media_img" loading="lazy" src="/assets/images/blog/detail/Granules.png" alt="Granules">
+                        <figure class="sc-FDVC">
+                            <img class="adaptive-img" width="550" height="600" class="media_img" loading="lazy" src="/assets/images/blog/detail/Granules.png" alt="Granules">
                         </figure>
                     </div>
                     <div class="text-container d-flex al-centre just-centre">

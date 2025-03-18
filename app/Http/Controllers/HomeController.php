@@ -32,7 +32,7 @@ class HomeController extends Controller
 
     public function blog() 
     {
-        $post=Post::paginate(8);
+        $post=Post::paginate(6);
         return view('pages.sectionBlog.blog',compact('post'));
     }
 
