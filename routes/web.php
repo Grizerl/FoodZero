@@ -13,9 +13,9 @@ Route::get('/', function () {
     return redirect()->route('home.page');
 });
 
-Route::fallback(function () {
-    return redirect()->route('home.page');
-});
+// Route::fallback(function () {
+//     return redirect()->route('home.page');
+// });
 
 Route::prefix('FoodZero')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.page');
@@ -44,4 +44,5 @@ Route::prefix('Admin')->group(function () {
         Route::post('Logout', [AuthController::class, 'logout'])->name('logout');
     });
 });
+
 
