@@ -39,7 +39,6 @@ Route::prefix('Admin')->group(function () {
             Route::resource('category', CategoryController::class);
             Route::resource('menu', MenuController::class);
             Route::resource('reservation', ReservationController::class);
-            Route::resource('members', UsersController::class);
         });
         Route::post('Logout', [AuthController::class, 'logout'])->name('logout');
     });
