@@ -93,7 +93,7 @@
                         </div>
                     </div>
                     <button class="btm__menu">
-                        <a href="{{ route('fullMenu.page') }}">Complete menu</a>
+                        <a href="{{ route('fullMenu.page') }}">Complete <span>menu </span></a>
                     </button>
                 </div>
             </div>

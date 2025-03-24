@@ -539,6 +539,14 @@ option {
     background: var(--background-color-main);
     color: var(--color-navbar-text);
     cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+  
+.btn-reservation:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 /* Section balance */

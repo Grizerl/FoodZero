@@ -63,7 +63,7 @@
                             We are located in 1959 Sepulveda Blvd. 
                             Culver City, CA, 90230</a> 
                         </p>
-                        <button class="btn_map"><a href="" class="map_text">View in maps</a></button>
+                        <button class="btn_map"><a href="https://maps.app.goo.gl/PjPLxPcNTivPaTp9A" class="map_text">View in maps</a></button>
                     </div>
                     <figure class="sc-VDFcd">
                         <img class="fruit_img" src="/assets/images/contact/House.png" alt="House">

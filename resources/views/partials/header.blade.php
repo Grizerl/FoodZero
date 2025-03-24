@@ -7,7 +7,7 @@
             <div class="content-right">
                 <span class="phone-number"><a href="tel:+86 852 346 000">+86 852 346 000</a></span>
                     <button class="btn-reservations">
-                        <a href="#">Reservations</a>
+                        <a href="{{ route('contact.page') }}">Reservations</a>
                     </button>
             </div> 
         </div>

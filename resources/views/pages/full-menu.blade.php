@@ -50,14 +50,14 @@
                     <ul class="menu_navbar d-flex">
                         @foreach($categories as $category)
                         <li class="menu_items">
-                            <a class="menu_links" href="">{{ $category->name }}</a>
+                            <a class="menu_links" href="#category-{{ $category->id }}">{{ $category->name }}</a>
                         </li>
                         @endforeach
                     </ul>
                 </div>
                 <div class="category_items_content">
                     @foreach($categories as $category)
-                        <div class="category_items_content">
+                        <div class="category_items_content" id="category-{{ $category->id }}">
                             <div class="menu-header">
                                 <h1 class="menu-title">{{ $category->name }}</h1>
                                     <p class="menu-lead">This is a section of your menu. Give your section a brief description</p>

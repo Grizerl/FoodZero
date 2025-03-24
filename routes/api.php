@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\IncController;
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Api\AuthController as ApiAuthController;
 use App\Http\Controllers\Api\V1\CategoryController;
@@ -16,22 +17,23 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/menu-items', [ApiController::class, 'menu']);
 
-Route::get('/full-menu', [ApiController::class, 'fullMenu']);
+    Route::get('/full-menu', [ApiController::class, 'fullMenu']);
 
-Route::get('/blog', [ApiController::class, 'blog']);
+        Route::get('/blog', [ApiController::class, 'blog']);
 
-Route::get('/post/{id}', [ApiController::class, 'post']);
+            Route::get('/post/{id}', [ApiController::class, 'post']);
 
-// Route::prefix('admin')->group(function () {
-//     Route::post('register', [IncController::class, 'register']);
-//     Route::post('login', [IncController::class, 'login']);
-// });
+                Route::prefix('admin')->group(function () 
+                {
+                    Route::post('login',[IncController::class, 'login']);
+                });
 
-Route::prefix('dashboard')->group(function() {
+Route::prefix('dashboard')->middleware(['auth:sanctum'])->group(function() 
+{
     Route::apiResource('posts', PostController::class);
-    Route::resource('team', TeamController::class);
-    Route::resource('categories', CategoryController::class);
-    Route::resource('menu', MenuController::class);
-    Route::resource('reservation', ReservationController::class);
-    //  Route::middleware('auth:sanctum')->get('logout', [IncController::class, 'logout']);
+        Route::resource('team', TeamController::class);
+            Route::resource('categories', CategoryController::class);
+                Route::resource('menu', MenuController::class);
+                    Route::resource('reservation', ReservationController::class);
+                        Route::middleware('auth:sanctum')->get('logout', [IncController::class, 'logout']);
 });

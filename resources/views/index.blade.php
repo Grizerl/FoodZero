@@ -216,8 +216,8 @@
                                 <h1 class="fashion-title max-text">Fruit and vegetables and protection against diseases</h1>
                                 <p class="fashion-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="sc-FAfgd d-flex">
-                                    <a class="fashion-btn-arrow" href="#">Read More 
-                                        <a class="arrow">&rarr;</a>
+                                    <a class="fashion-btn-arrow" href="{{ route('post.details.page',1) }}">Read More 
+                                        <a class="arrow" href="{{ route('post.details.page',1) }}">&rarr;</a>
                                     </a>
                                 </div>
                             </div>
@@ -244,8 +244,8 @@
                                 <h1 class="fashion-title max-text">Asparagus Spring Salad with Rocket, Goat's Cheese</h1>
                                 <p class="fashion-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="sc-FAfgd d-flex">
-                                    <a class="fashion-btn-arrow" href="#">Read More 
-                                        <a class="arrow">&rarr;</a>
+                                    <a class="fashion-btn-arrow" href="{{ route('post.details.page', 2) }}">Read More 
+                                        <a class="arrow" href="{{ route('post.details.page', 2) }}">&rarr;</a>
                                     </a>
                                 </div>
                             </div>
@@ -270,17 +270,17 @@
                         <figure class="img-container">
                             <h4 class="img-title">Starters</h4>
                             <img src="/assets/images/calories-img/Image.png" alt="Starters">
-                            <a class="arrow sc-sfFGg">&rarr;</a>
+                            <a class="arrow sc-sfFGg" href="{{ route('fullMenu.page') }}">&rarr;</a>
                         </figure>
                         <figure class="img-container">
                             <h4 class="img-title">Mains</h4>
                             <img src="/assets/images/calories-img/Image (1).png" alt="Mains">
-                            <a class="arrow sc-sfFGg">&rarr;</a>
+                            <a class="arrow sc-sfFGg" href="{{ route('fullMenu.page') }}">&rarr;</a>
                         </figure>
                         <figure class="img-container">
                             <h4 class="img-title">Soups</h4>
                             <img src="/assets/images/calories-img/Image (2).png" alt="Soups">
-                            <a class="arrow sc-sfFGg">&rarr;</a>
+                            <a class="arrow sc-sfFGg" href="{{ route('fullMenu.page') }}">&rarr;</a>
                         </figure>
                     </div>
                 </div>

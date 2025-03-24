@@ -14,16 +14,15 @@
     <title>FoodZero-Restaurant and Food</title>
 </head>
 <body>
-    <div class="app">
-        <div>
-            <div class="container">
-                @include('partials.header')
-            </div>
-                @yield('content')
+<div class="app">
+    <div>
+        <div class="container">
+            @include('partials.header')
         </div>
-            @include('partials.footer')
+        @yield('content')
     </div>
-    
+        @include('partials.footer')
+</div>
 <!-- Link JS -->
 <script src="../assets/js/index-slider.js"></script>
 <script src="../../../assets/js/adaptive-menu.js"></script>
