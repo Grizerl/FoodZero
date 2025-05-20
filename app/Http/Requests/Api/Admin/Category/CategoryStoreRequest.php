@@ -25,5 +25,5 @@ class CategoryStoreRequest extends FormRequest
             'name' => 'string|required|max:255',
             'images_category' => 'required',
         ];
-    } 
+    }
 }

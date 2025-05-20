@@ -75,6 +75,9 @@
                </tbody>
             </table>
          </div>
+          <div style="margin-top: 5px; margin-left: 5px;">
+            {{ $options->links('pagination::bootstrap-4') }}
+         </div>
       </div>
    </section>
 @endsection

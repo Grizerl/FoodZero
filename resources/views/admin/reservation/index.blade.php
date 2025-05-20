@@ -39,7 +39,7 @@
                   </tr>
                </thead>
                <tbody>
-                    @foreach ($reserv as $reservation)
+                    @foreach ($reservations as $reservation)
                      <tr>
                         <td>
                           {{ $reservation->id }}
@@ -67,6 +67,9 @@
                      @endforeach
                </tbody>
             </table>
+         </div>
+          <div style="margin-top: 5px; margin-left: 5px;">
+            {{ $reservations->links('pagination::bootstrap-4') }}
          </div>
       </div>
    </section>

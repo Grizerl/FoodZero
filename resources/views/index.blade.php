@@ -21,17 +21,17 @@
                     </div>
                     <div class="section-img">
                         <figure style="text-align: center;">
-                            <img class="banner-img" src="/assets/images/ImageMeat.png" alt="Cooked meat on white ceramic plate">
+                            <img class="banner-img" src="/assets/images/ImageMeat.png" alt="Cooked meat on white ceramic plate" loading="lazy">
                         </figure>
                         <div class="block-seasonings">
                             <figure>
-                                <img  src="/assets/images/seasonings/spices1.png" alt="Spices">
+                                <img  src="/assets/images/seasonings/spices1.png" alt="Spices" loading="lazy">
                             </figure>
                             <figure>
-                                <img  src="/assets/images/seasonings/spices2.png" alt="Spices">
+                                <img  src="/assets/images/seasonings/spices2.png" alt="Spices" loading="lazy">
                             </figure>
                             <figure>
-                                <img src="/assets/images/seasonings/spices3.png" alt="Spices">
+                                <img src="/assets/images/seasonings/spices3.png" alt="Spices" loading="lazy">
                             </figure>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                         <h1 class="headline-1">Our Menu</h1>
                         <p class="menu-text text-light max-width">This is a section of your menu. Give your section a brief description</p>
                     </div>
-                    <img  src="/assets/images/Image (15).png" alt="Annie-spratt">
+                    <img  src="/assets/images/Image (15).png" alt="Annie-spratt" loading="lazy">
                 </div>
                 <div>
                     <div class="menu-list d-grid">
@@ -269,17 +269,17 @@
                     <div class="calories-images d-grid">
                         <figure class="img-container">
                             <h4 class="img-title">Starters</h4>
-                            <img src="/assets/images/calories-img/Image.png" alt="Starters">
+                            <img src="/assets/images/calories-img/Image.png" alt="Starters" loading="lazy">
                             <a class="arrow sc-sfFGg" href="{{ route('fullMenu.page') }}">&rarr;</a>
                         </figure>
                         <figure class="img-container">
                             <h4 class="img-title">Mains</h4>
-                            <img src="/assets/images/calories-img/Image (1).png" alt="Mains">
+                            <img src="/assets/images/calories-img/Image (1).png" alt="Mains" loading="lazy">
                             <a class="arrow sc-sfFGg" href="{{ route('fullMenu.page') }}">&rarr;</a>
                         </figure>
                         <figure class="img-container">
                             <h4 class="img-title">Soups</h4>
-                            <img src="/assets/images/calories-img/Image (2).png" alt="Soups">
+                            <img src="/assets/images/calories-img/Image (2).png" alt="Soups" loading="lazy">
                             <a class="arrow sc-sfFGg" href="{{ route('fullMenu.page') }}">&rarr;</a>
                         </figure>
                     </div>
@@ -299,11 +299,11 @@
                                 Purus lorem id penatibus imperdiet. Turpis egestas ultricies 
                                 purus  Lorem ipsum dolor sit amet.
                             </p>
-                            <img style="user-select: none; position:absolute; right: 0;" src="/assets/images/slider-people/”.png" alt="”">
+                            <img style="user-select: none; position:absolute; right: 0;" src="/assets/images/slider-people/”.png" alt="”" loading="lazy">
                         </div>
                         <div class="slide-people d-flex">
                             <div class="d-flex" style="align-items: center;">
-                                <img width="200" height="200" src="/assets/images/slider-people/Dianne Russell.png" alt="Dianne Russell">
+                                <img width="200" height="200" src="/assets/images/slider-people/Dianne Russell.png" alt="Dianne Russell" loading="lazy">
                                 <div>
                                     <h3>Dianne Russell</h3>
                                     <span>Bloger</span>
@@ -322,11 +322,11 @@
                                 Purus lorem id penatibus imperdiet. Turpis egestas ultricies 
                                 purus  Lorem ipsum dolor sit amet.
                             </p>
-                            <img style="user-select: none; position:absolute; right: 0;" src="/assets/images/slider-people/”.png" alt="”">
+                            <img style="user-select: none; position:absolute; right: 0;" src="/assets/images/slider-people/”.png" alt="”" loading="lazy">
                         </div>
                         <div class="slide-people d-flex">
                             <div class="d-flex" style="align-items: center;">
-                                <img width="200" height="200" src="/assets/images/slider-people/John Doe.png" alt="John Doe">
+                                <img width="200" height="200" src="/assets/images/slider-people/John Doe.png" alt="John Doe" loading="lazy">
                                 <div>
                                     <h3>John Doe</h3>
                                     <span>Bloger</span>
@@ -345,11 +345,11 @@
                                 Purus lorem id penatibus imperdiet. Turpis egestas ultricies 
                                 purus  Lorem ipsum dolor sit amet.
                             </p>
-                            <img style="user-select: none; position:absolute; right: 0;" src="/assets/images/slider-people/”.png" alt="”">
+                            <img style="user-select: none; position:absolute; right: 0;" src="/assets/images/slider-people/”.png" alt="”" loading="lazy">
                         </div>
                         <div class="slide-people d-flex">
                             <div class="d-flex" style="align-items: center;">
-                                <img width="200" height="200" src="/assets/images/slider-people/Julie Christie.png" alt="Julie Christie">
+                                <img width="200" height="200" src="/assets/images/slider-people/Julie Christie.png" alt="Julie Christie" loading="lazy">
                                 <div>
                                     <h3>Julie Christie</h3>
                                     <span>Bloger</span>

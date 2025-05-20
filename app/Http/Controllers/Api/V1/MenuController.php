@@ -8,28 +8,33 @@ use App\Models\Menu;
 
 class MenuController extends Controller
 {
-   /**
-     * Display a listing of the resource.
+    /**
+     * Summary of index
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function index()
     {
-        return response()->json(Menu::all(),200);
+        return response()->json(Menu::all(), 200);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Summary of store
+     * @param \App\Http\Requests\Api\Admin\MenuRequest\MenuStoreRequest $menuStoreRequest
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function store(MenuStoreRequest $menuStoreRequest)
     {
         $menu = Menu::create($menuStoreRequest->all());
-        
+
         return response()->json([
             'menu' => $menu,
         ], 201);
     }
 
     /**
-     * Display the specified resource.
+     * Summary of show
+     * @param \App\Models\Menu $menu
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function show(Menu $menu)
     {
@@ -37,20 +42,25 @@ class MenuController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Summary of update
+     * @param \App\Http\Requests\Api\Admin\MenuRequest\MenuStoreRequest $menuStoreRequest
+     * @param \App\Models\Menu $menu
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function update(MenuStoreRequest $menuStoreRequest, Menu $menu)
     {
-       $menu->update($menuStoreRequest->all());
+        $menu->update($menuStoreRequest->all());
 
-       return response()->json([
-            'menu' => $menu,
-       ], 200);
+        return response()->json([
+             'menu' => $menu,
+        ], 200);
     }
-    
+
 
     /**
-     * Remove the specified resource from storage.
+     * Summary of destroy
+     * @param \App\Models\Menu $menu
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function destroy(Menu $menu)
     {

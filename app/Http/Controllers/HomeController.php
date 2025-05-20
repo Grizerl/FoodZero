@@ -2,54 +2,98 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categories;
+use App\Http\Requests\Main\ReservationRequest;
+use App\Models\Category;
 use App\Models\Menu;
 use App\Models\Post;
-use Illuminate\Http\Request;
+use App\Models\Reservation;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class HomeController extends Controller
 {
-    public function index() 
+    /**
+     * Summary of index
+     * @return View
+     */
+    public function index(): View
     {
         return view('index');
     }
 
-    public function menu() 
+    /**
+    * Summary of about
+    * @return View
+    */
+    public function about(): View
+    {
+        return view('pages.about');
+    }
+
+    /**
+     * Summary of menu
+     * @return View
+     */
+    public function menu(): View
     {
         return view('pages.menu', [
             'starters' => Menu::where('category_id', 1)->take(3)->get(),
             'mains' => Menu::where('category_id', 2)->take(3)->get(),
             'pastries_And_Drinks' => Menu::where('category_id', 3)->take(3)->get(),
         ]);
-        
-    }    
 
-    public function fullMenu() 
-    {
-        $categories = Categories::with('menu')->get();
-        return view('pages.full-menu',compact('categories'));
-    }   
-
-    public function blog() 
-    {
-        $post=Post::paginate(6);
-        return view('pages.sectionBlog.blog',compact('post'));
     }
 
-    public function show($id) 
+    /**
+     * Summary of fullMenu
+     * @return View
+     */
+    public function fullMenu(): View
     {
-        $post=Post::findOrFail($id);
-        $related_posts=Post::inRandomOrder()->take(2)->get();
-        return view('pages.sectionBlog.post_detail',compact('post','related_posts'));
+        $categories = Category::with('menu')->get();
+        return view('pages.full-menu', compact('categories'));
     }
 
-    public function about() 
+    /**
+     * Summary of blog
+     * @return View
+     */
+    public function blog(): View
     {
-        return view('pages.about');
+        $post = Post::paginate(6);
+        return view('pages.sectionBlog.blog', compact('post'));
     }
 
-    public function contact() 
+    /**
+     * Summary of show
+     * @param int $id
+     * @return View
+     */
+    public function show(int $id): View
+    {
+        $post = Post::findOrFail($id);
+        $related_posts = Post::inRandomOrder()->take(2)->get();
+        return view('pages.sectionBlog.post_detail', compact('post', 'related_posts'));
+    }
+
+    /**
+     * Summary of contact
+     * @return View
+     */
+    public function contact(): View
     {
         return view('pages.contact');
     }
+
+    /**
+     * Summary of reservation
+     * @param \App\Http\Requests\Main\ReservationRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function reservation(ReservationRequest $request): RedirectResponse
+    {
+        Reservation::create($request->validated());
+        return redirect()->back()->with('success', 'Your reservation has been successfully added.');
+    }
+
 }

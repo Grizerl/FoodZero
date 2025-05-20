@@ -3,50 +3,46 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AuthRequest;
-use App\Models\Menu;
-use App\Models\Post;
-use App\Models\Reservation;
-use App\Models\User;
+use App\Http\Requests\Auth\AuthRequest;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-   public function showform()
-   {
-      return view('auth.login');
-   }
+    /**
+     * Summary of showLoginForm
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function showLoginForm(): View
+    {
+        return view('auth.login');
+    }
 
-   public function login(AuthRequest $authRequest)
-   {
+    /**
+     * Summary of login
+     * @param \App\Http\Requests\Auth\AuthRequest $request
+     * @return mixed|\Illuminate\Http\RedirectResponse
+     */
+    public function login(AuthRequest $request): RedirectResponse
+    {
 
-      $credentials=$authRequest->only('email','password');
-      
-      if(Auth::attempt($credentials)) 
-      {
-         return redirect()->route('dashboard');
-      }
+        $credentials = $request->only('email', 'password');
 
-      return redirect()->back()->with('message','Incorrectly entered data');
-   }
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('dashboard');
+        }
 
-   public function dashboard()
-   {
-      return view('admin.dashboard')->with([
-         'count_user' => User::count(),
-         'count_menu' => Menu::count(),
-         'count_blog' => Post::count(),
-         'count_reservation' => Reservation::count()
-     ]);
-     
-   }
+        return redirect()->back()->with('message', 'Incorrectly entered data');
+    }
 
-   public function logout()
-   {
-      Auth::logout();
-      return redirect()->route('showform');
-   }
+    /**
+     * Summary of logout
+     * @return mixed|RedirectResponse
+     */
+    public function logout(): RedirectResponse
+    {
+        Auth::logout();
+        return redirect()->route('admin.login.form');
+    }
 }
-
-
-

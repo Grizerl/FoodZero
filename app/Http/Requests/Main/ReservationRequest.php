@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Main;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AuthRequest extends FormRequest
+class ReservationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,18 @@ class AuthRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required|email|string|max:255',
-            'password' => 'required|string|min:6',
+            'guest_name' => ['required', 'string', 'min:3', 'max:255'],
+            'reservation_time' => ['required', 'date', 'unique:reservations,reservation_time'],
+            'guest_count' => ['required', 'string'],
+        ];
+
+    }
+
+    public function messages(): array
+    {
+        return [
+            'reservation_time.unique' => ['Please choose another time!'],
         ];
     }
+
 }

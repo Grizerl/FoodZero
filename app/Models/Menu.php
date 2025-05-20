@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Menu extends Model
 {
-
-    protected $table = 'menu';
+    protected $table = 'menus';
     protected $fillable = [
         'name',
         'images',
@@ -16,7 +16,12 @@ class Menu extends Model
         'category_id',
     ];
 
-    public function category() {
-        return $this->belongsTo(Categories::class);
+    /**
+     * Summary of category
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<Category, Menu>
+     */
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 }

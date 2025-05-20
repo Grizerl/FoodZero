@@ -4,54 +4,65 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\Admin\Category\CategoryStoreRequest;
-use App\Models\Categories;
+use App\Models\Category;
+use Illuminate\Http\JsonResponse;
 
 class CategoryController extends Controller
 {
-   /**
-     * Display a listing of the resource.
+    /**
+     * Summary of index
+     * @return JsonResponse|mixed
      */
-    public function index()
+    public function index(): JsonResponse
     {
-        return response()->json(Categories::all(), 200);
+        return response()->json(Category::all(), 200);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Summary of store
+     * @param \App\Http\Requests\Api\Admin\Category\CategoryStoreRequest $categoryStoreRequest
+     * @return JsonResponse|mixed
      */
     public function store(CategoryStoreRequest $categoryStoreRequest)
     {
-       $category = Categories::create($categoryStoreRequest->all());
-       return response()->json([
-        'category' => $category,
-       ],201);
+        $category = Category::create($categoryStoreRequest->all());
+        return response()->json([
+         'category' => $category,
+        ], 201);
     }
 
     /**
-     * Display the specified resource.
+     * Summary of show
+     * @param \App\Models\Category $category
+     * @return JsonResponse|mixed
      */
-    public function show(Categories $category)
+    public function show(Category $category)
     {
-        return response()->json($category,200);
+        return response()->json($category, 200);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Summary of update
+     * @param \App\Http\Requests\Api\Admin\Category\CategoryStoreRequest $categoryStoreRequest
+     * @param \App\Models\Category $category
+     * @return JsonResponse|mixed
      */
-    public function update(CategoryStoreRequest $categoryStoreRequest, Categories $category)
+    public function update(CategoryStoreRequest $categoryStoreRequest, Category $category)
     {
-       $category->update($categoryStoreRequest->all());
+        $category->update($categoryStoreRequest->all());
 
-       return response()->json([
-            'category' => $category,
-       ], 200);
+        return response()->json([
+             'category' => $category,
+        ], 200);
     }
-    
+
 
     /**
-     * Remove the specified resource from storage.
+     * Summary of destroy
+     * @param \App\Models\Category $category
+     * @return JsonResponse|mixed
      */
-    public function destroy(Categories $category)
+    public function destroy(Category $category)
     {
         $category->delete();
 

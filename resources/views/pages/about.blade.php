@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('link.css')
-<link rel="stylesheet" href="/assets/css/pages/about.css">
+    <link rel="stylesheet" href="/assets/css/pages/about.css">
 @endsection
 
 @section('content')
@@ -35,9 +35,9 @@
                             auctor tincidunt lacus nunc. 
                         </p>
                     </div>
-                        <img class="tomato" src="/assets/images/about/Tomato.png" alt="Tomato">
+                        <img class="tomato" src="/assets/images/about/Tomato.png" alt="Tomato" loading="lazy">
                     <figure class="text-end">
-                        <img class="img-chef"  src="/assets/images/about/Chef.png" alt="Chef">
+                        <img class="img-chef"  src="/assets/images/about/Chef.png" alt="Chef" loading="lazy">
                     </figure>
                 </div>
                 <aside>
@@ -49,7 +49,7 @@
                                         <h1 class="role">Restuarant Manager</h1>
                                         <span class="name">Carson Hugn</span>
                                         <figure>
-                                            <img class="member-img" width="470" height="570" src="/assets/images/about/team members/Brain.png" alt="Brain">
+                                            <img class="member-img" width="470" height="570" src="/assets/images/about/team members/Brain.png" alt="Brain" loading="lazy">
                                         </figure>
                                     </div>
                                     <p class="slogan">
@@ -70,7 +70,7 @@
                                         <h1 class="role">Restuarant Manager</h1>
                                         <span class="name">Carson Hugn</span>
                                         <figure>
-                                            <img class="member-img" width="470" height="570" src="/assets/images/about/team members/John.png" alt="John">
+                                            <img class="member-img" width="470" height="570" src="/assets/images/about/team members/John.png" alt="John" loading="lazy">
                                         </figure>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                     <h1 class="video_name">It looks delicious</h1>
                     <p class="video_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                     <button onclick="" class="video_play_btn">
-                        <img width="85" height="85" src="/assets/images/about/8666551_play_circle_icon.svg" alt="Bnt play">
+                        <img width="85" height="85" src="/assets/images/about/8666551_play_circle_icon.svg" alt="Bnt play" loading="lazy">
                     </button>
                 </div>
             </div>
@@ -100,7 +100,7 @@
 <section>
     <div class="section_process">
         <div>
-            <img class="rosemary" src="/assets/images/about/stage/rosemary.png" alt="Rosemary">
+            <img class="rosemary" src="/assets/images/about/stage/rosemary.png" alt="Rosemary" loading="lazy">
             <div class="container">
                 <div class="process_container">
                     <div class="headline_content">
@@ -108,7 +108,7 @@
                     </div>
                     <div class="stage d-flex">
                         <figure>
-                            <img class="slice_stage" src="/assets/images/about/stage/Slice.png" alt="Slice meat">
+                            <img class="slice_stage" src="/assets/images/about/stage/Slice.png" alt="Slice meat" loading="lazy">
                         </figure>
                         <div class="text-centre">
                             <h1 class="stage_number">01.Slice</h1>
@@ -130,12 +130,12 @@
                             </p>
                         </div>
                         <figure>
-                            <img class="slice_stage" src="/assets/images/about/stage/Bake.png" alt="Bake meat">
+                            <img class="slice_stage" src="/assets/images/about/stage/Bake.png" alt="Bake meat" loading="lazy">
                         </figure>
                     </div>
                     <div class="stage d-flex">
                         <figure>
-                            <img class="slice_stage" src="/assets/images/about/stage/Pickled.png" alt="Pickled meat">
+                            <img class="slice_stage" src="/assets/images/about/stage/Pickled.png" alt="Pickled meat" loading="lazy">
                         </figure>
                         <div class="text-centre">
                             <h1 class="stage_number">03.Bake</h1>
@@ -147,7 +147,7 @@
                     </div>
                 </div>
             </div>
-            <img class="rosemary_second" src="/assets/images/about/stage/rosemary (1).png" alt="Rosemary">
+            <img class="rosemary_second" src="/assets/images/about/stage/rosemary (1).png" alt="Rosemary" loading="lazy">
         </div>
     </div>
 </section>

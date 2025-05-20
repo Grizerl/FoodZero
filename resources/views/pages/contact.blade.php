@@ -47,13 +47,13 @@
             <div class="contact">
                 <div class="top_container d-flex">
                     <figure class="sc-DSVdv">
-                        <img class="fruit_img" src="/assets/images/contact/Yellow_fruit.png" alt="Yellow_fruit">
+                        <img class="fruit_img" src="/assets/images/contact/Yellow_fruit.png" alt="Yellow_fruit" loading="lazy">
                     </figure>
-                    <img class="orange" src="/assets/images/contact/Orange.png" alt="Orange">
+                    <img class="orange" src="/assets/images/contact/Orange.png" alt="Orange" loading="lazy">
                         <div class="text_container">
                             <p class="img_public_text">We can be contacted via 
                                 email <a class="get_in_touch">info@foodzero.com</a> 
-                                    or telephone on <a class="get_in_touch">+86 852 346 000</a> 
+                                or telephone on <a class="get_in_touch">+86 852 346 000</a> 
                             </p>
                         </div>
                 </div>
@@ -66,7 +66,7 @@
                         <button class="btn_map"><a href="https://maps.app.goo.gl/PjPLxPcNTivPaTp9A" class="map_text">View in maps</a></button>
                     </div>
                     <figure class="sc-VDFcd">
-                        <img class="fruit_img" src="/assets/images/contact/House.png" alt="House">
+                        <img class="fruit_img" src="/assets/images/contact/House.png" alt="House" loading="lazy">
                     </figure>
                 </div>
             </div>

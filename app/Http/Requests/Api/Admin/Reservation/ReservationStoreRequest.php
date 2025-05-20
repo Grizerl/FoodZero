@@ -24,7 +24,7 @@ class ReservationStoreRequest extends FormRequest
         return [
            'guest_name' => 'required|string|max:255',
            'reservation_time' => 'required',
-           'guest_count' => 'required', 
+           'guest_count' => 'required',
         ];
     }
 }

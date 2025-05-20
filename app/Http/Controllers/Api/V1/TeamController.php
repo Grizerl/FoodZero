@@ -10,27 +10,32 @@ use Illuminate\Http\Request;
 class TeamController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Summary of index
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function index()
     {
-        return response()->json(User::all(),200);
+        return response()->json(User::all(), 200);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Summary of store
+     * @param \App\Http\Requests\Api\Admin\Team\TeamStoreRequest $teamStoreRequest
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function store(TeamStoreRequest $teamStoreRequest)
     {
         $user = User::create($teamStoreRequest->all());
-        
+
         return response()->json([
             'user' => $user,
         ], 201);
     }
 
     /**
-     * Display the specified resource.
+     * Summary of show
+     * @param \App\Models\User $user
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function show(User $user)
     {
@@ -38,16 +43,19 @@ class TeamController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Summary of update
+     * @param \Illuminate\Http\Request $request
+     * @param int  $id
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, int $id)
     {
         $user = User::findOrFail($id);
 
         $validate = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|string|max:255',
-            'password' => 'string|min:6', 
+            'password' => 'string|min:6',
         ]);
 
         if (!$user) {
@@ -60,18 +68,18 @@ class TeamController extends Controller
 
         return response()->json([
             'user' => $user,
-        ], 200); 
+        ], 200);
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Summary of destroy
+     * @param int $id
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
-    public function destroy(User $user, $id)
+    public function destroy(int $id)
     {
-        $user = User::findOrFail($id);
+        User::findOrFail($id)->delete();
 
-        $user->delete();
-        
         return response()->json([
             'message' => 'User delete'
         ], 204);

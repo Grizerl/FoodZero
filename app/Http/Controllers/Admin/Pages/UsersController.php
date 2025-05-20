@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Pages;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AuthRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -15,8 +14,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users=User::all();
-        return view('admin.member.index',compact('users'));
+        $users = User::all();
+        return view('admin.member.index', compact('users'));
     }
 
     /**
@@ -32,20 +31,20 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $validate=$request->validate([
+        $validate = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|string|max:255|unique:users,email',
             'password' => 'required|string|min:6',
         ]);
 
         User::create([
-            'name' =>$validate['name'],
-            'email' =>$validate['email'],
-            'password' =>$validate['password'],
+            'name' => $validate['name'],
+            'email' => $validate['email'],
+            'password' => $validate['password'],
             'remember_token' => Str::random(60),
-        ]);	
+        ]);
 
-        return redirect()->back()->with('success','The user was successfully created.');
+        return redirect()->back()->with('success', 'The user was successfully created.');
     }
 
     /**
@@ -61,34 +60,34 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $users=User::findOrFail($id);
-        return view('admin.member.edit',compact('users'));
+        $users = User::findOrFail($id);
+        return view('admin.member.edit', compact('users'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user,$id)
+    public function update(Request $request, User $user, $id)
     {
-        $validate=$request->validate([
+        $validate = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|string|max:255',
             'password' => 'required|string|min:6',
         ]);
 
-        $user=User::findOrFail($id);
+        $user = User::findOrFail($id);
 
-        if(!$user) {
-            return redirect()->back()->with('message','User could not be found');
+        if (!$user) {
+            return redirect()->back()->with('message', 'User could not be found');
         }
-        
+
         $user->update([
-            'name' =>$validate['name'],
-            'email' =>$validate['email'],
-            'password' =>$validate['password'],
+            'name' => $validate['name'],
+            'email' => $validate['email'],
+            'password' => $validate['password'],
         ]);
 
-        return redirect()->back()->with('success','User update completed successfully.');
+        return redirect()->back()->with('success', 'User update completed successfully.');
     }
 
     /**
@@ -96,8 +95,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $user=User::findOrFail($id);
+        $user = User::findOrFail($id);
         $user->delete();
-        return redirect()->back()->with('success','User deleted successfully.');
+        return redirect()->back()->with('success', 'User deleted successfully.');
     }
 }

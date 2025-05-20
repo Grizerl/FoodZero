@@ -62,12 +62,12 @@
                                 <h1 class="menu-title">{{ $category->name }}</h1>
                                     <p class="menu-lead">This is a section of your menu. Give your section a brief description</p>
                                     <div class="blueberry">
-                                        <img src="/assets/images/menu/starters/Blueberry.png" alt="Blueberry">
+                                        <img src="/assets/images/menu/starters/Blueberry.png" alt="Blueberry" loading="lazy">
                                     </div>
                             </div>
                             <div class="menu-bottom d-grid">
                             <figure>
-                                <img class="dish-images" src="{{ $category->images_category }}" alt="{{ $category->name }}">
+                                <img class="dish-images" src="{{ $category->images_category }}" alt="{{ $category->name }}" loading="lazy">
                             </figure>
                             <div class="menu-right">
                                 @foreach($category->menu as $product)

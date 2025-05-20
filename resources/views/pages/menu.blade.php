@@ -25,12 +25,12 @@
                             <h1 class="menu-title">Starters</h1>
                             <p class="menu-lead">This is a section of your menu. Give your section a brief description</p>
                             <div class="blueberry">
-                                <img src="/assets/images/menu/starters/Blueberry.png" alt="Blueberry">
+                                <img src="/assets/images/menu/starters/Blueberry.png" alt="Blueberry" loading="lazy">
                             </div>
                         </div>
                         <div class="menu-bottom d-grid">
                             <figure>
-                                <img class="dish-images" src="/assets/images/menu/starters/cheese.png" alt="Cheese">
+                                <img class="dish-images" src="/assets/images/menu/starters/cheese.png" alt="Cheese" loading="lazy">
                             </figure>
                             <div class="menu-right">
                                 @foreach ($starters as $starter)
@@ -63,7 +63,7 @@
                                 @endforeach
                             </div>
                             <figure style="text-align: center;">
-                                <img class="dish-images" src="/assets/images/menu/Main/Beef.png" alt="Beef">
+                                <img class="dish-images" src="/assets/images/menu/Main/Beef.png" alt="Beef" loading="lazy">
                             </figure>
                         </div>
                     </div>
@@ -72,12 +72,12 @@
                             <h1 class="menu-title">Pastries & Drinks</h1>
                             <p class="menu-lead">This is a section of your menu. Give your section a brief description</p>
                             <div class="avocado">
-                                <img src="/assets/images/menu/Pastries&Drinks/Avocado.png" alt="Avocado">
+                                <img src="/assets/images/menu/Pastries&Drinks/Avocado.png" alt="Avocado" loading="lazy">
                             </div>
                         </div>
                         <div class="menu-bottom d-grid">
                             <figure>
-                                <img class="dish-images" src="/assets/images/menu/Pastries&Drinks/cups.png" alt="Four cups">
+                                <img class="dish-images" src="/assets/images/menu/Pastries&Drinks/cups.png" alt="Four cups" loading="lazy">
                             </figure>
                             <div class="menu-right">
                                 @foreach ($pastries_And_Drinks as $dessertsAndDrinks)

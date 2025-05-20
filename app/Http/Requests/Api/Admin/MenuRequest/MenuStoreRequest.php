@@ -23,7 +23,7 @@ class MenuStoreRequest extends FormRequest
     {
         return [
             'images' => 'required',
-            'name' =>'string|required|max:255',
+            'name' => 'string|required|max:255',
             'description' => 'required|max:255',
             'price' => 'required|numeric',
             'category_id' => 'required|exists:categories,id'

@@ -30,7 +30,7 @@
                      <th style="width: 30%">
                         Category Title
                      </th>
-                     <th style="width: 40%" class="text-center">
+                     <th style="width: 40%" class="text-left">
                         Category Images
                      </th>
                      <th style="width: 15%">
@@ -68,6 +68,9 @@
                   @endforeach
                </tbody>
             </table>
+         </div>
+         <div style="margin-top: 5px; margin-left: 5px;">
+            {{ $categories->links('pagination::bootstrap-4') }}
          </div>
       </div>
    </section>

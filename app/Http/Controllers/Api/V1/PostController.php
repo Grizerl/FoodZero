@@ -9,7 +9,8 @@ use App\Models\Post;
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Summary of index
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -17,39 +18,48 @@ class PostController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Summary of store
+     * @param \App\Http\Requests\Api\Admin\Posts\StorePostRequest $storePostRequest
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function store(StorePostRequest $storePostRequest)
     {
-       $post = Post::create($storePostRequest->all());
-       return response()->json([
-        'post' => $post,
-       ],201);
+        $post = Post::create($storePostRequest->all());
+        return response()->json([
+         'post' => $post,
+        ], 201);
     }
 
     /**
-     * Display the specified resource.
+     * Summary of show
+     * @param \App\Models\Post $post
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function show(Post $post)
     {
-        return response()->json($post,200);
+        return response()->json($post, 200);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Summary of update
+     * @param \App\Http\Requests\Api\Admin\Posts\StorePostRequest $storePostRequest
+     * @param \App\Models\Post $post
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function update(StorePostRequest $storePostRequest, Post $post)
     {
-       $post->update($storePostRequest->all());
+        $post->update($storePostRequest->all());
 
-       return response()->json([
-            'post' => $post,
-       ], 200);
+        return response()->json([
+             'post' => $post,
+        ], 200);
     }
-    
+
 
     /**
-     * Remove the specified resource from storage.
+     * Summary of destroy
+     * @param \App\Models\Post $post
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function destroy(Post $post)
     {
