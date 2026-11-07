@@ -32,25 +32,6 @@
   text-align: center;
 }
 
-.sc-FAvf {
-  justify-content: center;
-}
-
-.section-fashion {
-  padding-top: 70px;
-  padding-bottom: 60px;
-  background: var(--color-navbar-text);
-}
-
-.fashion-container {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
-}
-
-.navbar-media-content {
-  list-style-type: disc;
-}
-
 .banner_title {
   font-family: var(--font-Rufina);
   font-weight: 700;
@@ -67,64 +48,67 @@
   letter-spacing: 2%;
 }
 
-/* Section fashion */
-/* Paginate */
+/* Post list */
+.section-blog-list {
+  background: var(--background-cook);
+}
+
+/* Paginate (site palette) */
 .paginate {
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 56px;
 }
 
 .paginate .pagination {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
   padding-left: 0;
   list-style: none;
-  border-radius: 5px;
 }
 
-.paginate .page-item {
-  margin: 0;
-}
-
-.paginate .page-item .page-link {
-  position: relative;
+.paginate .page-link {
   display: block;
-  padding: 8px 12px;
-  margin-left: -1px;
-  line-height: 1.25;
-  color: #007bff;
+  min-width: 44px;
+  padding: 10px 14px;
+  border-radius: 16px;
   background-color: #fff;
-  border: 1px solid #dee2e6;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(35, 48, 0, 0.08), 0 10px 30px rgba(35, 48, 0, 0.08);
+  color: var(--background-color-main);
+  font-family: var(--font-Lato);
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  transition: background-color 0.25s, color 0.25s;
+}
+.paginate .page-link:focus-visible {
+  outline: 3px solid var(--hover-adaptive);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .paginate .page-link {
+    transition: none;
+  }
 }
 
 .paginate .page-item.active .page-link {
-  z-index: 1;
+  background-color: var(--background-span);
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
 }
 
-.paginate .page-item .page-link:hover {
-  z-index: 2;
-  color: #0056b3;
-  background-color: #e9ecef;
-  border-color: #dee2e6;
+.paginate .page-link:hover {
+  background-color: var(--background-color-main);
+  color: #fff;
 }
 
 .paginate .page-item.disabled .page-link {
-  color: #6c757d;
+  opacity: 0.5;
   pointer-events: none;
-  background-color: #fff;
-  border-color: #dee2e6;
 }
 
 @media screen and (max-width: 700px) {
-  .fashion-container {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-  }
   .banner_title {
     font-size: 75px;
   }
@@ -139,12 +123,6 @@
   }
   .section_blog_banner {
     min-height: 86vh;
-  }
-  .navbar-media-content {
-    list-style-type: none;
-  }
-  .fashion-title {
-    font-size: 26px;
   }
 }
 @media screen and (max-width: 830px) {

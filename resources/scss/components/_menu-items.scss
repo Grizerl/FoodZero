@@ -1,18 +1,60 @@
-// Shared by pages/menu.scss, pages/full-menu.scss.
+// Menu categories + dish cards. Shared by pages/menu.scss and pages/full-menu.scss.
 @use '../abstracts' as *;
 
 @mixin styles {
     .section_all_menu {
         position: relative;
+        padding-bottom: 80px;
         background: var(--color-navbar-text);
     }
 
-    .pastries-content {
-        position: relative;
+    // Quick links to the categories -------------------------------------------
+    .menu-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 56px 0 8px;
     }
 
-    // Section header: title and lead in the middle column, the decorative drawing in the
-    // right column (inside the grid, so it can never cover the text). Hidden below md.
+    .menu-nav__link {
+        padding: 10px 24px;
+        border-radius: $radius-pill;
+        background: var(--background-cook);
+        color: var(--background-color-main);
+        font-family: var(--font-Lato);
+        font-weight: 700;
+        font-size: 17px;
+        transition: background-color 0.25s, color 0.25s;
+
+        &:hover {
+            background: var(--background-color-main);
+            color: var(--color-navbar-text);
+        }
+
+        @include focus-ring;
+
+        @include reduce-motion {
+            transition: none;
+        }
+    }
+
+    // One category = one soft panel ---------------------------------------------
+    .menu-categories {
+        display: grid;
+        gap: 40px;
+        padding-top: 40px;
+    }
+
+    .menu-category {
+        padding: 48px 48px 56px;
+        border-radius: $radius-lg;
+        background: var(--background-cook);
+        scroll-margin-top: 24px;
+    }
+
+    // Title and lead in the middle column, the decorative drawing in the right one
+    // (inside the grid, so it can never cover the text). Hidden below md.
     .menu-header {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, 640px) minmax(0, 1fr);
@@ -32,13 +74,92 @@
         user-select: none;
         pointer-events: none;
 
-        // The drawing is taken out of the flow so it never stretches the header rows.
+        // Out of the flow so the drawing never stretches the header rows.
+        // Capped to the header height so it stays clear of the first dish card.
         img {
             position: absolute;
-            top: 0;
+            top: -8px;
             right: 0;
+            width: auto;
             max-width: 100%;
             height: auto;
+            max-height: 128px;
+        }
+    }
+
+    .menu-title {
+        font-family: var(--font-Rufina);
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 1.25;
+        letter-spacing: 0;
+        text-align: center;
+        color: var(--color-title-menu);
+    }
+
+    .menu-lead {
+        padding-top: 6px;
+        font-family: var(--font-Lato);
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 1.7;
+        text-align: center;
+        color: var(--color-card-lead);
+    }
+
+    .menu-category__body {
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        gap: 40px;
+        align-items: start;
+        padding-top: 40px;
+    }
+
+    .menu-category__body--reverse {
+        grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+
+        .menu-figure {
+            order: 2;
+        }
+    }
+
+    .menu-figure {
+        position: sticky;
+        top: 24px;
+        overflow: hidden;
+        border-radius: $radius-lg;
+        box-shadow: $shadow-card;
+
+        img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+        }
+    }
+
+    .dish-grid {
+        display: grid;
+        gap: 16px;
+    }
+
+    .menu-empty {
+        padding: 28px;
+        border-radius: $radius-md;
+        background: var(--color-navbar-text);
+        font-family: var(--font-Lato);
+        font-size: 17px;
+        text-align: center;
+        color: var(--color-card-lead);
+    }
+
+    @include respond-down(lg) {
+        .menu-category {
+            padding: 40px 28px 44px;
+        }
+
+        .menu-category__body {
+            gap: 28px;
         }
     }
 
@@ -51,72 +172,41 @@
         .avocado {
             display: none;
         }
+
+        .menu-category__body,
+        .menu-category__body--reverse {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .menu-figure,
+        .menu-category__body--reverse .menu-figure {
+            position: static;
+            order: -1;
+
+            img {
+                aspect-ratio: 16 / 10;
+            }
+        }
     }
 
-    .menu-title {
-        font-family: var(--font-Rufina);
-        font-weight: 700;
-        font-size: 65px;
-        line-height: 120px;
-        letter-spacing: 0px;
-        text-align: center;
+    @include respond-down(sm) {
+        .menu-title {
+            font-size: 44px;
+        }
     }
 
-    .menu-lead {
-        font-family: var(--font-Lato);
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 33.6px;
-        letter-spacing: 2%;
-        text-align: center;
-        color: var(--color-card-lead);
-    }
+    @include respond-down(xs) {
+        .menu-category {
+            padding: 32px 16px 36px;
+            border-radius: $radius-md;
+        }
 
-    .menu-bottom {
-        grid-template-columns: repeat(2,1fr);
-        gap: 40px;
-        padding-top: 50px;
-    }
+        .menu-title {
+            font-size: 38px;
+        }
 
-    .dish-images {
-        height: 100%;
-        width: 90%;
-        object-fit: cover;
-    }
-
-    .product-price {
-        font-family: var(--font-Rufina);
-        font-weight: 700;
-        font-size: 30px;
-        line-height: 40px;
-        letter-spacing: 0px;
-        text-align: right;
-        border-bottom: 4px dotted $color-black;
-    }
-
-    .dish-container {
-        padding-top: 20px;
-        padding-bottom: 15px;
-    }
-
-    .dish-name {
-        font-family: var(--font-Rufina);
-        font-weight: 700;
-        font-size: 35px;
-        line-height: 50px;
-        letter-spacing: 0px;
-    }
-
-    .max-wid-title {
-        max-width: 400px;
-    }
-
-    .dish-description {
-        font-family:var(--font-Lato);
-        font-weight: 400;
-        font-size: 19px;
-        line-height: 50px;
-        letter-spacing: 2%;
-        color: var(--color-card-lead);
+        .menu-lead {
+            font-size: 17px;
+        }
     }
 }

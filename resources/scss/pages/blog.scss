@@ -31,67 +31,64 @@
     letter-spacing: 2%;
 }
 
-/* Section fashion */
-   
+/* Post list */
+.section-blog-list {
+    background: var(--background-cook);
+}
 
-/* Paginate */
+/* Paginate (site palette) */
 .paginate {
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 56px;
 }
 
 .paginate .pagination {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
     padding-left: 0;
     list-style: none;
-    border-radius: 5px;
 }
 
-.paginate .page-item {
-    margin: 0;
-}
-
-.paginate .page-item .page-link {
-    position: relative;
+.paginate .page-link {
     display: block;
-    padding: 8px 12px;
-    margin-left: -1px;
-    line-height: 1.25;
-    color: $pagination-link;
+    min-width: 44px;
+    padding: 10px 14px;
+    border-radius: $radius-md;
     background-color: $color-white;
-    border: 1px solid $pagination-border;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    box-shadow: $shadow-card;
+    color: var(--background-color-main);
+    font-family: var(--font-Lato);
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    transition: background-color 0.25s, color 0.25s;
+
+    @include focus-ring;
+
+    @include reduce-motion {
+        transition: none;
+    }
 }
 
 .paginate .page-item.active .page-link {
-    z-index: 1;
+    background-color: var(--background-span);
     color: $color-white;
-    background-color: $pagination-link;
-    border-color: $pagination-link;
 }
 
-.paginate .page-item .page-link:hover {
-    z-index: 2;
-    color: $pagination-link-hover;
-    background-color: $pagination-hover-bg;
-    border-color: $pagination-border;
+.paginate .page-link:hover {
+    background-color: var(--background-color-main);
+    color: $color-white;
 }
 
 .paginate .page-item.disabled .page-link {
-    color: $pagination-disabled;
+    opacity: 0.5;
     pointer-events: none;
-    background-color: $color-white;
-    border-color: $pagination-border;
 }
 
 @include respond-down(sm) {
-    .fashion-container {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 20px;
-    }
-
     .banner_title {
         font-size: 75px;
     }
@@ -111,13 +108,6 @@
         min-height: 86vh;
     }
 
-    .navbar-media-content {
-        list-style-type: none;
-    }
-
-    .fashion-title {
-        font-size: 26px;
-    }
 }
 
 // Keep the banner text off the screen edge on tablets and phones.

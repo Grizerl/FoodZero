@@ -48,60 +48,55 @@
 /* Section Menu */
 @include menu-items.styles;
 
-.menu-content {
-    padding-bottom: 60px;
+.menu-cta-wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 56px;
+}
+
+.menu-cta {
+    display: inline-flex;
     align-items: center;
-    flex-direction: column;
-}
-
-.starters-content,.mains-content,.pastries-content {
-    padding-top: 60px;
-    padding-bottom: 50px;
-}
-
- 
-
-.btm__menu {
-    margin-top: 3rem;
-    padding: 5px 50px;
-    border: none;
-    border-radius: 5px;
+    gap: 12px;
+    padding: 14px 36px;
+    border-radius: $radius-pill;
     background: var(--background-color-main);
-    cursor: pointer;
-}
-
-.btm__menu a {
+    color: var(--color-navbar-text);
     font-family: var(--font-Rufina);
     font-weight: 700;
     font-size: 20px;
-    line-height: 48px;
-    letter-spacing: 1.5px;
-    color: var(--color-navbar-text);
+    letter-spacing: 1px;
+    box-shadow: $shadow-card;
+    transition: $transition-card;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: $shadow-card-hover;
+    }
+
+    &:hover .menu-cta__arrow {
+        transform: translateX(6px);
+    }
+
+    @include focus-ring;
+
+    @include reduce-motion {
+        transition: none;
+
+        &:hover,
+        &:hover .menu-cta__arrow {
+            transform: none;
+        }
+    }
 }
 
-.btm__menu span {
-    cursor: pointer;
+.menu-cta__arrow {
     display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-  
-.btm__menu span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-  
-.btm__menu:hover span {
-    padding-right: 25px;
-}
-  
-.btm__menu:hover span:after {
-    opacity: 1;
-    right: 0;
+    transition: transform 0.3s $ease-out;
+
+    @include reduce-motion {
+        transition: none;
+    }
 }
 
 @include respond-down(lg) {
@@ -116,16 +111,7 @@
 }
 
 @include respond-down(sm) {
-    .menu-bottom {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 20px;
-    }
-
-    .menu-bottom figure {
-        text-align: center;
-    }
-
-    .banner-slogan {
+            .banner-slogan {
         font-size: 80px;
     }
 
@@ -144,24 +130,11 @@
         font-size: 20px;
     }
 
-    .dish-name {
-        font-size: 30px;
-    }
-
-    .dish-description {
-        font-size: 17px;
-        line-height: 30px;
-    }
-
-    .section-menu-banner {
+            .section-menu-banner {
         min-height: 87vh;
     }
 
-    .starters-content, .mains-content, .pastries-content {
-        padding-top: 40px;
-        padding-bottom: 50px;
     }
-}
 
 // Keep the banner text off the screen edge on tablets and phones.
 @include respond-down(md) {

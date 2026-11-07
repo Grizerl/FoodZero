@@ -45,53 +45,31 @@
 </section>
 <section>
     <div class="section_all_menu">
-        <div>
-            <div class="container">
-                @if ($categories->isEmpty())
-                    @include('partials.empty-state', ['title' => 'The menu is not available yet', 'text' => 'We are preparing our dishes. Please check back soon.'])
-                @else
-                <div class="menu-content d-flex">
-                <div class="section_menu_items">
-                    <ul class="menu_navbar d-flex">
-                        @foreach($categories as $category)
-                        <li class="menu_items">
-                            <a class="menu_links" href="#category-{{ $category->id }}">{{ $category->name }}</a>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="category_items_content">
-                    @foreach($categories as $category)
-                        <div class="category_items_content" id="category-{{ $category->id }}">
-                            <div class="menu-header">
-                                <h2 class="menu-title">{{ $category->name }}</h2>
-                                    <p class="menu-lead">This is a section of your menu. Give your section a brief description</p>
-                                    <div class="blueberry">
-                                        <img src="/assets/images/menu/starters/Blueberry.png" alt="Blueberry" loading="lazy">
-                                    </div>
-                            </div>
-                            <div class="menu-bottom d-grid">
-                            <figure>
-                                <img class="dish-images" src="{{ $category->images_category }}" alt="{{ $category->name }}" loading="lazy">
-                            </figure>
-                            <div class="menu-right">
-                                @foreach($category->menu as $product)
-                                    <span class="product-price d-block">
-                                        {{$product->price}}$
-                                    </span>
-                                <div class="dish-container">
-                                    <h2 class="dish-name max-wid-title">{{ $product->name }}</h2>
-                                    <p class="dish-description">{{ $product->description }}</p>
-                                </div>
-                                @endforeach
-                            </div>
-                            </div>
-                        </div>
+        <div class="container">
+            @if ($categories->isEmpty())
+                @include('partials.empty-state', ['title' => 'The menu is not available yet', 'text' => 'We are preparing our dishes. Please check back soon.'])
+            @else
+                <nav class="menu-nav" aria-label="Menu categories">
+                    @foreach ($categories as $category)
+                        <a class="menu-nav__link" href="#category-{{ $category->id }}">{{ $category->name }}</a>
+                    @endforeach
+                </nav>
+                <div class="menu-categories">
+                    @foreach ($categories as $category)
+                        @include('partials.menu-category', [
+                            'id' => 'category-'.$category->id,
+                            'title' => $category->name,
+                            'dishes' => $category->menu,
+                            'image' => $category->images_category,
+                            'imageAlt' => $category->name,
+                            'reverse' => $loop->even,
+                            'decor' => $loop->odd
+                                ? ['class' => 'blueberry', 'src' => '/assets/images/menu/starters/Blueberry.png']
+                                : ['class' => 'avocado', 'src' => '/assets/images/menu/Pastries&Drinks/Avocado.png'],
+                        ])
                     @endforeach
                 </div>
-                </div>
-                @endif
-            </div>
+            @endif
         </div>
     </div>
 </section>

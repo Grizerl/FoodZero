@@ -117,8 +117,16 @@
     color: var(--color-background-section);
 }
 
-/* Section fashion */
-   
+/* Related posts */
+.post-grid-heading {
+    margin-bottom: 32px;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--color-title-menu);
+}
 
 @include respond-down(xl) {
     .adaptive-img {
@@ -127,25 +135,13 @@
         object-fit: cover;
     }
 
-    .navbar-media-content {
-        flex-wrap: wrap;
-    }
-
-    .fashion-container {
-        gap: 15px;
-    }
-
     .sc-FDVC {
         text-align: right;
     }
 }
 
 @include respond-down(xl) { 
-    .fashion-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .adaptive-img,.fashion-foto {
+    .adaptive-img {
         width: 100%;
         object-fit: cover;
     }
@@ -191,9 +187,6 @@
         padding-top: 0;
     }
 
-    .navbar-media-content {
-        list-style-type: none;
-    }
 }
 
 @include respond-down(xs) {
@@ -216,4 +209,9 @@
     .background_img {
         padding-inline: $banner-gutter;
     }
+}
+
+.post-byline {
+    justify-content: center;
+    padding-bottom: 24px;
 }

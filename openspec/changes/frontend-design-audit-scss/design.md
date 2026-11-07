@@ -67,6 +67,9 @@ resources/scss/
 **10. Адмін-лейаут — точкові виправлення, vendor не чіпаємо.**
 Видалити CDN Bootstrap 5 із зламаним URL (AdminLTE 3 несе власний Bootstrap 4 через `adminlte.min.css` і `bootstrap.bundle.min.js` — змішування BS5+BS4 прибирається); дублі `admin.js`/`colorbox` видаляються, шлях до `admin.js` — `/admin/js/admin.js`; закрити `</ul>`; ключ TinyMCE → `config('services.tinymce.key')` з `TINYMCE_API_KEY` у `.env`/`.env.example` (порожній у прикладі). Старий ключ у git-історії вважається скомпрометованим — рекомендація ротації зазначена в завданнях. Login: прибрати `family=Arial` з `auth/login.css` (`@import`) і використати системний стек.
 
+**11. Меню й блог: дані + оновлені картки (додано під час apply).**
+Причина порожніх сторінок — порожня dev-БД (0 категорій, 0 страв, 0 постів), а не помилка шаблонів. Додається `DemoContentSeeder` (updateOrCreate, явні id 1–3 для категорій, бо `HomeController@menu` вибирає за id), що запускається окремо `php artisan db:seed --class=DemoContentSeeder` і НЕ входить у `DatabaseSeeder` (той створює користувача з відкритим паролем). Оформлення: токени радіуса/тіней у `_tokens.scss`; картка поста та страви — компоненти `blog-card` і `menu-items` (спільні для головної, блогу, меню й full-menu); сітка `repeat(auto-fill, minmax(...))`; пагінація перефарбовується з кольорів Bootstrap у палітру сайту. *Альтернатива:* фабрики Eloquent — не підходять, бо потрібні реальні зображення з `public/assets/images`.
+
 ## Risks / Trade-offs
 
 - [Візуальна регресія при злитті токенів/брейкпоінтів] → базові знімки 375/768/1024/1440 до міграції, diff після кожного SCSS-кроку, міграція по одному файлу за раз.

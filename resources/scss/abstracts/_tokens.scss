@@ -83,3 +83,13 @@ $pagination-disabled: #6c757d;
 
 // Layout ----------------------------------------------------------------------
 $banner-gutter: 16px; // minimum side padding of page-banner text on tablets and phones
+
+// Shape and elevation (shadows are tinted with the dark-green brand color) ---------
+$radius-sm: 10px;
+$radius-md: 16px;
+$radius-lg: 24px;
+$radius-pill: 999px;
+$shadow-card: 0 1px 3px rgba(35, 48, 0, 0.08), 0 10px 30px rgba(35, 48, 0, 0.08);
+$shadow-card-hover: 0 4px 10px rgba(35, 48, 0, 0.1), 0 24px 48px rgba(35, 48, 0, 0.18);
+$ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+$transition-card: transform 0.35s $ease-out, box-shadow 0.35s $ease-out;

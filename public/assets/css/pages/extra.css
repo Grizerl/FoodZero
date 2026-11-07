@@ -44,25 +44,6 @@
   text-align: center;
 }
 
-.sc-FAvf {
-  justify-content: center;
-}
-
-.section-fashion {
-  padding-top: 70px;
-  padding-bottom: 60px;
-  background: var(--color-navbar-text);
-}
-
-.fashion-container {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
-}
-
-.navbar-media-content {
-  list-style-type: disc;
-}
-
 .banner_title {
   max-width: 950px;
   font-family: var(--font-Rufina);
@@ -154,28 +135,29 @@
   color: var(--color-background-section);
 }
 
-/* Section fashion */
+/* Related posts */
+.post-grid-heading {
+  margin-bottom: 32px;
+  font-family: var(--font-Rufina);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-title-menu);
+}
+
 @media screen and (max-width: 1150px) {
   .adaptive-img {
     padding: 4px;
     width: 90%;
     object-fit: cover;
   }
-  .navbar-media-content {
-    flex-wrap: wrap;
-  }
-  .fashion-container {
-    gap: 15px;
-  }
   .sc-FDVC {
     text-align: right;
   }
 }
 @media screen and (max-width: 1150px) {
-  .fashion-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .adaptive-img, .fashion-foto {
+  .adaptive-img {
     width: 100%;
     object-fit: cover;
   }
@@ -211,9 +193,6 @@
   .section_media_pole {
     padding-top: 0;
   }
-  .navbar-media-content {
-    list-style-type: none;
-  }
 }
 @media screen and (max-width: 480px) {
   .section_detail_banner {
@@ -231,4 +210,8 @@
   .background_img {
     padding-inline: 16px;
   }
+}
+.post-byline {
+  justify-content: center;
+  padding-bottom: 24px;
 }

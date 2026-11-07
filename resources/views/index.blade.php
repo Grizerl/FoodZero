@@ -71,50 +71,17 @@
                 <div class="menu-content">   
                     <div>
                         <h2 class="headline-1">Our Menu</h2>
-                        <p class="menu-text text-light max-width">This is a section of your menu. Give your section a brief description</p>
+                        <p class="menu-text text-light max-width">Our signature dishes, made daily from fresh seasonal ingredients.</p>
                     </div>
                     <img  src="/assets/images/Image (15).png" alt="Annie-spratt" loading="lazy">
                 </div>
-                <div>
+                @if ($dishes->isNotEmpty())
                     <div class="menu-list d-grid">
-                        <div class="menu-item">
-                            <div class="price-container text-right">
-                                <span class="currency">$</span><span class="price">20</span>      
-                            </div>
-                            <div class="card-content">
-                                <h2 class="card-title max-text">Deep Sea Snow White Cod Fillet</h2>
-                                <p class="card-lead text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="price-container text-right">
-                                <span class="currency">$</span><span class="price">22</span>      
-                            </div>
-                            <div class="card-content">
-                                <h2 class="card-title max-text">Steak With Rosemary Butter</h2>
-                                <p class="card-lead text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="price-container text-right">
-                                <span class="currency">$</span><span class="price">18</span>      
-                            </div>
-                            <div class="card-content">
-                                <h2 class="card-title max-text">Cucumber Salad</h2>
-                                <p class="card-lead text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="price-container text-right">
-                                <span class="currency">$</span><span class="price">90</span>      
-                            </div>
-                            <div class="card-content">
-                                <h2 class="card-title max-text">Natural Wine Pairing</h2>
-                                <p class="card-lead text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
+                        @foreach ($dishes as $dish)
+                            @include('partials.dish-card', ['dish' => $dish])
+                        @endforeach
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </div>
@@ -193,40 +160,11 @@
 @if ($posts->isNotEmpty())
 <section>
     <div class="section-fashion">
-        <div>
-            <div class="container">
-                <div class="sc-fDFF d-flex">
-                    <div class="fashion-container">
-                        @foreach ($posts as $post)
-                        <div class="fashion-content">
-                            <div class="fashion-img">
-                                <div class="fashion-label">
-                                    <span>Fashion</span>
-                                </div>
-                                <img width="530" height="530" src="{{ $post->images }}" loading="lazy" class="fashion-foto" alt="{{ $post->title }}">
-                            </div>
-                            <div class="fashion-info-content d-flex">
-                                <figure>
-                                    <img width="60" height="60" class="avatar" src="{{ $post->clients_img }}" loading="lazy" alt="{{ $post->clients }}">
-                                </figure>
-                                <ul class="navbar-media-content d-flex">
-                                    <li class="media-item">{{ $post->clients }}</li>
-                                    <li class="media-item">{{ $post->created_at?->format('F j, Y') }}</li>
-                                    <li class="media-item">{{ $post->created_at?->format('g:i a') }}</li>
-                                </ul>
-                            </div>
-                            <div class="media-section">
-                                <h2 class="fashion-title max-text">{{ $post->title }}</h2>
-                                <p class="fashion-p">{{ $post->description }}</p>
-                                <div class="sc-FAfgd d-flex">
-                                    <a class="fashion-btn-arrow" href="{{ route('post.details.page', $post->id) }}">Read More
-                                        <span class="arrow" aria-hidden="true">&rarr;</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
+        <div class="container">
+            <div class="post-grid post-grid--duo">
+                @foreach ($posts as $post)
+                    @include('partials.post-card', ['post' => $post])
+                @endforeach
             </div>
         </div>
     </div>

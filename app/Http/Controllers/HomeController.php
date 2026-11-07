@@ -19,6 +19,7 @@ class HomeController extends Controller
     {
         return view('index', [
             'posts' => Post::latest()->take(2)->get(),
+            'dishes' => Menu::orderByDesc('price')->take(4)->get(),
         ]);
     }
 
@@ -36,9 +37,9 @@ class HomeController extends Controller
     public function menu(): View
     {
         return view('pages.menu', [
-            'starters' => Menu::where('category_id', 1)->take(3)->get(),
-            'mains' => Menu::where('category_id', 2)->take(3)->get(),
-            'pastries_And_Drinks' => Menu::where('category_id', 3)->take(3)->get(),
+            'starters' => Menu::where('category_id', 1)->take(4)->get(),
+            'mains' => Menu::where('category_id', 2)->take(4)->get(),
+            'pastries_And_Drinks' => Menu::where('category_id', 3)->take(4)->get(),
         ]);
 
     }

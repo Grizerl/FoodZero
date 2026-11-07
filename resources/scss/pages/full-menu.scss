@@ -37,59 +37,6 @@
 /* Section Menu */
 @include menu-items.styles;
 
-.section_menu_items {
-    padding-top: 100px;
-    padding-bottom: 50px;
-}
-
-.menu-content {
-    padding-bottom: 60px;
-    align-items: center;
-    flex-direction: column;
-}
-
-.menu_navbar {
-    align-items: center;
-}
-
-.menu_items {
-    padding: 0 35px;
-}
-
-.menu_links {
-    position: relative;
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 140%;
-    letter-spacing: 6%;
-    color: var(--color-title-menu);
-    z-index: 9999;
-}
-
-.menu_links::after {
-    content: "";
-    height: 3px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: var(--color-title-menu);
-    transform: scaleX(0);
-}
-
-.menu_links:hover.menu_links::after {
-    transform: scaleX(1); 
-    transition: var(--transition-all);
-}
-
-.category_items_content {
-    padding-top: 60px;
-    padding-bottom: 50px;
-}
-
- 
-
 @include respond-down(xxl) {
     .banner_text {
         padding-left: 0rem;
@@ -101,26 +48,7 @@
         padding: 0
     }
 
-    .menu_navbar {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .menu-bottom {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 40px;
-        padding-top: 20px;
-    }
-
-    .menu-bottom figure {
-        text-align: center;
-    }
-
-    .category_items_content {
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-    
+                    
     .banner_title {
         font-size: 80px;
         line-height: 100px;
@@ -156,14 +84,7 @@
         line-height: 40px;
     }
 
-    .section_menu_items {
-        padding-top: 50px;
-    }
-
-    .menu_items {
-        padding: 0 15px;
-    }
-}
+        }
 
 @include respond-down(xs) {
     .banner_title {
@@ -176,15 +97,7 @@
         line-height: 30px;
     }
 
-    .menu-title {
-        font-size: 60px;
-        line-height: 80px;
-    }
-
-    .menu_items {
-        padding: 0 5px;
-    }
-}
+        }
 
 // Keep the banner text off the screen edge on tablets and phones.
 @include respond-down(md) {

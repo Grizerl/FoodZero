@@ -1,0 +1,14 @@
+// Wraps motion that should be switched off for people who asked for less of it.
+@mixin reduce-motion {
+    @media (prefers-reduced-motion: reduce) {
+        @content;
+    }
+}
+
+// Visible keyboard focus in the brand accent.
+@mixin focus-ring($offset: 3px) {
+    &:focus-visible {
+        outline: 3px solid var(--hover-adaptive);
+        outline-offset: $offset;
+    }
+}

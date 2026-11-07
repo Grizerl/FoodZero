@@ -1,7 +1,8 @@
 /*! Compiled from resources/scss/index.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
 
 @use 'abstracts' as *;
-@use 'components/blog-card';
+@use 'components/post-card';
+@use 'components/dish-card';
 
 /* Banner Section */
 .banner-content {
@@ -164,41 +165,13 @@
 }
 
 .menu-list {
-    grid-template-columns: repeat(2,1fr);
-    gap: 40px;
-}
-
-.price-container {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 50px;
-    letter-spacing: 0px;
-    border-bottom: 3px dotted $color-black;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    padding-top: 40px;
 }
 
 .text-right {
     text-align: right;
-}
-
-.card-content {
-    padding-top: 15px;
-}
-
-.card-title {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 39px;
-    letter-spacing: 3px;
-    padding-bottom: 8px;
-}
-
-.card-lead {
-    font-family: var(--font-Lato);
-    font-weight: 600;
-    font-size: 17px;
-    line-height: 33.6px;
-    letter-spacing: 1px;
 }
 
 /* Section excellent-cook */
@@ -344,38 +317,11 @@
     margin-inline: auto;
 }
 
-/* Section fashion */
-.section-fashion {
-    padding-top: 50px;
-    padding-bottom: 60px;
-    background:var(--color-navbar-text)
-}
+/* Dish cards */
+@include dish-card.styles;
 
-.sc-fDFF {
-    align-items: center;
-    justify-content: center;
-}
-
-.fashion-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 65px;
-}
-
-@include blog-card.styles;
-
-.fashion-img img {
-    object-fit: cover;
-    width: 100%;
-}
-
-.navbar-media-content {
-    flex-wrap: wrap;
-    list-style-type: disc;
-}
-
-   
+/* Blog post cards */
+@include post-card.styles;
 
 /* Section reservation */
 .section-reservation {
@@ -668,16 +614,16 @@ option {
 }
 
 @include respond-down(lg) {
-    .fashion-container,.menu-list,.sc-Adfg  {
+    .menu-list,.sc-Adfg  {
         display: grid;
         grid-template-columns: repeat(1,1fr);
     }
 
-    .media-section,.cook-container,.sc-Adfg   {
+    .cook-container,.sc-Adfg   {
         text-align: center;
     }
 
-    .sc-FAfgd, .cook-container{
+    .cook-container{
         justify-content: center;
     }
 
@@ -786,15 +732,11 @@ option {
         line-height: 60px;
     }
 
-    .lead,.card-lead {
+    .lead {
         font-size: 15px;
     }
 
-    .media-item {
-        font-size: 13px;
-    }
-
-    .sc-Adfg,.section-fashion {
+    .sc-Adfg {
         padding-top: 0;
     }
 
@@ -802,11 +744,7 @@ option {
         padding: 0;
     }
 
-    .card-title {
-        font-size: 29px;
-    }
-
-    .slide-text p {
+        .slide-text p {
         font-size: 25px;
         text-align: center;
     }
