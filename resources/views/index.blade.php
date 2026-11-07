@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', 'FoodZero — Healthy Restaurant & Fresh Seasonal Food')
+@section('meta.description', 'Healthy eating is an important part of lifestyle. Discover the FoodZero menu, read our food blog and book a table online.')
 
 @section('content')
     <section>
@@ -13,7 +15,7 @@
                         </h1>
                         <p class="banner-text">
                             Lorem ipsum dolor sit amet, 
-                            consectetur adipiscing<br> elit. Neque congue arcu
+                            consectetur adipiscing elit. Neque congue arcu
                         </p>
                         <h4 class="banner-scroll">
                             Scroll
@@ -68,7 +70,7 @@
             <div class="container">
                 <div class="menu-content">   
                     <div>
-                        <h1 class="headline-1">Our Menu</h1>
+                        <h2 class="headline-1">Our Menu</h2>
                         <p class="menu-text text-light max-width">This is a section of your menu. Give your section a brief description</p>
                     </div>
                     <img  src="/assets/images/Image (15).png" alt="Annie-spratt" loading="lazy">
@@ -77,7 +79,7 @@
                     <div class="menu-list d-grid">
                         <div class="menu-item">
                             <div class="price-container text-right">
-                                <span class="currency">$</span class="price"><span>20</span>      
+                                <span class="currency">$</span><span class="price">20</span>      
                             </div>
                             <div class="card-content">
                                 <h2 class="card-title max-text">Deep Sea Snow White Cod Fillet</h2>
@@ -86,7 +88,7 @@
                         </div>
                         <div class="menu-item">
                             <div class="price-container text-right">
-                                <span class="currency">$</span class="price"><span>22</span>      
+                                <span class="currency">$</span><span class="price">22</span>      
                             </div>
                             <div class="card-content">
                                 <h2 class="card-title max-text">Steak With Rosemary Butter</h2>
@@ -95,7 +97,7 @@
                         </div>
                         <div class="menu-item">
                             <div class="price-container text-right">
-                                <span class="currency">$</span class="price"><span>18</span>      
+                                <span class="currency">$</span><span class="price">18</span>      
                             </div>
                             <div class="card-content">
                                 <h2 class="card-title max-text">Cucumber Salad</h2>
@@ -104,7 +106,7 @@
                         </div>
                         <div class="menu-item">
                             <div class="price-container text-right">
-                                <span class="currency">$</span class="price"><span>90</span>      
+                                <span class="currency">$</span><span class="price">90</span>      
                             </div>
                             <div class="card-content">
                                 <h2 class="card-title max-text">Natural Wine Pairing</h2>
@@ -134,7 +136,7 @@
                         </div>
                     </div>
                     <div>
-                        <h1 class="section-cook-title">Excellent cook</h1>
+                        <h2 class="section-cook-title">Excellent cook</h2>
                         <p class="section-cook-text max-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus imperdiet. Turpis egestas ultricies purus auctor tincidunt lacus nunc. </p>
                         <figure class="text-right">
                             <img class="leaf-section" src="/assets/images/excellent cook/Leaf (1).png" loading="lazy" alt="Lead">
@@ -188,74 +190,48 @@
         </div>
     </div>
 </section>
+@if ($posts->isNotEmpty())
 <section>
     <div class="section-fashion">
         <div>
             <div class="container">
                 <div class="sc-fDFF d-flex">
                     <div class="fashion-container">
-                        <div style="padding-right: 5px;" class="fashion-content">
-                            <div class="fashion-img">
-                                <div class="fashion-label">
-                                    <span>Fashion</span>
-                                </div>
-                                <img width="530" height="530" src="/assets/images/fashion blog/Feature Image.png" loading="lazy" class="fashion-foto" alt="Feature Image">
-                            </div>
-                            <div class="fashion-info-content d-flex">
-                                <figure>
-                                    <img width="60" height="60" class="avatar" src="/assets/images/fashion blog/Avatar.png" loading="lazy" alt="Avatar">
-                                </figure>
-                                <ul class="navbar-media-content d-flex">
-                                    <li class="media-item">Julie Christie</li>
-                                    <li class="media-item">October 17,2025</li>
-                                    <li class="media-item">3:33 pm</li>
-                                    <li class="media-item">2 comments</li>
-                                </ul>
-                            </div>    
-                            <div class="media-section">
-                                <h1 class="fashion-title max-text">Fruit and vegetables and protection against diseases</h1>
-                                <p class="fashion-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <div class="sc-FAfgd d-flex">
-                                    <a class="fashion-btn-arrow" href="{{ route('post.details.page',1) }}">Read More 
-                                        <a class="arrow" href="{{ route('post.details.page',1) }}">&rarr;</a>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        @foreach ($posts as $post)
                         <div class="fashion-content">
                             <div class="fashion-img">
                                 <div class="fashion-label">
                                     <span>Fashion</span>
                                 </div>
-                                <img width="530" height="530" src="/assets/images/fashion blog/Feature Image (1).png" loading="lazy" class="fashion-foto" alt="Feature Image">
+                                <img width="530" height="530" src="{{ $post->images }}" loading="lazy" class="fashion-foto" alt="{{ $post->title }}">
                             </div>
                             <div class="fashion-info-content d-flex">
                                 <figure>
-                                    <img width="60" height="60" class="avatar" src="/assets/images/fashion blog/Avatar (2).png" loading="lazy" alt="Avatar">
+                                    <img width="60" height="60" class="avatar" src="{{ $post->clients_img }}" loading="lazy" alt="{{ $post->clients }}">
                                 </figure>
                                 <ul class="navbar-media-content d-flex">
-                                    <li class="media-item">Dianne Russell</li>
-                                    <li class="media-item">October 17,2024</li>
-                                    <li class="media-item">3:33 pm</li>
-                                    <li class="media-item">2 comments</li>
+                                    <li class="media-item">{{ $post->clients }}</li>
+                                    <li class="media-item">{{ $post->created_at?->format('F j, Y') }}</li>
+                                    <li class="media-item">{{ $post->created_at?->format('g:i a') }}</li>
                                 </ul>
-                            </div>    
+                            </div>
                             <div class="media-section">
-                                <h1 class="fashion-title max-text">Asparagus Spring Salad with Rocket, Goat's Cheese</h1>
-                                <p class="fashion-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <h2 class="fashion-title max-text">{{ $post->title }}</h2>
+                                <p class="fashion-p">{{ $post->description }}</p>
                                 <div class="sc-FAfgd d-flex">
-                                    <a class="fashion-btn-arrow" href="{{ route('post.details.page', 2) }}">Read More 
-                                        <a class="arrow" href="{{ route('post.details.page', 2) }}">&rarr;</a>
-                                    </a>
+                                    <a class="fashion-btn-arrow" href="{{ route('post.details.page', $post->id) }}">Read More
+                                        <span class="arrow" aria-hidden="true">&rarr;</span></a>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+@endif
 @include('partials.form')
 <section>
     <div class="section-balance">
@@ -263,7 +239,7 @@
             <div class="container">
                 <div class="energy-content d-flex">
                     <div>
-                        <h1 class="energy-title max-text ">Calories Energy Balance</h1>
+                        <h2 class="energy-title max-text ">Calories Energy Balance</h2>
                         <p class="energy-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                     <div class="calories-images d-grid">
@@ -306,7 +282,7 @@
                                 <img width="200" height="200" src="/assets/images/slider-people/Dianne Russell.png" alt="Dianne Russell" loading="lazy">
                                 <div>
                                     <h3>Dianne Russell</h3>
-                                    <span>Bloger</span>
+                                    <span>Blogger</span>
                                 </div>
                             </div>
                             <div class="number-slide">
@@ -329,7 +305,7 @@
                                 <img width="200" height="200" src="/assets/images/slider-people/John Doe.png" alt="John Doe" loading="lazy">
                                 <div>
                                     <h3>John Doe</h3>
-                                    <span>Bloger</span>
+                                    <span>Blogger</span>
                                 </div>
                             </div>
                             <div class="number-slide">
@@ -352,7 +328,7 @@
                                 <img width="200" height="200" src="/assets/images/slider-people/Julie Christie.png" alt="Julie Christie" loading="lazy">
                                 <div>
                                     <h3>Julie Christie</h3>
-                                    <span>Bloger</span>
+                                    <span>Blogger</span>
                                 </div>
                             </div>
                             <div class="number-slide">

@@ -1,4 +1,6 @@
 /node_modules
 /baseline
+/baseline-original
 /current
-/report.json
+/diff
+/report-*.json

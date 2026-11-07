@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', 'Menu — FoodZero')
+@section('meta.description', 'Starters, mains, pastries and drinks made daily from fresh seasonal ingredients at FoodZero.')
 
 @section('link.css')
 <link rel="stylesheet" href="/assets/css/pages/menu.css">
@@ -22,7 +24,7 @@
                 <div class="menu-content d-flex">
                     <div class="starters-content">
                         <div class="menu-header">
-                            <h1 class="menu-title">Starters</h1>
+                            <h2 class="menu-title">Starters</h2>
                             <p class="menu-lead">This is a section of your menu. Give your section a brief description</p>
                             <div class="blueberry">
                                 <img src="/assets/images/menu/starters/Blueberry.png" alt="Blueberry" loading="lazy">
@@ -47,7 +49,7 @@
                     </div>
                     <div class="mains-content">
                         <div class="menu-header">
-                            <h1 class="menu-title">Mains</h1>
+                            <h2 class="menu-title">Mains</h2>
                             <p class="menu-lead">This is a section of your menu. Give your section a brief description</p>
                         </div>
                         <div class="menu-bottom d-grid">
@@ -69,7 +71,7 @@
                     </div>
                     <div class="pastries-content">
                         <div class="menu-header">
-                            <h1 class="menu-title">Pastries & Drinks</h1>
+                            <h2 class="menu-title">Pastries & Drinks</h2>
                             <p class="menu-lead">This is a section of your menu. Give your section a brief description</p>
                             <div class="avocado">
                                 <img src="/assets/images/menu/Pastries&Drinks/Avocado.png" alt="Avocado" loading="lazy">

@@ -14,17 +14,17 @@ class HomeController extends Controller
 {
     /**
      * Summary of index
-     * @return View
      */
     public function index(): View
     {
-        return view('index');
+        return view('index', [
+            'posts' => Post::latest()->take(2)->get(),
+        ]);
     }
 
     /**
-    * Summary of about
-    * @return View
-    */
+     * Summary of about
+     */
     public function about(): View
     {
         return view('pages.about');
@@ -32,7 +32,6 @@ class HomeController extends Controller
 
     /**
      * Summary of menu
-     * @return View
      */
     public function menu(): View
     {
@@ -46,39 +45,37 @@ class HomeController extends Controller
 
     /**
      * Summary of fullMenu
-     * @return View
      */
     public function fullMenu(): View
     {
         $categories = Category::with('menu')->get();
+
         return view('pages.full-menu', compact('categories'));
     }
 
     /**
      * Summary of blog
-     * @return View
      */
     public function blog(): View
     {
         $post = Post::paginate(6);
+
         return view('pages.sectionBlog.blog', compact('post'));
     }
 
     /**
      * Summary of show
-     * @param int $id
-     * @return View
      */
     public function show(int $id): View
     {
         $post = Post::findOrFail($id);
         $related_posts = Post::inRandomOrder()->take(2)->get();
+
         return view('pages.sectionBlog.post_detail', compact('post', 'related_posts'));
     }
 
     /**
      * Summary of contact
-     * @return View
      */
     public function contact(): View
     {
@@ -87,13 +84,11 @@ class HomeController extends Controller
 
     /**
      * Summary of reservation
-     * @param \App\Http\Requests\Main\ReservationRequest $request
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function reservation(ReservationRequest $request): RedirectResponse
     {
         Reservation::create($request->validated());
+
         return redirect()->back()->with('success', 'Your reservation has been successfully added.');
     }
-
 }

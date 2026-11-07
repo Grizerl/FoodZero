@@ -14,7 +14,7 @@
                             <h4 class="footer-section-title">Contact</h4>
                             <ul>
                                 <li class="contact-item">
-                                    <a class="contact-link" href="tel:+1+86 852 346 000">+1+86 852 346 000</a>
+                                    <a class="contact-link" href="tel:+868523460000">+86 852 346 000</a>
                                 </li>
                                 <li class="contact-item">
                                     <a class="contact-link" href="mailto:info@foodzero.com">info@foodzero.com</a>
@@ -44,7 +44,7 @@
             <div>
                 <div class="container">
                     <div class="aside-container d-flex">
-                        <span>© 2025 Inc. All rights Reserved</span>
+                        <span>© {{ date('Y') }} FoodZero. All rights reserved</span>
                         <div class="media-icon">
                             <ul class="d-flex">
                                 <li>
@@ -57,7 +57,7 @@
                                     <a class="media-link" href="#"><img height="25" width="25" src="/assets/images/media-icon/Icon_facebook.svg" alt="Media icon Facebook"></a>
                                 </li>
                                 <li>
-                                    <a class="media-link" href="#"><img height="25" width="25" src="/assets/images/media-icon/Icon_youtube.svg" alt="Media icon Youtub"></a>
+                                    <a class="media-link" href="#"><img height="25" width="25" src="/assets/images/media-icon/Icon_youtube.svg" alt="Media icon YouTube"></a>
                                 </li>
                             </ul>
                         </div>

@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', $post->title.' — FoodZero')
+@section('meta.description', \Illuminate\Support\Str::limit(strip_tags($post->description), 155))
 
 @section('link.css')
     <link rel="stylesheet" href="/assets/css/pages/extra.css">
@@ -101,12 +103,11 @@
                                     </ul>
                                 </div>    
                                 <div class="media-section">
-                                    <h1 class="fashion-title max_text">{{ $related_post->title }}</h1>
+                                    <h2 class="fashion-title max_text">{{ $related_post->title }}</h2>
                                     <p class="fashion-p">{{ $related_post->description }}</p>
                                     <div class="sc-FAfgd d-flex">
                                         <a class="fashion-btn-arrow" href="{{ route('post.details.page',$related_post['id']) }}">Read More 
-                                            <a href="{{ route('post.details.page',$related_post['id']) }}" class="arrow">&rarr;</a>
-                                        </a>
+                                            <span class="arrow" aria-hidden="true">&rarr;</span></a>
                                     </div>
                                 </div>
                             </div>

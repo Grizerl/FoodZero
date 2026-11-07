@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', 'Blog — FoodZero')
+@section('meta.description', 'Recipes, seasonal ingredients and healthy eating stories from the FoodZero kitchen.')
 
 @section('link.css')
     <link rel="stylesheet" href="/assets/css/pages/blog.css">
@@ -13,7 +15,7 @@
                     Blogs - Two Columns
                 </h1>
                 <p class="banner_lead">
-                    It is easy way to create your beatiful blog for daily
+                    It is easy way to create your beautiful blog for daily
                 </p>
             </div>
         </div>
@@ -23,6 +25,9 @@
     <div class="section-fashion">
         <div>
             <div class="container">
+                @if ($post->isEmpty())
+                    @include('partials.empty-state', ['title' => 'No posts yet', 'text' => 'Our blog is being prepared. Please check back soon.'])
+                @else
                 <div class="d-flex sc-FAvf">
                     <div class="fashion-container d-grid">
                         @foreach ($post as $posts)
@@ -45,12 +50,11 @@
                                     </ul>
                                 </div>    
                                 <div class="media-section">
-                                    <h1 class="fashion-title max-text">{{ $posts->title }}</h1>
+                                    <h2 class="fashion-title max-text">{{ $posts->title }}</h2>
                                     <p class="fashion-p">{{ $posts->description }}</p>
                                     <div class="sc-FAfgd d-flex">
                                         <a class="fashion-btn-arrow" href="{{ route('post.details.page',$posts['id']) }}">Read More 
-                                            <a href="{{ route('post.details.page',$posts['id']) }}" class="arrow">&rarr;</a>
-                                        </a>
+                                            <span class="arrow" aria-hidden="true">&rarr;</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -60,6 +64,7 @@
                 <div class="paginate">
                     {{ $post->links() }}
                 </div>
+                @endif
             </div>
         </div>
     </div>

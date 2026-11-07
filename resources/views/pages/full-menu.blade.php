@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', 'Full Menu — FoodZero')
+@section('meta.description', 'Browse the complete FoodZero menu by category: brunch, lunch and dinner dishes with prices.')
 
 @section('link.css')
 <link rel="stylesheet" href="/assets/css/pages/full-menu.css">
@@ -45,6 +47,9 @@
     <div class="section_all_menu">
         <div>
             <div class="container">
+                @if ($categories->isEmpty())
+                    @include('partials.empty-state', ['title' => 'The menu is not available yet', 'text' => 'We are preparing our dishes. Please check back soon.'])
+                @else
                 <div class="menu-content d-flex">
                 <div class="section_menu_items">
                     <ul class="menu_navbar d-flex">
@@ -59,7 +64,7 @@
                     @foreach($categories as $category)
                         <div class="category_items_content" id="category-{{ $category->id }}">
                             <div class="menu-header">
-                                <h1 class="menu-title">{{ $category->name }}</h1>
+                                <h2 class="menu-title">{{ $category->name }}</h2>
                                     <p class="menu-lead">This is a section of your menu. Give your section a brief description</p>
                                     <div class="blueberry">
                                         <img src="/assets/images/menu/starters/Blueberry.png" alt="Blueberry" loading="lazy">
@@ -84,6 +89,8 @@
                         </div>
                     @endforeach
                 </div>
+                </div>
+                @endif
             </div>
         </div>
     </div>
