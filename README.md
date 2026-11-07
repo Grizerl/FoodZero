@@ -77,3 +77,8 @@ Public-site and login styles are written in SCSS (`resources/scss/`) and compile
 ### Visual audit
 
 `tools/visual-audit` (headless Chrome via `puppeteer-core`) captures every public page at 375/768/1024/1440 px, checks console errors, 404s, horizontal scroll, `h1` count and overlaps, and pixel-diffs two screenshot sets. See the header of `audit.mjs`; run `npm install` inside that folder first.
+
+### Demo content and keys
+
+- A fresh database has no menu and no blog posts, so those pages are empty. Load demo data (idempotent, creates no users): `php artisan db:seed --class=DemoContentSeeder` (inside `workspace-84`). It is deliberately not part of `DatabaseSeeder`.
+- The admin TinyMCE editor reads its API key from `TINYMCE_API_KEY` in `.env` (`config('services.tinymce.key')`); `.env.example` leaves it empty.
