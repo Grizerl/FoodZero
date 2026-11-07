@@ -103,7 +103,7 @@
                                     </ul>
                                 </div>    
                                 <div class="media-section">
-                                    <h2 class="fashion-title max_text">{{ $related_post->title }}</h2>
+                                    <h2 class="fashion-title max-text">{{ $related_post->title }}</h2>
                                     <p class="fashion-p">{{ $related_post->description }}</p>
                                     <div class="sc-FAfgd d-flex">
                                         <a class="fashion-btn-arrow" href="{{ route('post.details.page',$related_post['id']) }}">Read More 

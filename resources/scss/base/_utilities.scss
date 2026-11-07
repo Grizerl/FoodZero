@@ -1,0 +1,12 @@
+// Layout utilities shared by every page. Emitted once (through app.scss).
+.d-flex {
+    display: flex;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.d-block {
+    display: block;
+}

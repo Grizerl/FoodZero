@@ -1,42 +1,11 @@
 /*! Compiled from resources/scss/app.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
-@charset "UTF-8";
-@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
-:root {
 
-    --background-color-main: #233000;
-    --color-navbar-text: #FFFFFF;
-    --color-title-menu: #000000;
-    --color-card-lead: #4D4D4D;
-    --background-cook: #EBF0E4;
-    --background-span: #5E6600;
-    --box-color-label: #00000014;
-    --hover-adaptive: #9CAA00;
-    --font-Rufina: 'Rufina';
-    --font-Lato: 'Lato';
-    --font-Inter: 'Inter';
-    --transition-all: all .3s ease-in-out;
-}
+@use 'base/fonts';
+@use 'abstracts' as *;
+@use 'base/reset';
+@use 'base/utilities';
 
-*,*::after,*::before {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-html {
-    font-size: 1.3rem;
-}
-
-ul {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-}
+@include root-tokens;
 
 .app {
     background-color: var(--background-color-main);
@@ -126,7 +95,7 @@ a {
     position: relative;
     overflow: hidden;
     background: transparent;
-    border: 2px solid #FFFFFF;
+    border: 2px solid $color-white;
     margin-left: 15px;
     padding-right: 30px;
     padding-left: 30px;
@@ -173,14 +142,6 @@ a {
     transition: color 0.5s ease-in-out 0.5s; 
 }
 
-.d-flex {
-    display: flex;
-}
-
-.d-grid {
-    display: grid;
-}
-
 /* Adaptive Menu */
 .burger-menu {
     position: fixed;
@@ -189,7 +150,7 @@ a {
     z-index: 99999;
     height: 100%;
     width: 100%; 
-    background: linear-gradient(rgba(35, 40, 0, 0.90), rgba(35, 48, 0, 0.6)), url(/assets/images/CloseUp.png) center/cover no-repeat;
+    background: linear-gradient($overlay-main-90, $overlay-main-60), url(#{$img-path}/CloseUp.png) center/cover no-repeat;
     transition: var(--transition-all); 
 }
 
@@ -386,7 +347,7 @@ a {
     padding: 0 10px;
 }
 
-@media screen and (max-width: 1000px) {
+@include respond-down(lg) {
    .footer-container {
         display: flex;
         justify-content: space-evenly; 
@@ -399,7 +360,7 @@ a {
     }
 }
 
-@media screen and (max-width: 700px) {
+@include respond-down(sm) {
     .content-right {
         display: none;
     }
@@ -429,7 +390,7 @@ a {
     }
 }
 
-@media screen and (max-width: 500px) {
+@include respond-down(xs) {
 
     .burger-container {
         flex-wrap: wrap;
@@ -486,7 +447,7 @@ a {
     color: var(--color-card-lead);
 }
 
-@media screen and (max-width: 500px) {
+@include respond-down(xs) {
     .empty-state {
         padding: 60px 16px;
     }

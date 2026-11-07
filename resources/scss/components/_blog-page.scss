@@ -1,0 +1,47 @@
+// Shared by pages/blog.scss, pages/extra.scss.
+@use '../abstracts' as *;
+
+@mixin styles {
+    .background_img::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--color-title-menu);
+        opacity: 0.40;
+    }
+
+    .sc-CbaHFG {
+        align-items: center;
+        justify-content: center;
+        color: var(--color-navbar-text);
+    }
+
+    .banner_container {
+        position: relative;
+        z-index: 9999;
+        text-align: center;
+    }
+
+    .sc-FAvf {
+        justify-content: center;
+    }
+
+    // Blog listing variant of the home-page card section (overrides index.scss).
+    .section-fashion {
+        padding-top: 70px;
+        padding-bottom: 60px;
+        background: var(--color-navbar-text);
+    }
+
+    .fashion-container {
+        grid-template-columns: repeat(2,1fr);
+        gap: 60px;
+    }
+
+    .navbar-media-content {
+        list-style-type: disc;
+    }
+}

@@ -1,19 +1,7 @@
 /*! Compiled from resources/scss/pages/contact.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
-@charset "UTF-8";
-@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
-:root {
-    --color-navbar-text: #FFFFFF;
-    --color-title-menu: #000000;
-    --color-card-lead: #4D4D4D;
-    --background-cook: #EBF0E4;
-    --background-player: #233000;
-    --font-Rufina: 'Rufina';
-    --font-Lato: 'Lato';
-    --font-Inter: 'Inter';
-    --transition-all: all .3s ease-in-out;
-}
+
+@use '../abstracts' as *;
+@use '../components/hours-banner';
 
 .section_contact {
    min-height: 89vh;
@@ -22,19 +10,12 @@
 .background-image {
     position: absolute; 
     inset: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
-    url(../../images/contact/Berry.png) center no-repeat;
+    background: linear-gradient($overlay-black-45, $overlay-black-45), 
+    url(#{$img-path}/contact/Berry.png) center no-repeat;
     background-size: cover;
 }
 
-.sc-DdgA {
-    align-items: center;
-}
-
-.banner_text {
-    padding-left: 10rem;
-    color: var(--color-navbar-text);
-}
+@include hours-banner.styles;
 
 .banner_title {
     font-family: var(--font-Rufina);
@@ -50,59 +31,6 @@
     font-size: 25px;
     line-height: 48px;
     letter-spacing: 0px;
-}
-
-.aside_baner_text {
-    position: absolute;
-    right: 40px;
-    flex-direction: column;
-    color: var(--color-navbar-text);
-}
-
-.sc-Fcsg {
-    padding-top: 40px;
-    padding-bottom: 8px;
-    border-bottom: 2px dotted var(--color-navbar-text);
-}
-
-.open_time {
-    padding-right: 8rem;
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 23px;
-    line-height: 48px;
-    letter-spacing: 0px;
-}
-
-.open_day {
-    padding-left: 5rem;
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 21px;
-    line-height: 48px;
-    letter-spacing: 2%;
-}
-
-.sc-FDdg {
-    padding-top: 15px;
-    padding-bottom: 5px;
-}
-
-.info_container {
-    padding-right: 5rem;
-    flex-direction: column;
-}
-
-.info_container > span {
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 33.6px;
-    letter-spacing: 2%;
-}
-
-.info_container:last-child {
-    padding-right: 0rem;
 }
 
 /* Section contact */
@@ -208,7 +136,7 @@
     transition: 0s
 }
 
-@media screen and (max-width:810px) {
+@include respond-down(md) {
     .banner_text {
         padding: 0
     }
@@ -237,7 +165,7 @@
     }
 }
 
-@media screen and (max-width: 580px) {
+@include respond-down(sm) {
     .open_time,.open_day,.info_container {
         padding: 0;
     }
@@ -266,7 +194,7 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@include respond-down(xs) {
     .banner_title {
         font-size: 60px;
         line-height: 87px;

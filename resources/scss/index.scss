@@ -1,4 +1,8 @@
 /*! Compiled from resources/scss/index.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
+
+@use 'abstracts' as *;
+@use 'components/blog-card';
+
 /* Banner Section */
 .banner-content {
     display: flex;
@@ -11,7 +15,7 @@
 .banner-slogan {
     font-family: var(--font-Rufina);
     font-weight: 700;
-    font-size: 85px;
+    @include fluid-type(48px, font-size(hero));
     letter-spacing: 0px;
     padding-top: 15px;
     padding-bottom: 20px;
@@ -81,10 +85,6 @@
 .section-diet-today {
     padding-top: 60px;
     padding-bottom: 40px;
-}
-
-.d-grid {
-    display: grid;
 }
 
 .sc-Adfg {
@@ -174,7 +174,7 @@
     font-size: 30px;
     line-height: 50px;
     letter-spacing: 0px;
-    border-bottom: 3px dotted #000000;
+    border-bottom: 3px dotted $color-black;
 }
 
 .text-right {
@@ -204,10 +204,6 @@
 /* Section excellent-cook */
 .section-excellent-cook {
     background: var(--background-cook);
-}
-
-.d-flex {
-    display: flex;
 }
 
 .cook-container {
@@ -274,8 +270,9 @@
     width: 100%;
 }
 
+// Centered column: the block children are centered through auto margins (see .layers-text).
 .text-centre {
-    text-align: -webkit-center;
+    text-align: center;
 }
 
 .section-layers {
@@ -344,6 +341,7 @@
     line-height: 25.6px;
     letter-spacing: 1px;
     color: var(--color-card-lead);
+    margin-inline: auto;
 }
 
 /* Section fashion */
@@ -365,40 +363,11 @@
     gap: 40px;
 }
 
-.fashion-img {
-    display: inline-block;
-    max-width: max-content;
-    position: relative;
-}
+@include blog-card.styles;
 
 .fashion-img img {
     object-fit: cover;
     width: 100%;
-}
-
-.fashion-label {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding-top: 8px;
-    padding-right: 35px;
-    padding-left: 35px;
-    padding-bottom: 8px;
-    background: var(--background-span);
-    box-shadow: 1px 1px 12px 0px var(--box-color-label);
-    color: var(--color-navbar-text);
-}
-
-.fashion-label span {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 19px;
-    letter-spacing: 0px;
-}
-
-.fashion-info-content {
-    padding: 10px 0px 13px 0px;
-    align-items: center;
 }
 
 .navbar-media-content {
@@ -406,61 +375,7 @@
     list-style-type: disc;
 }
 
-.navbar-media-content li:first-child {
-    list-style-type: none;
-}
-
-.media-item {
-    margin: 0px 25px 0px 5px;
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 21.6px;
-    letter-spacing: 2%;
-    color: var(--background-span);
-}   
-
-.fashion-title {
-    padding-bottom: 8px;
-    font-family: var(--font-Rufina);
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 40px;
-    letter-spacing: 0px;
-    border-bottom: 3px dotted var(--color-title-menu);
-    color: var(--color-title-menu);
-}
-
-.fashion-p {
-    padding-top: 10px;
-    font-family: var(--font-Lato);
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 30.8px;
-    letter-spacing: 2%;
-    color: var(--color-card-lead);
-}
-
-.sc-FAfgd {
-    align-items: anchor-center;
-}
-
-.fashion-btn-arrow {
-    padding-right: 8px;
-    font-family:var(--font-Lato);
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 33.6px;
-    letter-spacing: 2%;
-    color: var(--color-title-menu);
-}
-
-.arrow {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--background-color-main);
-    cursor: pointer;
-}
+   
 
 /* Section reservation */
 .section-reservation {
@@ -479,7 +394,7 @@
     text-align: center;
     font-family: var(--font-Rufina);
     font-weight: 700;
-    font-size: 75px;
+    @include fluid-type(55px, font-size(display));
     line-height: 120px;
     letter-spacing: 5px;
     color: var(--color-title-menu);
@@ -513,7 +428,7 @@
     margin-left: 15px;
     padding-right: 20px;
     padding-left: 20px;
-    border: 1.5px solid #000000;
+    border: 1.5px solid $color-black;
     background-color: transparent;
     font-family: var(--font-Lato);
     font-weight: 500;
@@ -542,11 +457,11 @@ option {
     cursor: pointer;
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 9px $color-button-shadow;
 }
   
 .btn-reservation:active {
-    box-shadow: 0 5px #666;
+    box-shadow: 0 5px $color-button-shadow-active;
     transform: translateY(4px);
 }
 
@@ -706,23 +621,21 @@ option {
 }
 
 .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
     animation-name: fade;
-    animation-duration: 1.5;
-}
-
-@-webkit-keyframes fade {
-    from{opacity: .4;}
-    to{opacity: 1;}
+    animation-duration: 1.5s;
 }
 
 @keyframes fade {
-    from{opacity: .4;}
-    to{opacity: 1;}
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
-@media screen and (max-width: 1150px) {
+@include respond-down(xl) {
     .banner-content {
         align-items: center;
         justify-content: center;
@@ -732,10 +645,6 @@ option {
     .sc-scgFG {
         text-align: center;
         max-width: 1000px;
-    }
-
-    .banner-slogan {
-        font-size: 82px;
     }
 
     .banner-text {
@@ -757,7 +666,7 @@ option {
     }
 }
 
-@media screen and (max-width: 950px) {
+@include respond-down(lg) {
     .fashion-container,.menu-list,.sc-Adfg  {
         display: grid;
         grid-template-columns: repeat(1,1fr);
@@ -802,7 +711,7 @@ option {
     }
 }
 
-@media screen and (max-width: 700px) {
+@include respond-down(sm) {
 
     .block-seasonings {
         right: 0;
@@ -819,7 +728,6 @@ option {
     }
 
     .headline-2,.banner-slogan {
-        font-size: 70px;
         line-height: 80px
     }
 
@@ -836,13 +744,10 @@ option {
     }
 }
 
-@media screen and (max-width: 500px) {
+@include respond-down(xs) {
     
     .block-seasonings {
         display: none;
-    }
-    .banner-slogan {
-        font-size: 48px;
     }
 
     .section-title,.energy-title {
@@ -865,7 +770,6 @@ option {
 
     .headline-2 {
         line-height: 60px;
-        font-size: 55px;
     }
 
     .lead,.card-lead {

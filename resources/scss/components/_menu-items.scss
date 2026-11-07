@@ -1,0 +1,80 @@
+// Shared by pages/menu.scss, pages/full-menu.scss.
+@use '../abstracts' as *;
+
+@mixin styles {
+    .section_all_menu {
+        position: relative;
+        background: var(--color-navbar-text);
+    }
+
+    .pastries-content {
+        position: relative;
+    }
+
+    .menu-title {
+        font-family: var(--font-Rufina);
+        font-weight: 700;
+        font-size: 65px;
+        line-height: 120px;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
+    .menu-lead {
+        font-family: var(--font-Lato);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 33.6px;
+        letter-spacing: 2%;
+        text-align: center;
+        color: var(--color-card-lead);
+    }
+
+    .menu-bottom {
+        grid-template-columns: repeat(2,1fr);
+        gap: 40px;
+        padding-top: 50px;
+    }
+
+    .dish-images {
+        height: 100%;
+        width: 90%;
+        object-fit: cover;
+    }
+
+    .product-price {
+        font-family: var(--font-Rufina);
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 40px;
+        letter-spacing: 0px;
+        text-align: right;
+        border-bottom: 4px dotted $color-black;
+    }
+
+    .dish-container {
+        padding-top: 20px;
+        padding-bottom: 15px;
+    }
+
+    .dish-name {
+        font-family: var(--font-Rufina);
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 50px;
+        letter-spacing: 0px;
+    }
+
+    .max-wid-title {
+        max-width: 400px;
+    }
+
+    .dish-description {
+        font-family:var(--font-Lato);
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 50px;
+        letter-spacing: 2%;
+        color: var(--color-card-lead);
+    }
+}

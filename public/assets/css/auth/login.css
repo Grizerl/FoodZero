@@ -1,18 +1,8 @@
 /*! Compiled from resources/scss/auth/login.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
 @import "https://fonts.googleapis.com/css2?family=Arial&display=swap";
-:root {
-  --color-logo: #ff5e00;
-  --background-body: #f0f4f8;
-  --color-label: #333;
-  --background-input: #f9f9f9;
-  --color-error: rgb(221, 10, 10);
-  --color-container: #ffffff;
-  --font-Arial: "Arial", sans-serif;
-}
-
 body {
-  font-family: var(--font-Arial);
-  background-color: var(--background-body);
+  font-family: "Arial", sans-serif;
+  background-color: #f0f4f8;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -42,13 +32,13 @@ a {
 .navbar-logo {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--color-logo);
+  color: #ff5e00;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .login-container {
-  background-color: var(--color-container);
+  background-color: #fff;
   padding: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
@@ -65,7 +55,7 @@ a {
 .input-group label {
   display: block;
   font-size: 1.1rem;
-  color: var(--color-label);
+  color: #333;
   margin-bottom: 16px;
   font-weight: 600;
 }
@@ -77,23 +67,23 @@ a {
   border: 1px solid #ddd;
   border-radius: 8px;
   box-sizing: border-box;
-  background-color: var(--background-input);
+  background-color: #f9f9f9;
   transition: all 0.3s ease;
 }
 
 .input-group input:focus {
-  border-color: var(--color-logo);
+  border-color: #ff5e00;
   outline: none;
   background-color: #fff;
 }
 
 .input-group input.is-invalid {
-  border: 1px solid var(--color-error);
-  background-color: var(--background-input);
+  border: 1px solid rgb(221, 10, 10);
+  background-color: #f9f9f9;
 }
 
 .error {
-  color: var(--color-error);
+  color: rgb(221, 10, 10);
   font-size: 0.9rem;
   position: absolute;
   bottom: -20px;
@@ -106,7 +96,7 @@ a {
   width: 100%;
   padding: 14px;
   font-size: 1.2rem;
-  background-color: var(--color-logo);
+  background-color: #ff5e00;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -116,7 +106,7 @@ a {
 }
 
 .login-btn:hover {
-  background-color: var(--color-logo);
+  background-color: #ff5e00;
   transform: translateY(-2px);
 }
 
@@ -127,15 +117,15 @@ a {
 
 .alert-danger {
   padding-top: 10px;
-  color: var(--color-error);
+  color: rgb(221, 10, 10);
 }
 
 .is-invalid {
-  border: 2px solid var(--color-error);
+  border: 2px solid rgb(221, 10, 10);
 }
 
 /* Section Adaptive */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 480px) {
   .login-container {
     padding: 20px;
     width: 100%;

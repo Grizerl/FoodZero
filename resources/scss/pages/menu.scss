@@ -1,18 +1,7 @@
 /*! Compiled from resources/scss/pages/menu.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
-@charset "UTF-8";
-@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
-:root {
-    --color-navbar-text: #FFFFFF;
-    --color-title-menu: #000000;
-    --color-card-lead: #4D4D4D;
-    --background-cook: #EBF0E4;
-    --font-Rufina: 'Rufina';
-    --font-Lato: 'Lato';
-    --font-Inter: 'Inter';
-    --transition-all: all .3s ease-in-out;
-}
+
+@use '../abstracts' as *;
+@use '../components/menu-items';
 
 .section-menu-banner {
     min-height: 89vh;
@@ -21,7 +10,7 @@
 .background-img {
     position: absolute;
     inset: 0;
-    background: #00000075 url(../../images/menu/Dish.png) center no-repeat;
+    background: $overlay-black-46 url(#{$img-path}/menu/Dish.png) center no-repeat;
     background-size: cover;
 }
 
@@ -57,10 +46,7 @@
 }
 
 /* Section Menu */
-.section_all_menu {
-    position: relative;
-    background: var(--color-navbar-text);
-}
+@include menu-items.styles;
 
 .menu-content {
     padding-bottom: 60px;
@@ -73,86 +59,13 @@
     padding-bottom: 50px;
 }
 
-.pastries-content {
-    position: relative;
-}
-
-.menu-title {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 65px;
-    line-height: 120px;
-    letter-spacing: 0px;
-    text-align: center;
-}
-
-.menu-lead {
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 33.6px;
-    letter-spacing: 2%;
-    text-align: center;
-    color: var(--color-card-lead);
-}
-
 .blueberry,.avocado {
     position: absolute;
     top: 0;
     right: 200px;
 }
 
-.menu-bottom {
-    grid-template-columns: repeat(2,1fr);
-    gap: 40px;
-    padding-top: 50px;
-}
-
-.dish-images {
-    height: 100%;
-    width: 90%;
-    object-fit: cover;
-}
-
-.d-block {
-    display: block;
-}
-
-.product-price {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 40px;
-    letter-spacing: 0px;
-    text-align: right;
-    border-bottom: 4px dotted #000000;
-}
-
-.dish-container {
-    padding-top: 20px;
-    padding-bottom: 15px;
-}
-
-.dish-name {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 35px;
-    line-height: 50px;
-    letter-spacing: 0px;
-} 
-
-.max-wid-title {
-    max-width: 400px;
-}
-
-.dish-description {
-    font-family:var(--font-Lato);
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 50px;
-    letter-spacing: 2%;
-    color: var(--color-card-lead);
-}
+ 
 
 .btm__menu {
     margin-top: 3rem;
@@ -197,7 +110,7 @@
     right: 0;
 }
 
-@media screen and (max-width: 1000px) {
+@include respond-down(lg) {
     .background-content {
         text-align: center;
         padding: 0;
@@ -208,7 +121,7 @@
     }
 }
 
-@media screen and (max-width: 700px) {
+@include respond-down(sm) {
     .menu-bottom {
         grid-template-columns: repeat(1, 1fr);
         gap: 20px;
@@ -227,7 +140,7 @@
     }
 }
 
-@media screen and (max-width: 450px) {
+@include respond-down(xs) {
 
     .banner-slogan {
         font-size: 60px;

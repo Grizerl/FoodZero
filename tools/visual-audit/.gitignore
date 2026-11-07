@@ -3,4 +3,7 @@
 /baseline-original
 /current
 /diff
+/cmp-*
+/login-check
 /report-*.json
+/pairs.mjs

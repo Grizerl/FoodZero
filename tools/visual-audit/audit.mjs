@@ -163,6 +163,7 @@ async function burgerCheck(browser) {
 async function settle(page) {
     await page.evaluate(async () => {
         document.querySelectorAll('img[loading="lazy"]').forEach((i) => (i.loading = 'eager'));
+        document.getAnimations().forEach((a) => { try { a.finish(); } catch (e) {} });
         const imgs = [...document.images];
         await Promise.all(imgs.map((i) => (i.complete ? Promise.resolve() : new Promise((r) => { i.onload = i.onerror = r; }))));
         await Promise.all(imgs.map((i) => (i.decode ? i.decode().catch(() => {}) : null)));
@@ -178,10 +179,10 @@ const browser = await puppeteer.launch({
 });
 
 const report = [];
-for (const name of only) {
-    const url = PAGES[name];
-    const raw = await rawHtmlChecks(BASE + url).catch((e) => ({ error: e.message }));
-    for (const w of WIDTHS) {
+
+/** Opens one page at one width. The admin login is throttled (5 req/min), so on HTTP 429 wait and retry. */
+async function visit(url, w) {
+    for (let attempt = 0; attempt < 4; attempt++) {
         const page = await browser.newPage();
         await page.setViewport({ width: w, height: 900 });
         const problems = new Set();
@@ -194,6 +195,20 @@ for (const name of only) {
         } catch (e) {
             problems.add('goto: ' + e.message);
         }
+        if (status === 429 && attempt < 3) {
+            await page.close();
+            await new Promise((r) => setTimeout(r, 65000));
+            continue;
+        }
+        return { page, status, problems };
+    }
+}
+
+for (const name of only) {
+    const url = PAGES[name];
+    const raw = name === 'login' ? {} : await rawHtmlChecks(BASE + url).catch((e) => ({ error: e.message }));
+    for (const w of WIDTHS) {
+        const { page, status, problems } = await visit(url, w);
         await settle(page);
         const dom = await page.evaluate(domChecks, MIN_SIDE_PADDING);
         if (!args['no-shots']) await page.screenshot({ path: path.join(here, OUT, `${name}-${w}.png`), fullPage: true });

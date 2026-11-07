@@ -11,7 +11,7 @@
 .banner-slogan {
   font-family: var(--font-Rufina);
   font-weight: 700;
-  font-size: 85px;
+  font-size: clamp(48px, 48px + 4.7741935484vw - 17.9032258065px, 85px);
   letter-spacing: 0px;
   padding-top: 15px;
   padding-bottom: 20px;
@@ -82,10 +82,6 @@
 .section-diet-today {
   padding-top: 60px;
   padding-bottom: 40px;
-}
-
-.d-grid {
-  display: grid;
 }
 
 .sc-Adfg {
@@ -174,7 +170,7 @@
   font-size: 30px;
   line-height: 50px;
   letter-spacing: 0px;
-  border-bottom: 3px dotted #000000;
+  border-bottom: 3px dotted #000;
 }
 
 .text-right {
@@ -204,10 +200,6 @@
 /* Section excellent-cook */
 .section-excellent-cook {
   background: var(--background-cook);
-}
-
-.d-flex {
-  display: flex;
 }
 
 .cook-container {
@@ -276,7 +268,7 @@
 }
 
 .text-centre {
-  text-align: -webkit-center;
+  text-align: center;
 }
 
 .section-layers {
@@ -345,6 +337,7 @@
   line-height: 25.6px;
   letter-spacing: 1px;
   color: var(--color-card-lead);
+  margin-inline: auto;
 }
 
 /* Section fashion */
@@ -372,11 +365,6 @@
   position: relative;
 }
 
-.fashion-img img {
-  object-fit: cover;
-  width: 100%;
-}
-
 .fashion-label {
   position: absolute;
   top: 10px;
@@ -400,11 +388,6 @@
 .fashion-info-content {
   padding: 10px 0px 13px 0px;
   align-items: center;
-}
-
-.navbar-media-content {
-  flex-wrap: wrap;
-  list-style-type: disc;
 }
 
 .navbar-media-content li:first-child {
@@ -443,7 +426,7 @@
 }
 
 .sc-FAfgd {
-  align-items: anchor-center;
+  align-items: center;
 }
 
 .fashion-btn-arrow {
@@ -461,6 +444,16 @@
   font-weight: 700;
   color: var(--background-color-main);
   cursor: pointer;
+}
+
+.fashion-img img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.navbar-media-content {
+  flex-wrap: wrap;
+  list-style-type: disc;
 }
 
 /* Section reservation */
@@ -482,7 +475,7 @@
   text-align: center;
   font-family: var(--font-Rufina);
   font-weight: 700;
-  font-size: 75px;
+  font-size: clamp(55px, 55px + 2.5806451613vw - 9.6774193548px, 75px);
   line-height: 120px;
   letter-spacing: 5px;
   color: var(--color-title-menu);
@@ -516,7 +509,7 @@
   margin-left: 15px;
   padding-right: 20px;
   padding-left: 20px;
-  border: 1.5px solid #000000;
+  border: 1.5px solid #000;
   background-color: transparent;
   font-family: var(--font-Lato);
   font-weight: 500;
@@ -709,20 +702,10 @@ option {
 }
 
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
   animation-name: fade;
-  animation-duration: 1.5;
+  animation-duration: 1.5s;
 }
 
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @keyframes fade {
   from {
     opacity: 0.4;
@@ -741,9 +724,6 @@ option {
     text-align: center;
     max-width: 1000px;
   }
-  .banner-slogan {
-    font-size: 82px;
-  }
   .banner-text {
     text-align: center;
     font-size: 23px;
@@ -759,7 +739,7 @@ option {
     gap: 0px;
   }
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
   .fashion-container, .menu-list, .sc-Adfg {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -807,7 +787,6 @@ option {
     grid-template-columns: repeat(1, 1fr);
   }
   .headline-2, .banner-slogan {
-    font-size: 70px;
     line-height: 80px;
   }
   .headline-2 {
@@ -820,12 +799,9 @@ option {
     font-size: 30px;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 480px) {
   .block-seasonings {
     display: none;
-  }
-  .banner-slogan {
-    font-size: 48px;
   }
   .section-title, .energy-title {
     font-size: 40px;
@@ -843,7 +819,6 @@ option {
   }
   .headline-2 {
     line-height: 60px;
-    font-size: 55px;
   }
   .lead, .card-lead {
     font-size: 15px;

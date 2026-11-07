@@ -1,19 +1,5 @@
 @charset "UTF-8";
 /*! Compiled from resources/scss/pages/menu.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
-@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
-:root {
-  --color-navbar-text: #FFFFFF;
-  --color-title-menu: #000000;
-  --color-card-lead: #4D4D4D;
-  --background-cook: #EBF0E4;
-  --font-Rufina: "Rufina";
-  --font-Lato: "Lato";
-  --font-Inter: "Inter";
-  --transition-all: all .3s ease-in-out;
-}
-
 .section-menu-banner {
   min-height: 89vh;
 }
@@ -21,7 +7,7 @@
 .background-img {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4588235294) url(../../images/menu/Dish.png) center no-repeat;
+  background: rgba(0, 0, 0, 0.4588235294) url(/assets/images/menu/Dish.png) center no-repeat;
   background-size: cover;
 }
 
@@ -62,17 +48,6 @@
   background: var(--color-navbar-text);
 }
 
-.menu-content {
-  padding-bottom: 60px;
-  align-items: center;
-  flex-direction: column;
-}
-
-.starters-content, .mains-content, .pastries-content {
-  padding-top: 60px;
-  padding-bottom: 50px;
-}
-
 .pastries-content {
   position: relative;
 }
@@ -96,12 +71,6 @@
   color: var(--color-card-lead);
 }
 
-.blueberry, .avocado {
-  position: absolute;
-  top: 0;
-  right: 200px;
-}
-
 .menu-bottom {
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
@@ -114,10 +83,6 @@
   object-fit: cover;
 }
 
-.d-block {
-  display: block;
-}
-
 .product-price {
   font-family: var(--font-Rufina);
   font-weight: 700;
@@ -125,7 +90,7 @@
   line-height: 40px;
   letter-spacing: 0px;
   text-align: right;
-  border-bottom: 4px dotted #000000;
+  border-bottom: 4px dotted #000;
 }
 
 .dish-container {
@@ -152,6 +117,23 @@
   line-height: 50px;
   letter-spacing: 2%;
   color: var(--color-card-lead);
+}
+
+.menu-content {
+  padding-bottom: 60px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.starters-content, .mains-content, .pastries-content {
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+.blueberry, .avocado {
+  position: absolute;
+  top: 0;
+  right: 200px;
 }
 
 .btm__menu {
@@ -221,7 +203,7 @@
     font-size: 23px;
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
   .banner-slogan {
     font-size: 60px;
   }

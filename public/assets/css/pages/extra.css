@@ -1,29 +1,4 @@
 /*! Compiled from resources/scss/pages/extra.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
-@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
-:root {
-  --color-background-section: #FFFFFF;
-  --color-text-lead: #4D4D4D;
-  --color-category-name: #070707;
-  --font-Rufina: "Rufina";
-  --font-Lato: "Lato";
-  --font-Inter: "Inter";
-  --transition-all: all .3s ease-in-out;
-}
-
-ul {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-.d-flex {
-  display: flex;
-}
-
 .al-centre {
   align-items: center;
 }
@@ -43,7 +18,7 @@ a {
 .background_img {
   position: absolute;
   inset: 0;
-  background: url(../../../assets/images/blog/detail/Raw_Meat.png) center/cover no-repeat;
+  background: url(/assets/images/blog/detail/Raw_Meat.png) center/cover no-repeat;
 }
 
 .background_img::after {
@@ -67,6 +42,25 @@ a {
   position: relative;
   z-index: 9999;
   text-align: center;
+}
+
+.sc-FAvf {
+  justify-content: center;
+}
+
+.section-fashion {
+  padding-top: 70px;
+  padding-bottom: 60px;
+  background: var(--color-navbar-text);
+}
+
+.fashion-container {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
+
+.navbar-media-content {
+  list-style-type: disc;
 }
 
 .banner_title {
@@ -103,7 +97,7 @@ a {
   color: var(--color-text-lead);
 }
 
-.max-width {
+.main-text {
   max-width: 850px;
 }
 
@@ -139,14 +133,15 @@ a {
   color: var(--color-text-lead);
 }
 
-.max-text {
+.aside-text,
+.foto_text {
   max-width: 1000px;
 }
 
 /* Aside Pole */
 .background_foto_in_media_pole {
   height: 50vh;
-  background: url(../../../assets/images/blog/detail/Holding.png) center/cover no-repeat;
+  background: url(/assets/images/blog/detail/Holding.png) center/cover no-repeat;
 }
 
 .foto_text {
@@ -160,117 +155,7 @@ a {
 }
 
 /* Section fashion */
-.section-fashion {
-  padding-top: 70px;
-  padding-bottom: 60px;
-  background: var(--color-navbar-text);
-}
-
-.sc-FAvf {
-  justify-content: center;
-}
-
-.fashion-container {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
-}
-
-.fashion-img {
-  display: inline-block;
-  max-width: max-content;
-  position: relative;
-}
-
-.fashion-label {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding-top: 8px;
-  padding-right: 35px;
-  padding-left: 35px;
-  padding-bottom: 8px;
-  background: var(--background-span);
-  box-shadow: 1px 1px 12px 0px var(--box-color-label);
-  color: var(--color-navbar-text);
-}
-
-.fashion-label span {
-  font-family: var(--font-Rufina);
-  font-weight: 700;
-  font-size: 19px;
-  letter-spacing: 0px;
-}
-
-.fashion-info-content {
-  padding: 10px 0px 13px 0px;
-  align-items: center;
-}
-
-.navbar-media-content {
-  list-style-type: disc;
-}
-
-.navbar-media-content li:first-child {
-  list-style-type: none;
-}
-
-.media-item {
-  margin: 0px 25px 0px 5px;
-  font-family: var(--font-Lato);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 21.6px;
-  letter-spacing: 2%;
-  color: var(--background-span);
-}
-
-.fashion-title {
-  padding-bottom: 8px;
-  font-family: var(--font-Rufina);
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 40px;
-  letter-spacing: 0px;
-  border-bottom: 3px dotted var(--color-title-menu);
-  color: var(--color-title-menu);
-}
-
-.fashion-p {
-  padding-top: 10px;
-  font-family: var(--font-Lato);
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 30.8px;
-  letter-spacing: 2%;
-  color: var(--color-card-lead);
-}
-
-.sc-FAfgd {
-  align-items: anchor-center;
-}
-
-.fashion-btn-arrow {
-  padding-right: 8px;
-  font-family: var(--font-Lato);
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 33.6px;
-  letter-spacing: 2%;
-  color: var(--color-title-menu);
-}
-
-.arrow {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--background-color-main);
-  cursor: pointer;
-}
-
-.max_text {
-  max-width: 500px;
-}
-
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: 1150px) {
   .adaptive-img {
     padding: 4px;
     width: 90%;
@@ -286,7 +171,7 @@ a {
     text-align: right;
   }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1150px) {
   .fashion-container {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -330,7 +215,7 @@ a {
     list-style-type: none;
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
   .section_detail_banner {
     min-height: 86vh;
   }

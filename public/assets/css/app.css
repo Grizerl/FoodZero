@@ -1,23 +1,10 @@
 /*! Compiled from resources/scss/app.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
-@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
-:root {
-  --background-color-main: #233000;
-  --color-navbar-text: #FFFFFF;
-  --color-title-menu: #000000;
-  --color-card-lead: #4D4D4D;
-  --background-cook: #EBF0E4;
-  --background-span: #5E6600;
-  --box-color-label: #00000014;
-  --hover-adaptive: #9CAA00;
-  --font-Rufina: "Rufina";
-  --font-Lato: "Lato";
-  --font-Inter: "Inter";
-  --transition-all: all .3s ease-in-out;
-}
-
-*, *::after, *::before {
+@import 'https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -34,6 +21,37 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-block {
+  display: block;
+}
+
+:root {
+  --background-color-main: #233000;
+  --color-navbar-text: #fff;
+  --color-title-menu: #000;
+  --color-card-lead: #4d4d4d;
+  --background-cook: #ebf0e4;
+  --background-span: #5e6600;
+  --box-color-label: rgba(0, 0, 0, 0.0784313725);
+  --hover-adaptive: #9caa00;
+  --background-player: #233000;
+  --color-background-section: #fff;
+  --color-text-lead: #4d4d4d;
+  --color-category-name: #070707;
+  --font-Rufina: 'Rufina';
+  --font-Lato: 'Lato';
+  --font-Inter: 'Inter';
+  --transition-all: all 0.3s ease-in-out;
 }
 
 .app {
@@ -124,7 +142,7 @@ a {
   position: relative;
   overflow: hidden;
   background: transparent;
-  border: 2px solid #FFFFFF;
+  border: 2px solid #fff;
   margin-left: 15px;
   padding-right: 30px;
   padding-left: 30px;
@@ -169,14 +187,6 @@ a {
 .btn-reservations:hover a {
   color: var(--color-title-menu);
   transition: color 0.5s ease-in-out 0.5s;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.d-grid {
-  display: grid;
 }
 
 /* Adaptive Menu */
@@ -419,7 +429,7 @@ a {
     margin-bottom: 10px;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 480px) {
   .burger-container {
     flex-wrap: wrap;
   }
@@ -467,7 +477,7 @@ a {
   color: var(--color-card-lead);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 480px) {
   .empty-state {
     padding: 60px 16px;
   }

@@ -1,19 +1,6 @@
 /*! Compiled from resources/scss/pages/about.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
-@charset "UTF-8";
-@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
-:root {
-    --color-navbar-text: #FFFFFF;
-    --color-title-menu: #000000;
-    --color-card-lead: #4D4D4D;
-    --background-cook: #EBF0E4;
-    --background-player: #233000;
-    --font-Rufina: 'Rufina';
-    --font-Lato: 'Lato';
-    --font-Inter: 'Inter';
-    --transition-all: all .3s ease-in-out;
-}
+
+@use '../abstracts' as *;
 
 .section_about_banner {
     min-height: 89vh;
@@ -22,7 +9,7 @@
 .background-img {
     position: absolute;
     inset: 0;
-    background: #00000075 url(../../images/about/Wooden.png) center / cover no-repeat;
+    background: $overlay-black-46 url(#{$img-path}/about/Wooden.png) center / cover no-repeat;
 }
 
 .sc_FDFf {
@@ -51,7 +38,9 @@
     letter-spacing: 0px;
 }
 
-.max-text {
+.background-text,
+.story_lead,
+.stage_description {
     max-width: 550px;
 }
 
@@ -106,10 +95,6 @@
     justify-content: space-around;
 }
 
-.text-centre {
-    text-align: center;
-}
-
 .role {
     font-family: var(--font-Rufina);
     font-weight: 700;
@@ -150,7 +135,7 @@
 .background-foto {
     position: relative;
     height: 75vh;
-    background: url(../../images/about/FreeFood.png) center / cover no-repeat;
+    background: url(#{$img-path}/about/FreeFood.png) center / cover no-repeat;
 }
 
 .background-foto::after {
@@ -267,7 +252,7 @@
     color: var(--color-card-lead);
 }
 
-@media screen and (max-width:1440px) {
+@include respond-down(xxl) {
     .background-content {
         padding: 0;
     }
@@ -277,7 +262,7 @@
     }
 }
 
-@media screen and (max-width:1000px) {
+@include respond-down(lg) {
     .bottom_container {
         bottom: 0;
     }
@@ -292,7 +277,7 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@include respond-down(md) {
     .member_content {
         display: grid;
     }
@@ -324,11 +309,9 @@
         text-align: center;
     }
 
-    .text-centre {
-        text-align: center;
-    }
-
-    .max-text {
+    .background-text,
+    .story_lead,
+    .stage_description {
         max-width: 600px;
     }
 
@@ -355,7 +338,7 @@
     }
 }
 
-@media screen and (max-width: 450px) {
+@include respond-down(xs) {
     .section_about_banner {
         min-height: 86vh;
     }
