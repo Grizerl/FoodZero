@@ -1,0 +1,31 @@
+// Type scale + fluid sizing for the biggest headings.
+@use 'sass:math';
+@use 'sass:map';
+
+$font-sizes: (
+    'caption': 12px,
+    'small': 15px,
+    'body': 17px,
+    'lead': 19px,
+    'h4': 25px,
+    'h3': 30px,
+    'h2': 40px,
+    'h1': 55px,
+    'display': 75px,
+    'hero': 85px,
+);
+
+@function font-size($step) {
+    @if not map.has-key($font-sizes, $step) {
+        @error 'Unknown font size `#{$step}`. Use one of: #{map.keys($font-sizes)}.';
+    }
+
+    @return map.get($font-sizes, $step);
+}
+
+// Linear interpolation between $min (at $min-vw) and $max (at $max-vw), clamped to both.
+@mixin fluid-type($min, $max, $min-vw: 375px, $max-vw: 1150px) {
+    $slope: math.div(math.div($max - $min, 1px), math.div($max-vw - $min-vw, 1px));
+
+    font-size: clamp(#{$min}, calc(#{$min} + #{$slope * 100}vw - #{$slope * math.div($min-vw, 1px)}px), #{$max});
+}

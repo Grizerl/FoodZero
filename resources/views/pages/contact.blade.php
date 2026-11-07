@@ -1,7 +1,9 @@
 @extends('layouts.app')
+@section('title', 'Contact & Reservations — FoodZero')
+@section('meta.description', 'Get in touch with FoodZero by phone or email, find us on the map and reserve your table.')
 
 @section('link.css')
-<link rel="stylesheet" href="/assets/css/pages/contact.css">
+<link rel="stylesheet" href="@assetv('assets/css/pages/contact.css')">
 @endsection
 
 @section('content')
@@ -53,7 +55,7 @@
                         <div class="text_container">
                             <p class="img_public_text">We can be contacted via 
                                 email <a class="get_in_touch">info@foodzero.com</a> 
-                                or telephone on <a class="get_in_touch">+86 852 346 000</a> 
+                                or telephone on <a class="get_in_touch" href="tel:+868523460000">+86 852 346 000</a> 
                             </p>
                         </div>
                 </div>

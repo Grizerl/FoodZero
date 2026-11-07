@@ -1,0 +1,81 @@
+// Dish card (name ..... price + description). Emitted once, from index.scss, so every page has it.
+@use '../abstracts' as *;
+
+@mixin styles {
+    // Dish cards ----------------------------------------------------------------
+    .dish-card {
+        padding: 22px 26px 24px;
+        border-radius: $radius-md;
+        background: var(--color-navbar-text);
+        box-shadow: $shadow-card;
+        transition: $transition-card;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: $shadow-card-hover;
+        }
+
+        @include reduce-motion {
+            transition: none;
+
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+
+    .dish-card__top {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+    }
+
+    .dish-name {
+        font-family: var(--font-Rufina);
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.3;
+        color: var(--color-title-menu);
+    }
+
+    // The dotted leader between name and price keeps the site's dotted-line motif.
+    .dish-card__dots {
+        flex: 1;
+        min-width: 24px;
+        border-bottom: 3px dotted var(--color-card-lead);
+        opacity: 0.45;
+        transform: translateY(-5px);
+    }
+
+    .product-price {
+        font-family: var(--font-Rufina);
+        font-weight: 700;
+        font-size: 24px;
+        white-space: nowrap;
+        color: var(--background-span);
+    }
+
+    .dish-description {
+        padding-top: 8px;
+        font-family: var(--font-Lato);
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--color-card-lead);
+    }
+
+    @include respond-down(xs) {
+            .dish-card {
+                padding: 18px 18px 20px;
+            }
+
+            .dish-name,
+            .product-price {
+                font-size: 21px;
+            }
+
+            .dish-description {
+                font-size: 16px;
+            }
+    }
+}

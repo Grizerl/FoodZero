@@ -3,7 +3,7 @@
         <div>
             <div class="container">
                 <div class="reservation-container d-flex">
-                    <h1 class="headline-2">Make a Reservation</h1>
+                    <h2 class="headline-2">Make a Reservation</h2>
                     <p class="lead">Get in touch with restaurant</p>
                     <div class="form-group">
                     <form action="{{ route('reservation.submit') }}" class="reservation-form d-grid" method="post">

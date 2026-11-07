@@ -1,0 +1,15 @@
+/node_modules
+/baseline
+/baseline-original
+/current
+/diff
+/cmp-*
+/login-check
+/report-*.json
+/pairs.mjs
+/baseline-*
+/rects.mjs
+/shot.mjs
+/before-*.png
+/shots
+/final

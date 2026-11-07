@@ -1,0 +1,352 @@
+// Header menu button + full-screen menu. Emitted once, from app.scss.
+@use '../abstracts' as *;
+
+@mixin styles {
+    // The round "hamburger" button next to the logo -----------------------------
+    .adaptive-icon {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        flex: none;
+        width: 48px;
+        height: 48px;
+        margin-left: 20px;
+        padding: 0 13px;
+        border: 1px solid $line-on-dark;
+        border-radius: 50%;
+        background: transparent;
+        color: var(--color-navbar-text);
+        cursor: pointer;
+        transition: background-color 0.25s, border-color 0.25s;
+
+        &:hover {
+            border-color: var(--hover-adaptive);
+            background: $hover-on-dark;
+        }
+
+        &:hover .adaptive-icon__bar:nth-child(2) {
+            transform: scaleX(0.55);
+        }
+
+        @include focus-ring(3px);
+
+        @include reduce-motion {
+            transition: none;
+        }
+    }
+
+    .adaptive-icon__bar {
+        display: block;
+        height: 2px;
+        border-radius: 2px;
+        background: currentcolor;
+        transform-origin: left center;
+        transition: transform 0.3s $ease-out;
+
+        @include reduce-motion {
+            transition: none;
+        }
+    }
+
+    // The overlay: opens as a circle growing out of the button ------------------
+    .burger-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        background: linear-gradient(135deg, $overlay-main-90, $overlay-main-60), url(#{$img-path}/CloseUp.png) center / cover no-repeat;
+        visibility: hidden;
+        opacity: 0;
+        clip-path: circle(0 at 84px 58px);
+        transition: clip-path 0.7s $ease-out, opacity 0.4s, visibility 0s 0.7s;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            clip-path: circle(150% at 84px 58px);
+            transition: clip-path 0.8s $ease-out, opacity 0.3s, visibility 0s;
+        }
+
+        @include reduce-motion {
+            clip-path: none;
+            transition: opacity 0.2s, visibility 0s 0.2s;
+
+            &.active {
+                clip-path: none;
+                transition: opacity 0.2s, visibility 0s;
+            }
+        }
+    }
+
+    .menu-open {
+        overflow: hidden;
+    }
+
+    .close-btn {
+        position: relative;
+        flex: none;
+        align-self: flex-start;
+        width: 52px;
+        height: 52px;
+        margin: 32px 0 0 32px;
+        border: 1px solid $line-on-dark;
+        border-radius: 50%;
+        background: none;
+        color: var(--color-navbar-text);
+        cursor: pointer;
+        transition: transform 0.4s $ease-out, background-color 0.25s;
+
+        &:hover {
+            background: $hover-on-dark;
+            transform: rotate(90deg);
+        }
+
+        @include focus-ring(3px);
+
+        @include reduce-motion {
+            transition: none;
+
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+
+    .close-btn__x::before,
+    .close-btn__x::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 22px;
+        height: 2px;
+        border-radius: 2px;
+        background: currentcolor;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .close-btn__x::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .burger-container {
+        flex: 1 0 auto;
+        align-items: center;
+        justify-content: space-around;
+        gap: 40px;
+        padding: 10px 40px 56px;
+    }
+
+    // Links: big, numbered, fly in one after another ----------------------------
+    .left-navbar {
+        display: grid;
+        gap: 4px;
+        list-style: none;
+    }
+
+    .left-item {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.5s, transform 0.6s $ease-out;
+
+        @include reduce-motion {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+
+    .burger-menu.active .left-item {
+        opacity: 1;
+        transform: none;
+        transition-delay: calc(0.25s + var(--i, 0) * 0.07s);
+    }
+
+    .left-link {
+        position: relative;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 18px;
+        padding: 6px 0;
+        font-family: var(--font-Rufina);
+        font-weight: 700;
+        font-size: clamp(40px, 6vw, 72px);
+        line-height: 1.2;
+        text-transform: uppercase;
+        color: var(--color-navbar-text);
+        transition: transform 0.4s $ease-out, color 0.25s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            border-radius: 2px;
+            background: var(--hover-adaptive);
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.45s $ease-out;
+        }
+
+        &:hover,
+        &:focus-visible,
+        &[aria-current='page'] {
+            color: var(--hover-adaptive);
+        }
+
+        &:hover,
+        &:focus-visible {
+            transform: translateX(14px);
+        }
+
+        &:hover::after,
+        &:focus-visible::after,
+        &[aria-current='page']::after {
+            transform: scaleX(1);
+        }
+
+        @include focus-ring(4px);
+
+        @include reduce-motion {
+            transition: none;
+
+            &:hover,
+            &:focus-visible {
+                transform: none;
+            }
+        }
+    }
+
+    .left-link__num {
+        font-family: var(--font-Lato);
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 2px;
+        color: var(--hover-adaptive);
+    }
+
+    // Contact card ----------------------------------------------------------------
+    .container-right {
+        min-width: 300px;
+        padding: 32px 36px;
+        border: 1px solid $glass-border;
+        border-radius: $radius-lg;
+        background: $glass-bg;
+        backdrop-filter: blur(10px);
+        color: var(--color-navbar-text);
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s 0.55s, transform 0.7s $ease-out 0.55s;
+
+        @include reduce-motion {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+
+    .burger-menu.active .container-right {
+        opacity: 1;
+        transform: none;
+    }
+
+    .right-title {
+        margin-bottom: 18px;
+        padding-bottom: 14px;
+        border-bottom: 2px dotted $line-on-dark;
+        font-family: var(--font-Rufina);
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1.3;
+        letter-spacing: 1px;
+    }
+
+    .right-item {
+        padding: 6px 0;
+    }
+
+    .right-link {
+        font-family: var(--font-Lato);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.5;
+        letter-spacing: 0.5px;
+        color: var(--color-navbar-text);
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--hover-adaptive);
+        }
+
+        @include focus-ring(3px);
+    }
+
+    .sc-DdfF {
+        gap: 12px;
+        padding-top: 22px;
+    }
+
+    .sc-DdfF .media-link {
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border: 1px solid $glass-border;
+        border-radius: 50%;
+        transition: background-color 0.25s, transform 0.3s $ease-out;
+
+        &:hover {
+            background: var(--background-span);
+            transform: translateY(-3px);
+        }
+
+        @include focus-ring(3px);
+
+        @include reduce-motion {
+            transition: none;
+
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+
+    @include respond-down(md) {
+        .burger-container {
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            gap: 32px;
+            padding: 8px 24px 48px;
+        }
+
+        .container-right {
+            min-width: 0;
+        }
+    }
+
+    @include respond-down(xs) {
+        .close-btn {
+            margin: 20px 0 0 16px;
+        }
+
+        .burger-container {
+            padding-inline: 16px;
+        }
+
+        .container-right {
+            padding: 24px 20px;
+        }
+
+        .right-title {
+            font-size: 26px;
+        }
+    }
+}

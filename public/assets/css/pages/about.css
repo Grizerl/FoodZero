@@ -1,370 +1,357 @@
-@charset "UTF-8";
-@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
-:root {
-    --color-navbar-text: #FFFFFF;
-    --color-title-menu: #000000;
-    --color-card-lead: #4D4D4D;
-    --background-cook: #EBF0E4;
-    --background-player: #233000;
-    --font-Rufina: 'Rufina';
-    --font-Lato: 'Lato';
-    --font-Inter: 'Inter';
-    --transition-all: all .3s ease-in-out;
-}
-
+/*! Compiled from resources/scss/pages/about.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
 .section_about_banner {
-    min-height: 89vh;
+  min-height: 89vh;
 }
 
 .background-img {
-    position: absolute;
-    inset: 0;
-    background: #00000075 url(../../images/about/Wooden.png) center / cover no-repeat;
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4588235294) url(/assets/images/about/Wooden.png) center/cover no-repeat;
 }
 
 .sc_FDFf {
-    align-items: center;
-    justify-content: flex-end;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .background-content {
-    padding-right: 10rem;
-    color: var(--color-navbar-text);
+  padding-right: 10rem;
+  color: var(--color-navbar-text);
 }
 
 .background-title {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 110px;
-    line-height: 152px;
-    letter-spacing: 0px;
+  font-family: var(--font-Rufina);
+  font-weight: 700;
+  font-size: 110px;
+  line-height: 152px;
+  letter-spacing: 0px;
 }
 
 .background-text {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 23px;
-    line-height: 40px;
-    letter-spacing: 0px;
+  font-family: var(--font-Rufina);
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 40px;
+  letter-spacing: 0px;
 }
 
-.max-text {
-    max-width: 550px;
+.background-text,
+.story_lead,
+.stage_description {
+  max-width: 550px;
 }
 
 /* Section about */
 .section_about {
-    padding-top: 70px;
-    background: var(--color-navbar-text);
+  padding-top: 70px;
+  background: var(--color-navbar-text);
 }
 
 .about-content {
-    padding-top: 60px;
-    padding-bottom: 70px;
-    position: relative;
-    align-items: center;
-    justify-content: space-around;
+  padding-top: 60px;
+  padding-bottom: 70px;
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .our_story {
-    color: var(--color-title-menu);
+  position: relative;
+  color: var(--color-title-menu);
 }
 
 .story_title {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 70px;
-    line-height: 120px;
-    letter-spacing: 0px;
+  font-family: var(--font-Rufina);
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 120px;
+  letter-spacing: 0px;
 }
 
 .story_lead {
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 33.6px;
-    letter-spacing: 0px;
-    color: var(--color-card-lead);
+  font-family: var(--font-Lato);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 33.6px;
+  letter-spacing: 0px;
+  color: var(--color-card-lead);
 }
 
 .tomato {
-    position: absolute;
-    top: 0;
+  position: absolute;
+  top: -123px;
+  left: 100%;
+  margin-left: 20px;
+  pointer-events: none;
 }
 
 /* Aside info */
- .aside-content {
-    padding-top: 80px;
-    padding-bottom: 30px;
+.aside-content {
+  padding-top: 80px;
+  padding-bottom: 30px;
 }
 
 .member_content {
-    align-items: center;
-    justify-content: space-around;
-}
-
-.text-centre {
-    text-align: center;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .role {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 35px;
-    letter-spacing: 0px;
+  font-family: var(--font-Rufina);
+  font-weight: 700;
+  font-size: 35px;
+  letter-spacing: 0px;
 }
 
 .name {
-    padding-bottom: 10px;
-    display: block;
-    font-family:var(--font-Lato);
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 55px;
-    letter-spacing: 2%;
+  padding-bottom: 10px;
+  display: block;
+  font-family: var(--font-Lato);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 55px;
+  letter-spacing: 2%;
 }
 
 .slogan {
-    max-width: 450px;
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 33.6px;
-    letter-spacing: 2%;
-    color: var(--color-card-lead);
-} 
+  max-width: 450px;
+  font-family: var(--font-Lato);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 33.6px;
+  letter-spacing: 2%;
+  color: var(--color-card-lead);
+}
 
 .sc-FvGAS {
-    text-align: right;
+  text-align: right;
 }
 
 .bottom_container {
-    position: relative;
-    bottom: 100px;
+  position: relative;
+  bottom: 100px;
 }
 
 /* Section Video */
 .background-foto {
-    position: relative;
-    height: 75vh;
-    background: url(../../images/about/FreeFood.png) center / cover no-repeat;
+  position: relative;
+  height: 75vh;
+  background: url(/assets/images/about/FreeFood.png) center/cover no-repeat;
 }
 
 .background-foto::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 75vh;
-    width: 100%;
-    background: var(--background-player);
-    opacity: 0.50;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 75vh;
+  width: 100%;
+  background: var(--background-player);
+  opacity: 0.5;
 }
 
 .sc-FhaFD {
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .video_content {
-    position: relative;
-    text-align: center;
-    color: var(--color-navbar-text);
-    z-index: 9999;
+  position: relative;
+  text-align: center;
+  color: var(--color-navbar-text);
+  z-index: 9999;
 }
 
 .video_name {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 90px;
-    line-height: 120px;
-    letter-spacing: 0px;
+  font-family: var(--font-Rufina);
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 120px;
+  letter-spacing: 0px;
 }
 
 .video_description {
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 33.6px;
-    letter-spacing: 2%;
+  font-family: var(--font-Lato);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 33.6px;
+  letter-spacing: 2%;
 }
 
 .video_play_btn {
-    border: none;
-    background: transparent;
-    padding-top: 40px;
-    padding-bottom: 15px;
-    cursor: pointer;
+  border: none;
+  background: transparent;
+  padding-top: 40px;
+  padding-bottom: 15px;
+  cursor: pointer;
 }
 
 /* Section stage */
 .section_process {
-    position: relative;
-    background: var(--color-navbar-text);
+  position: relative;
+  background: var(--color-navbar-text);
 }
 
 .rosemary {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.rosemary_second {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding-bottom: 30px;
-}
-
-.process_container {
-    padding-top: 80px;
-    padding-bottom: 100px
-}
-
-.headline_content {
-    padding-bottom: 60px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: min(352px, (100vw - 640px) / 2);
+  max-height: 360px;
+  width: auto;
+  height: auto;
+  pointer-events: none;
 }
 
 .headline {
-    text-align: center;
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 55px;
-    line-height: 120px;
-    letter-spacing: 0px;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.rosemary_second {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 30px;
+}
+
+.process_container {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.headline_content {
+  padding-bottom: 60px;
+}
+
+.headline {
+  text-align: center;
+  font-family: var(--font-Rufina);
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 120px;
+  letter-spacing: 0px;
 }
 
 .stage {
-    align-items: center;
-    justify-content: space-around;
-    padding-top: 20px;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 20px;
 }
 
 .slice_stage {
-    height: 100%;
-    width: 90%;
-    object-fit: cover;
+  height: 100%;
+  width: 90%;
+  object-fit: cover;
 }
 
 .stage_number {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 60px;
-    line-height: 105.6px;
-    letter-spacing: 0px;
-    color: var(--color-title-menu);
+  font-family: var(--font-Rufina);
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 105.6px;
+  letter-spacing: 0px;
+  color: var(--color-title-menu);
 }
 
 .stage_description {
-    font-family: var(--font-Lato);
-    font-weight: 400;
+  font-family: var(--font-Lato);
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 33.6px;
+  letter-spacing: 2%;
+  color: var(--color-card-lead);
+}
+
+@media screen and (max-width: 1500px) {
+  .background-content {
+    padding: 0;
+  }
+  .text-end {
+    text-align: end;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .bottom_container {
+    bottom: 0;
+  }
+  .slogan {
+    text-align: right;
     font-size: 19px;
-    line-height: 33.6px;
-    letter-spacing: 2%;
-    color: var(--color-card-lead);
+  }
+  .sc-FvGAS {
+    text-align: left;
+  }
 }
-
-@media screen and (max-width:1440px) {
-    .background-content {
-        padding: 0;
-    }
-
-    .text-end {
-        text-align: end;
-    }
+@media screen and (max-width: 830px) {
+  .member_content {
+    display: grid;
+  }
+  .background-title {
+    font-size: 100px;
+    line-height: 100px;
+  }
+  .member-img, .img-chef {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .slogan {
+    text-align: center;
+  }
+  .bottom_container {
+    margin-top: 30px;
+  }
+  .stage {
+    display: grid;
+  }
+  .stage > figure {
+    text-align: center;
+  }
+  .background-text,
+  .story_lead,
+  .stage_description {
+    max-width: 600px;
+  }
+  .stage_description {
+    padding-bottom: 10px;
+  }
+  .video_name {
+    font-size: 70px;
+    line-height: 80px;
+  }
+  .video_description, .background-text {
+    font-size: 20px;
+  }
+  .about-content {
+    text-align: center;
+    flex-direction: column;
+  }
+  .text-end {
+    text-align: center;
+  }
 }
-
-@media screen and (max-width:1000px) {
-    .bottom_container {
-        bottom: 0;
-    }
-
-    .slogan {
-        text-align: right;
-        font-size: 19px;
-    } 
-
-    .sc-FvGAS {
-        text-align: left;
-    }
+@media screen and (max-width: 480px) {
+  .section_about_banner {
+    min-height: 86vh;
+  }
+  .aside-content {
+    padding-top: 0;
+  }
+  .headline {
+    font-size: 45px;
+    line-height: 55px;
+  }
 }
-
-@media screen and (max-width: 800px) {
-    .member_content {
-        display: grid;
-    }
-
-    .background-title {
-        font-size: 100px;
-        line-height: 100px;
-    }
-
-    .member-img,.img-chef {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .slogan {
-        text-align: center;
-    }
-
-    .bottom_container {
-        margin-top: 30px;
-    }
-
-    .stage {
-        display: grid;
-    }
-
-    .stage > figure {
-        text-align: center;
-    }
-
-    .text-centre {
-        text-align: center;
-    }
-
-    .max-text {
-        max-width: 600px;
-    }
-
-    .stage_description {
-        padding-bottom: 10px;
-    }
-
-    .video_name {
-        font-size: 70px;
-        line-height: 80px;
-    }
-
-    .video_description,.background-text {
-        font-size: 20px;
-    }
-
-    .about-content {
-        text-align: center;
-        flex-direction: column;
-    }
-
-    .text-end {
-        text-align: center;
-    }
+@media screen and (max-width: 1150px) {
+  .tomato,
+  .rosemary,
+  .rosemary_second {
+    display: none;
+  }
 }
-
-@media screen and (max-width: 450px) {
-    .section_about_banner {
-        min-height: 86vh;
-    }
-
-    .aside-content {
-        padding-top: 0;
-    }
-
-    .headline {
-        font-size: 45px;
-        line-height: 55px;
-    }
+@media screen and (max-width: 830px) {
+  .background-img {
+    padding-inline: 16px;
+  }
 }

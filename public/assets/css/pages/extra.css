@@ -1,361 +1,217 @@
-@charset "UTF-8";
-@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
-:root {
-    --color-background-section: #FFFFFF;
-    --color-text-lead: #4D4D4D;
-    --color-category-name: #070707;
-    --font-Rufina: 'Rufina';
-    --font-Lato: 'Lato';
-    --font-Inter: 'Inter';
-    --transition-all: all .3s ease-in-out;
-}
-
-ul {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-.d-flex {
-    display: flex;
-}
-
+/*! Compiled from resources/scss/pages/extra.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
 .al-centre {
-    align-items: center;
+  align-items: center;
 }
 
 .just-centre {
-    justify-content: center;
+  justify-content: center;
 }
 
 .just-around {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 .section_detail_banner {
-    min-height: 89vh;
+  min-height: 89vh;
 }
 
 .background_img {
-    position: absolute;
-    inset: 0;
-    background: url(../../../assets/images/blog/detail/Raw_Meat.png) center / cover no-repeat;
+  position: absolute;
+  inset: 0;
+  background: url(/assets/images/blog/detail/Raw_Meat.png) center/cover no-repeat;
 }
 
 .background_img::after {
-    content: "";
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--color-title-menu);
-    opacity: 0.40;
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-title-menu);
+  opacity: 0.4;
 }
 
 .sc-CbaHFG {
-    align-items: center;
-    justify-content: center;
-    color: var(--color-navbar-text);
+  align-items: center;
+  justify-content: center;
+  color: var(--color-navbar-text);
 }
 
 .banner_container {
-    position: relative;
-    z-index: 9999;
-    text-align: center;
+  position: relative;
+  z-index: 9999;
+  text-align: center;
 }
 
 .banner_title {
-    max-width: 950px;
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 75px;
-    line-height: 110px;
-    letter-spacing: 0px;
+  max-width: 950px;
+  font-family: var(--font-Rufina);
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 110px;
+  letter-spacing: 0px;
 }
+
 /* Section Media Pole */
 .section_media_pole {
-    padding-top: 70px;
-    background: var(--color-background-section);
+  padding-top: 70px;
+  background: var(--color-background-section);
 }
 
 .section_category {
-    padding-top: 2.5rem;
+  padding-top: 2.5rem;
 }
 
 .category_items:last-child .category_links {
-    color: var(--color-category-name);
+  color: var(--color-category-name);
 }
 
 .category_links, .category_items {
-    padding: 0 5px;
-    font-family:var(--font-Lato);
-    font-weight: 400;
-    font-size: 21px;
-    line-height: 140%;
-    letter-spacing: 2%;
-    text-align: center;
-    color: var(--color-text-lead);
-}
-
-.max-width {
-    max-width: 850px;
-}
-
-.text-container {
-    padding-top: 4rem;
-    padding-bottom: 5rem;
+  padding: 0 5px;
+  font-family: var(--font-Lato);
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 140%;
+  letter-spacing: 2%;
+  text-align: center;
+  color: var(--color-text-lead);
 }
 
 .main-text {
-    word-break: break-all;
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 31px;
-    line-height: 48px;
-    letter-spacing: 0px;
-    color: var(--color-text-lead);
+  max-width: 850px;
+}
+
+.text-container {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+.main-text {
+  word-break: break-all;
+  font-family: var(--font-Rufina);
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 48px;
+  letter-spacing: 0px;
+  color: var(--color-text-lead);
 }
 
 .adaptive-img {
-    padding: 8px;
+  padding: 8px;
 }
 
 .media_img {
-    margin: 0 25px;
+  margin: 0 25px;
 }
 
 .aside-text {
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 140%;
-    letter-spacing: 2%;
-    color: var(--color-text-lead);
+  font-family: var(--font-Lato);
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 140%;
+  letter-spacing: 2%;
+  color: var(--color-text-lead);
 }
 
-.max-text {
-    max-width: 1000px;
+.aside-text,
+.foto_text {
+  max-width: 1000px;
 }
 
 /* Aside Pole */
 .background_foto_in_media_pole {
-    height: 50vh;
-    background: url(../../../assets/images/blog/detail/Holding.png) center / cover no-repeat;
+  height: 50vh;
+  background: url(/assets/images/blog/detail/Holding.png) center/cover no-repeat;
 }
 
 .foto_text {
-    font-family:var(--font-Lato);
-    font-weight: 700;
-    font-style: italic;
-    font-size: 38px;
-    line-height: 140%;
-    letter-spacing: 0px;
-    color: var(--color-background-section);
+  font-family: var(--font-Lato);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 38px;
+  line-height: 140%;
+  letter-spacing: 0px;
+  color: var(--color-background-section);
 }
 
-/* Section fashion */
-.section-fashion {
-    padding-top: 70px;
-    padding-bottom: 60px;
-    background:var(--color-navbar-text)
+/* Related posts */
+.post-grid-heading {
+  margin-bottom: 32px;
+  font-family: var(--font-Rufina);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-title-menu);
 }
 
-.sc-FAvf {
+@media screen and (max-width: 1150px) {
+  .adaptive-img {
+    padding: 4px;
+    width: 90%;
+    object-fit: cover;
+  }
+  .sc-FDVC {
+    text-align: right;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .adaptive-img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .main-text, .foto_text {
+    font-size: 27px;
+  }
+  .aside-text, .category_links, .category_items {
+    font-size: 20px;
+  }
+  .banner_title {
+    font-size: 65px;
+    line-height: 100px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .sc-Ccgg {
+    flex-direction: column;
+  }
+  .category_navbar {
     justify-content: center;
+    flex-wrap: wrap;
+  }
+  .main-text, .foto_text {
+    font-size: 19.5px;
+  }
+  .foto_text {
+    text-align: center;
+  }
+  .text-container {
+    padding-top: 1.3rem;
+    padding-bottom: 1.5rem;
+  }
+  .section_media_pole {
+    padding-top: 0;
+  }
 }
-
-.fashion-container {
-    grid-template-columns: repeat(2,1fr);   
-    gap: 60px;
-}
-
-.fashion-img {
-    display: inline-block;
-    max-width: max-content;
-    position: relative;
-}
-
-.fashion-label {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding-top: 8px;
-    padding-right: 35px;
-    padding-left: 35px;
-    padding-bottom: 8px;
-    background: var(--background-span);
-    box-shadow: 1px 1px 12px 0px var(--box-color-label);
-    color: var(--color-navbar-text);
-}
-
-.fashion-label span {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 19px;
-    letter-spacing: 0px;
-}
-
-.fashion-info-content {
-    padding: 10px 0px 13px 0px;
-    align-items: center;
-}
-
-.navbar-media-content {
-    list-style-type: disc;
-}
-
-.navbar-media-content li:first-child {
-    list-style-type: none;
-}
-
-.media-item {
-    margin: 0px 25px 0px 5px;
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 21.6px;
-    letter-spacing: 2%;
-    color: var(--background-span);
-}   
-
-.fashion-title {
-    padding-bottom: 8px;
-    font-family: var(--font-Rufina);
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 40px;
-    letter-spacing: 0px;
-    border-bottom: 3px dotted var(--color-title-menu);
-    color: var(--color-title-menu);
-}
-
-.fashion-p {
-    padding-top: 10px;
-    font-family: var(--font-Lato);
-    font-weight: 700;
+@media screen and (max-width: 480px) {
+  .section_detail_banner {
+    min-height: 86vh;
+  }
+  .banner_title {
+    font-size: 55px;
+    line-height: 80px;
+  }
+  .aside-text {
     font-size: 17px;
-    line-height: 30.8px;
-    letter-spacing: 2%;
-    color: var(--color-card-lead);
+  }
 }
-
-.sc-FAfgd {
-    align-items: anchor-center;
+@media screen and (max-width: 830px) {
+  .background_img {
+    padding-inline: 16px;
+  }
 }
-
-.fashion-btn-arrow {
-    padding-right: 8px;
-    font-family:var(--font-Lato);
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 33.6px;
-    letter-spacing: 2%;
-    color: var(--color-title-menu);
+.post-byline {
+  justify-content: center;
+  padding-bottom: 24px;
 }
-
-.arrow {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--background-color-main);
-    cursor: pointer;
-}
-
-.max_text {
-    max-width: 500px;
-}
-
-@media screen and (max-width: 1240px) {
-    .adaptive-img {
-        padding: 4px;
-        width: 90%;
-        object-fit: cover;
-    }
-
-    .navbar-media-content {
-        flex-wrap: wrap;
-    }
-
-    .fashion-container {
-        gap: 15px;
-    }
-
-    .sc-FDVC {
-        text-align: right;
-    }
-}
-
-@media screen and (max-width: 1100px) { 
-    .fashion-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .adaptive-img,.fashion-foto {
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .main-text,.foto_text {
-        font-size: 27px;
-    }
-
-    .aside-text,.category_links, .category_items {
-        font-size: 20px;
-    }
-
-    .banner_title {
-        font-size: 65px;
-        line-height: 100px;
-    }
-}
-
-@media screen and (max-width: 700px) { 
-    .sc-Ccgg {
-        flex-direction: column;
-    }
-
-    .category_navbar {
-        justify-content: center;
-        flex-wrap: wrap;
-    }   
-
-    .main-text, .foto_text {
-        font-size: 19.5px;
-    }
-
-    .foto_text {
-        text-align: center;
-    }
-
-    .text-container {
-        padding-top: 1.3rem;
-        padding-bottom: 1.5rem;
-    }
-
-    .section_media_pole {
-        padding-top: 0;
-    }
-
-    .navbar-media-content {
-        list-style-type: none;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .section_detail_banner {
-        min-height: 86vh;
-    }
-
-    .banner_title {
-        font-size: 55px;
-        line-height: 80px;
-    }
-
-    .aside-text {
-        font-size: 17px;
-    }
-} 

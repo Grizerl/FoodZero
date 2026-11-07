@@ -1,7 +1,9 @@
 @extends('layouts.app')
+@section('title', 'About Us — FoodZero')
+@section('meta.description', 'Meet the FoodZero team and learn how our chefs prepare every dish, from slicing to baking.')
 
 @section('link.css')
-    <link rel="stylesheet" href="/assets/css/pages/about.css">
+    <link rel="stylesheet" href="@assetv('assets/css/pages/about.css')">
 @endsection
 
 @section('content')
@@ -26,16 +28,16 @@
             <div class="container">
                 <div class="about-content d-flex">
                     <div class="our_story">
-                        <h1 class="story_title">
+                        <h2 class="story_title">
                             Our Story
-                        </h1>
+                        </h2>
                         <p class="story_lead max-text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Purus lorem id penatibus imperdiet. Turpis egestas ultricies purus 
                             auctor tincidunt lacus nunc. 
                         </p>
+                        <img class="tomato" src="/assets/images/about/Tomato.png" alt="" aria-hidden="true" loading="lazy">
                     </div>
-                        <img class="tomato" src="/assets/images/about/Tomato.png" alt="Tomato" loading="lazy">
                     <figure class="text-end">
                         <img class="img-chef"  src="/assets/images/about/Chef.png" alt="Chef" loading="lazy">
                     </figure>
@@ -46,7 +48,7 @@
                             <div class="top_container">
                                 <div class="member_content d-flex">
                                     <div class="text-centre">
-                                        <h1 class="role">Restuarant Manager</h1>
+                                        <h2 class="role">Restaurant Manager</h2>
                                         <span class="name">Carson Hugn</span>
                                         <figure>
                                             <img class="member-img" width="470" height="570" src="/assets/images/about/team members/Brain.png" alt="Brain" loading="lazy">
@@ -67,7 +69,7 @@
                                         congue mi. 
                                     </p>
                                     <div class="text-centre">
-                                        <h1 class="role">Restuarant Manager</h1>
+                                        <h2 class="role">Restaurant Manager</h2>
                                         <span class="name">Carson Hugn</span>
                                         <figure>
                                             <img class="member-img" width="470" height="570" src="/assets/images/about/team members/John.png" alt="John" loading="lazy">
@@ -87,7 +89,7 @@
         <div>
             <div class="background-foto d-flex sc-FhaFD">
                 <div class="video_content">
-                    <h1 class="video_name">It looks delicious</h1>
+                    <h2 class="video_name">It looks delicious</h2>
                     <p class="video_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                     <button onclick="" class="video_play_btn">
                         <img width="85" height="85" src="/assets/images/about/8666551_play_circle_icon.svg" alt="Bnt play" loading="lazy">
@@ -104,14 +106,14 @@
             <div class="container">
                 <div class="process_container">
                     <div class="headline_content">
-                        <h1 class="headline">Sophisticated Process</h1>
+                        <h2 class="headline">Sophisticated Process</h2>
                     </div>
                     <div class="stage d-flex">
                         <figure>
                             <img class="slice_stage" src="/assets/images/about/stage/Slice.png" alt="Slice meat" loading="lazy">
                         </figure>
                         <div class="text-centre">
-                            <h1 class="stage_number">01.Slice</h1>
+                            <h2 class="stage_number">01.Slice</h2>
                             <p class="stage_description max-text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Purus lorem id penatibus imperdiet. 
@@ -123,7 +125,7 @@
                     </div>
                     <div class="stage d-flex">
                         <div class="text-centre">
-                            <h1 class="stage_number">02.Pickled</h1>
+                            <h2 class="stage_number">02.Pickled</h2>
                             <p class="stage_description max-text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Purus lorem id penatibus imperdiet.
@@ -138,7 +140,7 @@
                             <img class="slice_stage" src="/assets/images/about/stage/Pickled.png" alt="Pickled meat" loading="lazy">
                         </figure>
                         <div class="text-centre">
-                            <h1 class="stage_number">03.Bake</h1>
+                            <h2 class="stage_number">03.Bake</h2>
                             <p class="stage_description max-text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Purus lorem id penatibus imperdiet. 

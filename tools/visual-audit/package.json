@@ -1,0 +1,15 @@
+{
+    "name": "foodzero-visual-audit",
+    "private": true,
+    "type": "module",
+    "description": "Headless-Chrome audit of the Food Zero public site (not part of the app build).",
+    "scripts": {
+        "audit": "node audit.mjs",
+        "compare": "node compare.mjs"
+    },
+    "dependencies": {
+        "pixelmatch": "^5.3.0",
+        "pngjs": "^7.0.0",
+        "puppeteer-core": "^23.0.0"
+    }
+}

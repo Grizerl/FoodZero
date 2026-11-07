@@ -1,0 +1,29 @@
+// Desktop-first breakpoints. Every @media query in the site goes through
+// `respond-down`, so the whole site switches layouts at the same widths.
+//
+//   xs   phones               <= 480
+//   sm   large phones         <= 700
+//   md   tablets (portrait)   <= 830  (stacked layouts of about / contact / full menu)
+//   lg   tablets (landscape)  <= 1000
+//   xl   small desktops       <= 1150
+//   xxl  wide desktops        <= 1500
+@use 'sass:map';
+
+$breakpoints: (
+    'xs': 480px,
+    'sm': 700px,
+    'md': 830px,
+    'lg': 1000px,
+    'xl': 1150px,
+    'xxl': 1500px,
+);
+
+@mixin respond-down($name) {
+    @if not map.has-key($breakpoints, $name) {
+        @error 'Unknown breakpoint `#{$name}`. Use one of: #{map.keys($breakpoints)}.';
+    }
+
+    @media screen and (max-width: map.get($breakpoints, $name)) {
+        @content;
+    }
+}

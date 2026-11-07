@@ -1,0 +1,118 @@
+/*! Compiled from resources/scss/pages/blog.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
+
+@use '../abstracts' as *;
+@use '../components/blog-page';
+
+.section_blog_banner {
+    min-height: 89vh;
+}
+
+.background_img {
+    position: absolute;
+    inset: 0;
+    background: url(#{$img-path}/blog/Blue_flower.png) center / cover no-repeat;
+}
+
+@include blog-page.styles;
+
+.banner_title {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 120px;
+    letter-spacing: 0px;
+}
+
+.banner_lead {
+    font-family:var(--font-Lato);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 33.6px;
+    letter-spacing: 2%;
+}
+
+/* Post list */
+.section-blog-list {
+    background: var(--background-cook);
+}
+
+/* Paginate (site palette) */
+.paginate {
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+.paginate .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.paginate .page-link {
+    display: block;
+    min-width: 44px;
+    padding: 10px 14px;
+    border-radius: $radius-md;
+    background-color: $color-white;
+    box-shadow: $shadow-card;
+    color: var(--background-color-main);
+    font-family: var(--font-Lato);
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    transition: background-color 0.25s, color 0.25s;
+
+    @include focus-ring;
+
+    @include reduce-motion {
+        transition: none;
+    }
+}
+
+.paginate .page-item.active .page-link {
+    background-color: var(--background-span);
+    color: $color-white;
+}
+
+.paginate .page-link:hover {
+    background-color: var(--background-color-main);
+    color: $color-white;
+}
+
+.paginate .page-item.disabled .page-link {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@include respond-down(sm) {
+    .banner_title {
+        font-size: 75px;
+    }
+
+    .banner_lead {
+        font-size: 17px;
+    }
+}
+
+@include respond-down(xs) {
+    .banner_title {
+        font-size: 65px;
+        line-height: 90px;
+    }
+
+    .section_blog_banner {
+        min-height: 86vh;
+    }
+
+}
+
+// Keep the banner text off the screen edge on tablets and phones.
+@include respond-down(md) {
+    .background_img {
+        padding-inline: $banner-gutter;
+    }
+}

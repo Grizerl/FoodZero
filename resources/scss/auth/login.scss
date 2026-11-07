@@ -1,0 +1,139 @@
+/*! Compiled from resources/scss/auth/login.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
+@use '../abstracts' as *;
+
+body {
+  font-family: $login-font;
+  background-color: $login-background-body;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+*,*::after,*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.d-flex {
+  display: flex;
+}
+
+header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $login-color-logo;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.login-container {
+  background-color: $login-color-container;
+  padding: 30px;
+  box-shadow: $login-shadow-container;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.input-group label {
+  display: block;
+  font-size: 1.1rem;
+  color: $login-color-label;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1.1rem;
+  border: 1px solid $login-border-input;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: $login-background-input;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: $login-color-logo;
+  outline: none;
+  background-color: $login-color-container;
+}
+
+.input-group input.is-invalid {
+  border: 1px solid $login-color-error;
+  background-color: $login-background-input;
+}
+
+.error {
+  color: $login-color-error;
+  font-size: 0.9rem;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.2rem;
+  background-color: $login-color-logo;
+  color: $login-color-on-accent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 15px;
+}
+
+.login-btn:hover {
+  background-color: $login-color-logo;
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  background-color: $login-color-logo-hover;
+  transform: translateY(0);
+}
+
+.alert-danger {
+  padding-top: 10px;
+  color: $login-color-error;
+}
+
+.is-invalid {
+  border: 2px solid $login-color-error;
+}
+
+/* Section Adaptive */
+@include respond-down(xs) {
+  .login-container {
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .login-btn {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,107 @@
+/*! Compiled from resources/scss/pages/full-menu.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
+
+@use '../abstracts' as *;
+@use '../components/menu-items';
+@use '../components/hours-banner';
+
+.section_explore_menu {
+   min-height: 89vh;
+}
+
+.background-image {
+    position: absolute; 
+    inset: 0;
+    background: linear-gradient($overlay-black-45, $overlay-black-45), 
+    url(#{$img-path}/menu/full-menu/MixedFruit.png) center no-repeat;
+    background-size: cover;
+}
+
+@include hours-banner.styles;
+
+.banner_title {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 130px;
+    letter-spacing: 0px;
+}
+
+.banner_lead{
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 48px;
+    letter-spacing: 0px;
+}
+
+/* Section Menu */
+@include menu-items.styles;
+
+@include respond-down(xxl) {
+    .banner_text {
+        padding-left: 0rem;
+    }
+}
+
+@include respond-down(md) {
+    .banner_text {
+        padding: 0
+    }
+
+                    
+    .banner_title {
+        font-size: 80px;
+        line-height: 100px;
+    }
+
+}
+
+@include respond-down(sm) {
+    .open_time,.open_day,.info_container {
+        padding: 0;
+    }
+
+    .sc-Fcsg,.sc-FDdg {
+        justify-content: space-between;
+    }
+
+    .aside_baner_text {
+        position: relative;
+        right: 0;
+    }
+
+    .section_explore_menu {
+        min-height: 86vh;
+    }
+
+    .banner_title {
+        font-size: 80px;
+        line-height: 100px;
+    }
+
+    .banner_lead {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+        }
+
+@include respond-down(xs) {
+    .banner_title {
+        font-size: 60px;
+        line-height: 87px;
+    }
+
+    .banner_lead {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+        }
+
+// Keep the banner text off the screen edge on tablets and phones.
+@include respond-down(md) {
+    .background-image {
+        padding-inline: $banner-gutter;
+    }
+}

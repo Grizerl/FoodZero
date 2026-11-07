@@ -1,0 +1,217 @@
+/*! Compiled from resources/scss/pages/extra.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
+
+@use '../abstracts' as *;
+@use '../components/blog-page';
+
+.al-centre {
+    align-items: center;
+}
+
+.just-centre {
+    justify-content: center;
+}
+
+.just-around {
+    justify-content: space-around;
+}
+
+.section_detail_banner {
+    min-height: 89vh;
+}
+
+.background_img {
+    position: absolute;
+    inset: 0;
+    background: url(#{$img-path}/blog/detail/Raw_Meat.png) center / cover no-repeat;
+}
+
+@include blog-page.styles;
+
+.banner_title {
+    max-width: 950px;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 110px;
+    letter-spacing: 0px;
+}
+/* Section Media Pole */
+.section_media_pole {
+    padding-top: 70px;
+    background: var(--color-background-section);
+}
+
+.section_category {
+    padding-top: 2.5rem;
+}
+
+.category_items:last-child .category_links {
+    color: var(--color-category-name);
+}
+
+.category_links, .category_items {
+    padding: 0 5px;
+    font-family:var(--font-Lato);
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    text-align: center;
+    color: var(--color-text-lead);
+}
+
+.main-text {
+    max-width: 850px;
+}
+
+.text-container {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+}
+
+.main-text {
+    word-break: break-all;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 48px;
+    letter-spacing: 0px;
+    color: var(--color-text-lead);
+}
+
+.adaptive-img {
+    padding: 8px;
+}
+
+.media_img {
+    margin: 0 25px;
+}
+
+.aside-text {
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: var(--color-text-lead);
+}
+
+.aside-text,
+.foto_text {
+    max-width: 1000px;
+}
+
+/* Aside Pole */
+.background_foto_in_media_pole {
+    height: 50vh;
+    background: url(#{$img-path}/blog/detail/Holding.png) center / cover no-repeat;
+}
+
+.foto_text {
+    font-family:var(--font-Lato);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 38px;
+    line-height: 140%;
+    letter-spacing: 0px;
+    color: var(--color-background-section);
+}
+
+/* Related posts */
+.post-grid-heading {
+    margin-bottom: 32px;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--color-title-menu);
+}
+
+@include respond-down(xl) {
+    .adaptive-img {
+        padding: 4px;
+        width: 90%;
+        object-fit: cover;
+    }
+
+    .sc-FDVC {
+        text-align: right;
+    }
+}
+
+@include respond-down(xl) { 
+    .adaptive-img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .main-text,.foto_text {
+        font-size: 27px;
+    }
+
+    .aside-text,.category_links, .category_items {
+        font-size: 20px;
+    }
+
+    .banner_title {
+        font-size: 65px;
+        line-height: 100px;
+    }
+}
+
+@include respond-down(sm) { 
+    .sc-Ccgg {
+        flex-direction: column;
+    }
+
+    .category_navbar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }   
+
+    .main-text, .foto_text {
+        font-size: 19.5px;
+    }
+
+    .foto_text {
+        text-align: center;
+    }
+
+    .text-container {
+        padding-top: 1.3rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .section_media_pole {
+        padding-top: 0;
+    }
+
+}
+
+@include respond-down(xs) {
+    .section_detail_banner {
+        min-height: 86vh;
+    }
+
+    .banner_title {
+        font-size: 55px;
+        line-height: 80px;
+    }
+
+    .aside-text {
+        font-size: 17px;
+    }
+}
+
+// Keep the banner text off the screen edge on tablets and phones.
+@include respond-down(md) {
+    .background_img {
+        padding-inline: $banner-gutter;
+    }
+}
+
+.post-byline {
+    justify-content: center;
+    padding-bottom: 24px;
+}
