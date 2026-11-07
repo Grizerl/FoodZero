@@ -21,8 +21,9 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+/public/assets/images
+/public/assets/video
 
 # AI
-
 .claude
 CLAUDE.md
