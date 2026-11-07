@@ -1,7 +1,6 @@
 /*! Compiled from resources/scss/auth/login.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
-@import "https://fonts.googleapis.com/css2?family=Arial&display=swap";
 body {
-  font-family: "Arial", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #f0f4f8;
   justify-content: center;
   align-items: center;

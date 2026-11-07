@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3//admin/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <title>Admin|Panel System Control Center</title>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -214,6 +213,7 @@
                 </button>
             </form>
           </li>
+        </ul>
         </nav>
       </div>
     </aside>
@@ -224,12 +224,13 @@
   </div>
 <!-- jQuery -->
 <script src="/admin/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI (sortable widgets used by dashboard.js) -->
+<script src="/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script>$.widget.bridge('uibutton', $.ui.button)</script>
 <!-- Bootstrap 4 -->
 <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/admin/dist/js/adminlte.js"></script>
-<!-- Loading the main JS for the AdminLTE dashboard panel -->
-<script src="/admin/admin.js"></script>
 <!-- Loading the jQuery Colorbox plugin for modal windows (minimized version) -->
 <script type="text/javascript" src="/admin/dist/js/jquery.colorbox-min.js"></script>
 <!-- Loading Font Awesome for icon usage on the page -->
@@ -237,13 +238,11 @@
 <!-- Loading the JS for the dashboard page functionality -->
 <script src="/admin/dist/js/pages/dashboard.js"></script>
 <!-- Loading the TinyMCE editor for text editors on the page -->
-<script src="https://cdn.tiny.cloud/1/u3xget8b6g00f5okf2wfwg4jua3611mxzrrt0smpk6js3e98/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
-<!-- Duplicate loading of the jQuery Colorbox plugin (minimized version) for possible reuse -->
-<script type="text/javascript" src="/admin/dist/js/jquery.colorbox-min.js"></script>
+<script src="https://cdn.tiny.cloud/1/{{ config('services.tinymce.key') ?: 'no-api-key' }}/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 <!-- Loading the elFinder plugin for the file manager (used via standalone popup) -->
 <script type="text/javascript" src="/packages/barryvdh/elfinder/js/standalonepopup.min.js"></script>
-<!-- Repeating the loading of the main JS for the AdminLTE dashboard panel -->
-<script src="./admin/js/admin.js"></script>
+<!-- Project admin scripts (TinyMCE / elFinder wiring) -->
+<script src="/admin/js/admin.js"></script>
 </body>
 </html>
 

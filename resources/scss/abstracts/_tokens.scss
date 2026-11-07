@@ -71,7 +71,7 @@ $login-border-input: #ddd;
 $login-color-error: rgb(221, 10, 10);
 $login-color-container: #fff;
 $login-color-on-accent: #fff;
-$login-font: 'Arial', sans-serif;
+$login-font: Arial, Helvetica, sans-serif; // system fonts: no web-font request
 $login-shadow-container: 0 10px 30px rgba(0, 0, 0, 0.1);
 
 // Blog pagination (Bootstrap-style) ------------------------------------------

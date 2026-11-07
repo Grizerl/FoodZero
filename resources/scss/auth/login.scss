@@ -1,7 +1,6 @@
 /*! Compiled from resources/scss/auth/login.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
 @use '../abstracts' as *;
 
-@import "https://fonts.googleapis.com/css2?family=Arial&display=swap";
 body {
   font-family: $login-font;
   background-color: $login-background-body;
