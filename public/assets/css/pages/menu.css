@@ -1,50 +1,7 @@
 /*! Compiled from resources/scss/pages/menu.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
-.section-menu-banner {
-  min-height: 89vh;
-}
-
-.background-img {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4588235294) url(/assets/images/menu/Dish.png) center no-repeat;
-  background-size: cover;
-}
-
-.sc-fzfGF {
-  align-items: center;
-}
-
-.background-content {
-  padding-left: 10rem;
-  padding-bottom: 5rem;
-  color: var(--color-navbar-text);
-}
-
-.banner-slogan {
-  padding-top: 15px;
-  padding-bottom: 20px;
-  font-family: var(--font-Rufina);
-  font-weight: 700;
-  font-size: 110px;
-  letter-spacing: 0px;
-}
-
-.max-widt {
-  max-width: 600px;
-}
-
-.banner-lead {
-  font-family: var(--font-Rufina);
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 48px;
-  letter-spacing: 0px;
-}
-
-/* Section Menu */
 .section_all_menu {
   position: relative;
-  padding-bottom: 80px;
+  padding-bottom: var(--space-section);
   background: var(--color-navbar-text);
 }
 
@@ -53,7 +10,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  padding: 56px 0 8px;
+  padding: clamp(32px, 5vw, 56px) 0 8px;
 }
 
 .menu-nav__link {
@@ -90,7 +47,7 @@
   padding: 48px 48px 56px;
   border-radius: 24px;
   background: var(--background-cook);
-  scroll-margin-top: 24px;
+  scroll-margin-top: calc(var(--header-height) + 24px);
 }
 
 .menu-header {
@@ -125,8 +82,8 @@
 .menu-title {
   font-family: var(--font-Rufina);
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.25;
+  font-size: clamp(36px, 36px + 2.5806451613vw - 9.6774193548px, 56px);
+  line-height: 1.2;
   letter-spacing: 0;
   text-align: center;
   color: var(--color-title-menu);
@@ -159,7 +116,7 @@
 
 .menu-figure {
   position: sticky;
-  top: 24px;
+  top: calc(var(--header-height) + 24px);
   overflow: hidden;
   border-radius: 24px;
   box-shadow: 0 1px 3px rgba(35, 48, 0, 0.08), 0 10px 30px rgba(35, 48, 0, 0.08);
@@ -231,89 +188,5 @@
   }
   .menu-lead {
     font-size: 17px;
-  }
-}
-.menu-cta-wrap {
-  display: flex;
-  justify-content: center;
-  padding-top: 56px;
-}
-
-.menu-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 36px;
-  border-radius: 999px;
-  background: var(--background-color-main);
-  color: var(--color-navbar-text);
-  font-family: var(--font-Rufina);
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 1px;
-  box-shadow: 0 1px 3px rgba(35, 48, 0, 0.08), 0 10px 30px rgba(35, 48, 0, 0.08);
-  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-.menu-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(35, 48, 0, 0.1), 0 24px 48px rgba(35, 48, 0, 0.18);
-}
-.menu-cta:hover .menu-cta__arrow {
-  transform: translateX(6px);
-}
-.menu-cta:focus-visible {
-  outline: 3px solid var(--hover-adaptive);
-  outline-offset: 3px;
-}
-@media (prefers-reduced-motion: reduce) {
-  .menu-cta {
-    transition: none;
-  }
-  .menu-cta:hover, .menu-cta:hover .menu-cta__arrow {
-    transform: none;
-  }
-}
-
-.menu-cta__arrow {
-  display: inline-block;
-  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-@media (prefers-reduced-motion: reduce) {
-  .menu-cta__arrow {
-    transition: none;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .background-content {
-    text-align: center;
-    padding: 0;
-  }
-  .sc-fzfGF {
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 700px) {
-  .banner-slogan {
-    font-size: 80px;
-  }
-  .banner-lead {
-    font-size: 23px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .banner-slogan {
-    font-size: 60px;
-  }
-  .banner-lead {
-    font-size: 20px;
-  }
-  .section-menu-banner {
-    min-height: 87vh;
-  }
-}
-@media screen and (max-width: 830px) {
-  .background-img {
-    padding-inline: 16px;
   }
 }

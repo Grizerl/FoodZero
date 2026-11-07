@@ -3,8 +3,7 @@
 
 @mixin styles {
     .section-fashion {
-        padding-top: 70px;
-        padding-bottom: 80px;
+        padding-block: var(--space-section);
         background: var(--color-navbar-text);
     }
 
@@ -209,9 +208,5 @@
             font-size: 24px;
         }
 
-        .section-fashion {
-            padding-top: 40px;
-            padding-bottom: 50px;
-        }
     }
 }

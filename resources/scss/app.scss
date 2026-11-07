@@ -4,316 +4,61 @@
 @use 'abstracts' as *;
 @use 'base/reset';
 @use 'base/utilities';
+@use 'components/buttons';
+@use 'components/header';
+@use 'components/page-banner';
+@use 'components/footer';
 @use 'components/burger';
 
 @include root-tokens;
+
+body {
+    font-family: var(--font-Lato), system-ui, sans-serif;
+    color: var(--color-title-menu);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
 
 .app {
     background-color: var(--background-color-main);
 }
 
 .container {
-    max-width: 1483px;
-    margin: 0 auto;
-    padding: 0 0.8rem;
+    width: min(100% - 2 * var(--gutter), 1240px);
+    margin-inline: auto;
 }
 
-.navbar-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 0px 10px;
-    z-index: 9999;
-}
-
-.content-left,.content-right {
-    display: flex;
-    align-items: center;
-    color: var(--color-navbar-text);
-}
-
-.navbar-logo {
-    position: relative;
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 1.7rem;
-    line-height: 48px;
-    letter-spacing: 0px;
-    padding-right: 20px;
-}
-
-.navbar-logo::after {
-    content: "";
-    display: block;
+// Hidden visually, still read by screen readers.
+.sr-only {
     position: absolute;
-    top: -10px;
-    left: 30px;
-    height: 20px;
-    width: 110px;
-    border-top: 2px solid var(--color-navbar-text);
-    border-left: 2px solid var(--color-navbar-text);
-    border-right: 2px solid var(--color-navbar-text);
-}
-
-.navbar-logo::before {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -12px;
-    left: 30px;
-    height: 20px;
-    width: 110px;
-    border-left: 2px solid var(--color-navbar-text);
-    border-right: 2px solid var(--color-navbar-text);
-    border-bottom: 2px solid var(--color-navbar-text);
-}
-
-.phone-number a {
-    font-family: var(--font-Inter);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 31.47px;
-    letter-spacing: 0px;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: var(--color-navbar-text);
-}
-
-.btn-reservations {
-    position: relative;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
     overflow: hidden;
-    background: transparent;
-    border: 2px solid $color-white;
-    margin-left: 15px;
-    padding-right: 30px;
-    padding-left: 30px;
-    cursor: pointer;
-    transition: border-radius 0.3s ease-in-out, color 0.3s ease-in-out;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
-.btn-reservations a {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 48px;
-    letter-spacing: 0px;
-    color: var(--color-navbar-text);
-    text-decoration: none;
-    position: relative;
-    z-index: 2;
-}
+/* Buttons */
+@include buttons.styles;
 
-.btn-reservations::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    left: 0;
-    width: 100%;
-    height: 150%;
-    background: var(--color-navbar-text);
-    border-radius: 50%;
-    transform: scale(0);
-    transition: transform 0.5s ease-in-out 0.3s; 
-    z-index: 1;
-}
-
-.btn-reservations:hover {
-    border-radius: 10px;
-}
-
-.btn-reservations:hover::before {
-    transform: scale(3);
-}
-
-.btn-reservations:hover a {
-    color: var(--color-title-menu);
-    transition: color 0.5s ease-in-out 0.5s; 
-}
+/* Header */
+@include header.styles;
 
 /* Menu button + full-screen menu */
 @include burger.styles;
+
+/* Page banner */
+@include page-banner.styles;
+
 /* Footer */
-.section-foooter {
-    padding-top: 70px;
-    padding-bottom: 50px;
-    border-bottom: 2px dotted var(--color-navbar-text);
-}
-
-.sc-CSFD {
-    justify-content: center;
-}
-
-.footer-container {
-    grid-template-columns: repeat(3,1fr);
-    color: var(--color-navbar-text);
-}
-
-.brand-container {
-    align-items: center;
-}
-
-.brand {
-    max-width: 200px;
-    padding: 15px 0px 20px;
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 48px;
-    letter-spacing: 0px;
-}
-
-.footer-section-title {
-    padding: 15px 0px 20px;
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 27px;
-    line-height: 48px;
-    letter-spacing: 0px;
-}
-
-.contact-link {
-    font-family: var(--font-Lato);
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 35px;
-    letter-spacing: 0.5px;
-    color: var(--color-navbar-text);
-}
-
-.recipe-email {
-    outline: none;
-    width: 370px;
-    border: 2px solid var(--color-navbar-text);
-    background: transparent;
-    padding-top: 12px;
-    padding-right: 20px;
-    padding-bottom: 12px;
-    padding-left: 20px;
-}
-
-.email-text {
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 33.6px;
-    letter-spacing: 2%;
-    color: var(--color-navbar-text);
-}
-
-.recipe-email::placeholder {
-    color: var(--color-navbar-text);
-}
-
-.email-button {
-    border: none;
-    padding-top: 15px;
-    padding-right: 35px;
-    padding-bottom: 15px;
-    padding-left: 35px;
-    margin-left: 18px;
-    background: var(--background-span);
-    cursor: pointer;
-}
-
-.sc-Sub {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 21px;
-    letter-spacing: 0px;
-    color: var(--color-navbar-text);
-}
-
-.recipe-text {
-    padding: 15px 0;
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16.8px;
-    letter-spacing: 2%;
-}
-
-/* Aside info */
-.aside-footer-section {
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-
-.aside-container {
-    justify-content: space-between;
-    color: var(--color-navbar-text);
-}
-
-.media-link {
-    padding: 0 10px;
-}
-
-@include respond-down(lg) {
-   .footer-container {
-        display: flex;
-        justify-content: space-evenly; 
-        flex-wrap: wrap;
-    }
-
-    .brand {
-        text-align: center;
-        max-width: 1000px;
-    }
-}
-
-@include respond-down(sm) {
-    .content-right {
-        display: none;
-    }
-
-    .content-left {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .footer-container {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        text-align: center;
-    }
-
-    .brand {
-        width: 100%;
-    }
-
-    .sc-fsfd {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .recipe-email {
-        margin-bottom: 10px;
-    }
-}
-
-@include respond-down(xs) {
-
-                    .sc-InpPole,.recipe-email {
-        width: 100%;
-    }
-
-    .date-pole, .time-pole, .quantity {
-        width: 90%;
-    }
-
-    .aside-container {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .media-icon {
-        padding-top: 10px;
-    }
-
-}
+@include footer.styles;
 
 /* Empty state (blog, full menu) */
 .empty-state {
-    padding: 100px 20px;
+    padding: var(--space-section) 20px;
     text-align: center;
     color: var(--color-title-menu);
 }
@@ -321,7 +66,7 @@
 .empty-state-title {
     font-family: var(--font-Rufina);
     font-weight: 700;
-    font-size: 40px;
+    @include fluid-type(30px, 40px);
     line-height: 1.3;
 }
 
@@ -330,16 +75,6 @@
     font-family: var(--font-Lato);
     font-weight: 400;
     font-size: 18px;
-    line-height: 33.6px;
+    line-height: 1.7;
     color: var(--color-card-lead);
-}
-
-@include respond-down(xs) {
-    .empty-state {
-        padding: 60px 16px;
-    }
-
-    .empty-state-title {
-        font-size: 30px;
-    }
 }

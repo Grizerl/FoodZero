@@ -7,6 +7,9 @@
 $color-main: #233000;
 $color-white: #fff;
 $color-black: #000;
+$color-main-deep: #1a2400; // bottom of dark gradients
+$color-ink: #16200a; // text on light backgrounds (softer than pure black)
+$color-line: rgba(35, 48, 0, 0.14); // hairlines on light backgrounds
 $color-text-muted: #4d4d4d;
 $color-surface: #ebf0e4;
 $color-accent: #5e6600;
@@ -37,7 +40,7 @@ $img-path: '/assets/images';
 $custom-properties: (
     'background-color-main': $color-main,
     'color-navbar-text': $color-white,
-    'color-title-menu': $color-black,
+    'color-title-menu': $color-ink,
     'color-card-lead': $color-text-muted,
     'background-cook': $color-surface,
     'background-span': $color-accent,
@@ -51,6 +54,15 @@ $custom-properties: (
     'font-Lato': "'#{$font-body}'",
     'font-Inter': "'#{$font-ui}'",
     'transition-all': $transition-all,
+    'color-main-deep': $color-main-deep,
+    'color-ink': $color-ink,
+    'color-line': $color-line,
+    'gutter': clamp(16px, 4vw, 40px),
+    'space-section': clamp(56px, 8vw, 112px),
+    'header-height': 72px,
+    'radius-sm': 10px,
+    'radius-md': 16px,
+    'radius-lg': 24px,
 );
 
 @mixin root-tokens {
@@ -60,19 +72,6 @@ $custom-properties: (
         }
     }
 }
-
-// Admin login page theme (separate stylesheet, does not load app.css) ---------
-$login-color-logo: #ff5e00;
-$login-color-logo-hover: #e84100;
-$login-background-body: #f0f4f8;
-$login-color-label: #333;
-$login-background-input: #f9f9f9;
-$login-border-input: #ddd;
-$login-color-error: rgb(221, 10, 10);
-$login-color-container: #fff;
-$login-color-on-accent: #fff;
-$login-font: Arial, Helvetica, sans-serif; // system fonts: no web-font request
-$login-shadow-container: 0 10px 30px rgba(0, 0, 0, 0.1);
 
 // Blog pagination (Bootstrap-style) ------------------------------------------
 $pagination-link: #007bff;
@@ -90,9 +89,13 @@ $radius-md: 16px;
 $radius-lg: 24px;
 $radius-pill: 999px;
 $shadow-card: 0 1px 3px rgba(35, 48, 0, 0.08), 0 10px 30px rgba(35, 48, 0, 0.08);
+$shadow-soft: 0 1px 2px rgba(35, 48, 0, 0.06), 0 8px 24px rgba(35, 48, 0, 0.08);
 $shadow-card-hover: 0 4px 10px rgba(35, 48, 0, 0.1), 0 24px 48px rgba(35, 48, 0, 0.18);
 $ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
 $transition-card: transform 0.35s $ease-out, box-shadow 0.35s $ease-out;
+
+// Dark hero background: the brand green with a soft light patch, fading to a deeper tone
+$gradient-dark: radial-gradient(120% 80% at 80% 0%, #34460a 0%, rgba(52, 70, 10, 0) 60%), linear-gradient(180deg, $color-main 0%, $color-main-deep 100%);
 
 // Lines and glass on dark backgrounds (white with alpha) ---------------------------
 $line-on-dark: rgba(255, 255, 255, 0.35);

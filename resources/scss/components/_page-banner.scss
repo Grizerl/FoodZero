@@ -1,0 +1,133 @@
+// Banner at the top of every inner page (menu, full menu, blog, post, about, contact).
+// Markup: partials/page-banner.blade.php. The photo comes from the --<variant> modifier.
+@use '../abstracts' as *;
+
+@mixin styles {
+    .page-banner {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        min-height: clamp(360px, 56vh, 600px);
+        padding-block: clamp(48px, 7vw, 96px);
+        background:
+            linear-gradient(90deg, rgba(26, 36, 0, 0.82) 0%, rgba(26, 36, 0, 0.4) 70%, rgba(26, 36, 0, 0.2) 100%),
+            var(--banner-image, none) center / cover no-repeat,
+            $color-main;
+        color: var(--color-navbar-text);
+    }
+
+    .page-banner__inner {
+        display: grid;
+        gap: 6px;
+    }
+
+    .page-banner__title {
+        max-width: 18ch;
+        font-family: var(--font-Rufina);
+        font-weight: 700;
+        @include fluid-type(40px, 80px, 375px, 1300px);
+        line-height: 1.08;
+        letter-spacing: -0.01em;
+        text-wrap: balance;
+        overflow-wrap: anywhere;
+    }
+
+    .page-banner__lead {
+        max-width: 56ch;
+        margin-top: 12px;
+        font-family: var(--font-Lato);
+        font-size: 20px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.88);
+    }
+
+    .page-banner--menu {
+        --banner-image: url(#{$img-path}/menu/Dish.png);
+    }
+
+    .page-banner--full-menu {
+        --banner-image: url(#{$img-path}/menu/full-menu/MixedFruit.png);
+    }
+
+    .page-banner--blog {
+        --banner-image: url(#{$img-path}/blog/Blue_flower.png);
+    }
+
+    .page-banner--post {
+        --banner-image: url(#{$img-path}/blog/detail/Raw_Meat.png);
+
+        .page-banner__title {
+            max-width: 26ch;
+            @include fluid-type(30px, 60px, 375px, 1300px);
+        }
+    }
+
+    .page-banner--about {
+        --banner-image: url(#{$img-path}/about/Wooden.png);
+    }
+
+    .page-banner--contact {
+        --banner-image: url(#{$img-path}/contact/Berry.png);
+    }
+
+    // Opening hours strip (contact and full menu) ---------------------------------
+    .hours {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px 32px;
+        width: fit-content;
+        max-width: 100%;
+        margin-top: 28px;
+        padding: 16px 24px;
+        border: 1px solid $glass-border;
+        border-radius: $radius-md;
+        background: rgba(26, 36, 0, 0.55);
+        backdrop-filter: blur(10px);
+        font-family: var(--font-Inter);
+    }
+
+    .hours__days {
+        display: grid;
+        gap: 2px;
+        font-size: 15px;
+
+        strong {
+            font-family: var(--font-Rufina);
+            font-size: 20px;
+        }
+    }
+
+    .hours__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 32px;
+    }
+
+    .hours__list li {
+        display: grid;
+        gap: 2px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.75);
+
+        strong {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--color-navbar-text);
+        }
+    }
+
+    @include respond-down(sm) {
+        .page-banner {
+            min-height: 320px;
+        }
+
+        .page-banner__lead {
+            font-size: 18px;
+        }
+
+        .hours {
+            padding: 14px 16px;
+        }
+    }
+}

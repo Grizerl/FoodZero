@@ -7,16 +7,7 @@
 @endsection
 
 @section('content')
-<section>
-    <div class="section-menu-banner h-100">
-        <div class="background-img d-flex sc-fzfGF">
-            <div class="background-content">
-                <h1 class="banner-slogan max-widt">View Our New Menu</h1>
-                <p class="banner-lead">The freshest ingredients for you every day</p>
-            </div>
-        </div>
-    </div>
-</section>
+@include('partials.page-banner', ['variant' => 'menu', 'title' => 'View Our New Menu', 'lead' => 'The freshest ingredients for you every day'])
 <section>
     <div class="section_all_menu">
         <div class="container">
@@ -54,8 +45,8 @@
                     'decor' => ['class' => 'avocado', 'src' => '/assets/images/menu/Pastries&Drinks/Avocado.png'],
                 ])
             </div>
-            <div class="menu-cta-wrap">
-                <a class="menu-cta" href="{{ route('fullMenu.page') }}">Complete menu <span class="menu-cta__arrow" aria-hidden="true">&rarr;</span></a>
+            <div class="section-cta">
+                <a class="btn btn--primary" href="{{ route('fullMenu.page') }}">Complete menu <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
             </div>
         </div>
     </div>

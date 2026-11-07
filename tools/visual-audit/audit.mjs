@@ -4,6 +4,8 @@
 //   node audit.mjs [--out baseline|current] [--widths 375,768,1024,1440] [--pages home,menu] [--no-shots]
 // Env:
 //   BASE_URL   (default http://foodzero.local)
+//   ROUTE_PREFIX (default /foodzero; empty string when the site is served from /)
+//   ADMIN_LOGIN_PATH (default /admin/login)
 //   CHROME     (default: Chrome in Program Files)
 //
 // Writes screenshots to ./<out>/<page>-<width>.png and a JSON report to ./report-<out>.json,
@@ -23,18 +25,19 @@ const args = Object.fromEntries(
 );
 
 const BASE = process.env.BASE_URL || 'http://foodzero.local';
+const PREFIX = process.env.ROUTE_PREFIX ?? '/foodzero'; // '' when the public site is served from the root
 const CHROME = process.env.CHROME || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const OUT = args.out || 'current';
 const WIDTHS = String(args.widths || '375,768,1024,1440').split(',').map(Number);
 
 const PAGES = {
-    home: '/foodzero',
-    menu: '/foodzero/menu',
-    fullmenu: '/foodzero/menu/full',
-    blog: '/foodzero/blog',
-    about: '/foodzero/about',
-    contact: '/foodzero/contact',
-    login: '/admin/login',
+    home: PREFIX || '/',
+    menu: PREFIX + '/menu',
+    fullmenu: PREFIX + '/menu/full',
+    blog: PREFIX + '/blog',
+    about: PREFIX + '/about',
+    contact: PREFIX + '/contact',
+    login: process.env.ADMIN_LOGIN_PATH || '/admin/login',
 };
 const only = args.pages ? String(args.pages).split(',') : Object.keys(PAGES);
 
@@ -58,7 +61,7 @@ function domChecks(minPad) {
     );
     const decor = [...document.images].filter((img) => {
         if (isHidden(img) || inBurger(img)) return false;
-        if (img.closest('.img-container, .block-seasonings, .slide-people, .fashion-img, .banner-img, .section-img')) return false;
+        if (img.closest('.img-container, .tile, .block-seasonings, .slide-people, .fashion-img, .banner-img, .section-img')) return false;
         let el = img;
         for (let i = 0; i < 3 && el; i++, el = el.parentElement) {
             if (['absolute', 'fixed'].includes(getComputedStyle(el).position)) return true;

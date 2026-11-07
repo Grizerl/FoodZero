@@ -11,12 +11,22 @@
     <title>@yield('title', 'FoodZero-Restaurant and Food')</title>
 </head>
 <body>
+@php
+    // Shared by the header, the full-screen menu and the footer.
+    $menuLinks = [
+        ['home.page', 'Home', ['home.page']],
+        ['menu.page', 'Menu', ['menu.page', 'fullMenu.page']],
+        ['blog.page', 'Blog', ['blog.page', 'post.details.page']],
+        ['about.page', 'About', ['about.page']],
+        ['contact.page', 'Contact', ['contact.page']],
+    ];
+@endphp
 <div class="app">
     <div>
-        <div class="container">
-            @include('partials.header')
-        </div>
-        @yield('content')
+        @include('partials.header')
+        <main>
+            @yield('content')
+        </main>
     </div>
     @include('partials.footer')
 </div>

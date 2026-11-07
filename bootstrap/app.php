@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Request;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -12,8 +13,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        // The admin login route is named `admin.login.form`; there is no `login` route.
+        $middleware->redirectGuestsTo(fn () => route('admin.login.form'));
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        // API clients always get JSON (401 for guests), even without an `Accept: application/json` header.
+        $exceptions->shouldRenderJsonWhen(
+            fn (Request $request, Throwable $e) => $request->is('api/*') || $request->expectsJson()
+        );
     })->create();
