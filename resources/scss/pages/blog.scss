@@ -119,3 +119,10 @@
         font-size: 26px;
     }
 }
+
+// Keep the banner text off the screen edge on tablets and phones.
+@include respond-down(md) {
+    .background_img {
+        padding-inline: $banner-gutter;
+    }
+}

@@ -147,3 +147,8 @@
     font-size: 26px;
   }
 }
+@media screen and (max-width: 830px) {
+  .background_img {
+    padding-inline: 16px;
+  }
+}

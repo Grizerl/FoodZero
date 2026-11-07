@@ -205,3 +205,10 @@
         line-height: 30px;
     }
 }
+
+// Keep the banner text off the screen edge on tablets and phones.
+@include respond-down(md) {
+    .background-image {
+        padding-inline: $banner-gutter;
+    }
+}

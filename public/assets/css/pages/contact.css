@@ -247,3 +247,8 @@
     line-height: 30px;
   }
 }
+@media screen and (max-width: 830px) {
+  .background-image {
+    padding-inline: 16px;
+  }
+}

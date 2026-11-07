@@ -88,13 +88,6 @@
     padding-bottom: 50px;
 }
 
-.blueberry,.avocado {
-    position: absolute;
-    top: 0;
-    right: 200px;
-    user-select: none;
-}
-
  
 
 @include respond-down(xxl) {
@@ -106,11 +99,6 @@
 @include respond-down(md) {
     .banner_text {
         padding: 0
-    }
-
-    .blueberry {
-        position: absolute;
-        right: 0;
     }
 
     .menu_navbar {
@@ -168,10 +156,6 @@
         line-height: 40px;
     }
 
-    .blueberry {
-      display: none;
-    }
-
     .section_menu_items {
         padding-top: 50px;
     }
@@ -199,5 +183,12 @@
 
     .menu_items {
         padding: 0 5px;
+    }
+}
+
+// Keep the banner text off the screen edge on tablets and phones.
+@include respond-down(md) {
+    .background-image {
+        padding-inline: $banner-gutter;
     }
 }

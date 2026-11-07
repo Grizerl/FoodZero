@@ -359,8 +359,8 @@
 .fashion-container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 40px;
+    justify-content: center;
+    gap: 65px;
 }
 
 @include blog-card.styles;
@@ -394,9 +394,9 @@
     text-align: center;
     font-family: var(--font-Rufina);
     font-weight: 700;
-    @include fluid-type(55px, font-size(display));
+    @include fluid-type(44px, font-size(display));
     line-height: 120px;
-    letter-spacing: 5px;
+    letter-spacing: clamp(1px, 0.5vw, 5px);
     color: var(--color-title-menu);
 }
 
@@ -523,6 +523,7 @@ option {
 }
 
 .img-container > img {
+    display: block; // no inline baseline gap under the picture
     width: 100%;
 }
 
@@ -561,9 +562,9 @@ option {
   align-items: center;
 }
 
-.slide-text p {  
+.slide-text p {
     position: relative;
-    max-width: 970px;
+    max-width: min(970px, calc(100% - 232px));
     padding-top: 40px;
     padding-bottom: 50px;
     font-family: var(--font-Rufina);
@@ -684,14 +685,12 @@ option {
         grid-template-columns: repeat(2,1fr);
     }
 
-    .menu-content {
-        position: relative;
-    }
-
-    .menu-content >img {
-        position: absolute;
-        top: 0;
-        right: 0;
+    // The leaf drawing stays in the flex row and shrinks next to the heading instead of
+    // being laid over it (it wraps under the heading on phones, see below).
+    .menu-content > img {
+        min-width: 0;
+        max-width: 100%;
+        height: auto;
     }
 
     .images-block {
@@ -712,6 +711,16 @@ option {
 }
 
 @include respond-down(sm) {
+
+    .menu-content {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .menu-content > img {
+        margin-left: auto;
+    }
+
 
     .block-seasonings {
         right: 0;
@@ -739,7 +748,12 @@ option {
         flex-direction: column;
     }
 
+    .slide-text > img {
+        display: none;
+    }
+
     .slide-text p {
+        max-width: 100%;
         font-size: 30px;
     }
 }

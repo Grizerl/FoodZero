@@ -59,12 +59,6 @@
     padding-bottom: 50px;
 }
 
-.blueberry,.avocado {
-    position: absolute;
-    top: 0;
-    right: 200px;
-}
-
  
 
 .btm__menu {
@@ -159,12 +153,6 @@
         line-height: 30px;
     }
 
-    .blueberry, .avocado {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
     .section-menu-banner {
         min-height: 87vh;
     }
@@ -172,5 +160,12 @@
     .starters-content, .mains-content, .pastries-content {
         padding-top: 40px;
         padding-bottom: 50px;
+    }
+}
+
+// Keep the banner text off the screen edge on tablets and phones.
+@include respond-down(md) {
+    .background-img {
+        padding-inline: $banner-gutter;
     }
 }

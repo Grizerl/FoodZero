@@ -149,7 +149,12 @@
     left: -100%;
     z-index: 99999;
     height: 100%;
-    width: 100%; 
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     background: linear-gradient($overlay-main-90, $overlay-main-60), url(#{$img-path}/CloseUp.png) center/cover no-repeat;
     transition: var(--transition-all); 
 }
@@ -161,15 +166,24 @@
 .close-btn {
    border: 0;
    background: none;
-   color: inherit;
+   color: var(--color-navbar-text);
    font-family: inherit;
    padding: 35px;
    font-size: 35px;
    cursor: pointer;
+   align-self: flex-start;
+   flex: none;
+}
+
+.close-btn:focus-visible,
+.adaptive-icon:focus-visible {
+    outline: 2px solid var(--hover-adaptive);
+    outline-offset: 2px;
 }
 
 .burger-container {
-    height: 100%;
+    flex: 1 0 auto;
+    padding-bottom: 30px;
     align-items: center;
     justify-content: space-around;
 }
@@ -394,6 +408,12 @@
 
     .burger-container {
         flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .left-link {
+        font-size: 40px;
+        line-height: 60px;
     }
 
     .left-navbar,.right-title,.sc-navbar {

@@ -355,8 +355,8 @@
 .fashion-container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 40px;
+  justify-content: center;
+  gap: 65px;
 }
 
 .fashion-img {
@@ -475,9 +475,9 @@
   text-align: center;
   font-family: var(--font-Rufina);
   font-weight: 700;
-  font-size: clamp(55px, 55px + 2.5806451613vw - 9.6774193548px, 75px);
+  font-size: clamp(44px, 44px + 4vw - 15px, 75px);
   line-height: 120px;
-  letter-spacing: 5px;
+  letter-spacing: clamp(1px, 0.5vw, 5px);
   color: var(--color-title-menu);
 }
 
@@ -604,6 +604,7 @@ option {
 }
 
 .img-container > img {
+  display: block;
   width: 100%;
 }
 
@@ -644,7 +645,7 @@ option {
 
 .slide-text p {
   position: relative;
-  max-width: 970px;
+  max-width: min(970px, 100% - 232px);
   padding-top: 40px;
   padding-bottom: 50px;
   font-family: var(--font-Rufina);
@@ -753,13 +754,10 @@ option {
   .calories-images, .layers-container {
     grid-template-columns: repeat(2, 1fr);
   }
-  .menu-content {
-    position: relative;
-  }
   .menu-content > img {
-    position: absolute;
-    top: 0;
-    right: 0;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
   }
   .images-block {
     display: none;
@@ -775,6 +773,13 @@ option {
   }
 }
 @media screen and (max-width: 700px) {
+  .menu-content {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .menu-content > img {
+    margin-left: auto;
+  }
   .block-seasonings {
     right: 0;
   }
@@ -795,7 +800,11 @@ option {
   .slide-people {
     flex-direction: column;
   }
+  .slide-text > img {
+    display: none;
+  }
   .slide-text p {
+    max-width: 100%;
     font-size: 30px;
   }
 }

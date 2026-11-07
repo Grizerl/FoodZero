@@ -59,6 +59,7 @@
 }
 
 .our_story {
+    position: relative;
     color: var(--color-title-menu);
 }
 
@@ -79,9 +80,13 @@
     color: var(--color-card-lead);
 }
 
+// Decorative drawings: kept clear of the text boxes and only shown where the layout has room.
 .tomato {
     position: absolute;
-    top: 0;
+    top: -123px;
+    left: 100%;
+    margin-left: 20px;
+    pointer-events: none;
 }
 
 /* Aside info */
@@ -195,6 +200,16 @@
     position: absolute;
     top: 0;
     right: 0;
+    max-width: min(352px, calc((100vw - 640px) / 2));
+    max-height: 360px;
+    width: auto;
+    height: auto;
+    pointer-events: none;
+}
+
+.headline {
+    max-width: 640px;
+    margin-inline: auto;
 }
 
 .rosemary_second {
@@ -350,5 +365,20 @@
     .headline {
         font-size: 45px;
         line-height: 55px;
+    }
+}
+
+@include respond-down(xl) {
+    .tomato,
+    .rosemary,
+    .rosemary_second {
+        display: none;
+    }
+}
+
+// Keep the banner text off the screen edge on tablets and phones.
+@include respond-down(md) {
+    .background-img {
+        padding-inline: $banner-gutter;
     }
 }

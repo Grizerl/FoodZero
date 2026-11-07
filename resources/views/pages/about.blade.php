@@ -36,8 +36,8 @@
                             Purus lorem id penatibus imperdiet. Turpis egestas ultricies purus 
                             auctor tincidunt lacus nunc. 
                         </p>
+                        <img class="tomato" src="/assets/images/about/Tomato.png" alt="" aria-hidden="true" loading="lazy">
                     </div>
-                        <img class="tomato" src="/assets/images/about/Tomato.png" alt="Tomato" loading="lazy">
                     <figure class="text-end">
                         <img class="img-chef"  src="/assets/images/about/Chef.png" alt="Chef" loading="lazy">
                     </figure>

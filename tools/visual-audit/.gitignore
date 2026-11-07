@@ -7,3 +7,5 @@
 /login-check
 /report-*.json
 /pairs.mjs
+/baseline-*
+/rects.mjs
