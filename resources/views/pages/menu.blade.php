@@ -3,7 +3,7 @@
 @section('meta.description', 'Starters, mains, pastries and drinks made daily from fresh seasonal ingredients at FoodZero.')
 
 @section('link.css')
-<link rel="stylesheet" href="/assets/css/pages/menu.css">
+<link rel="stylesheet" href="@assetv('assets/css/pages/menu.css')">
 @endsection
 
 @section('content')

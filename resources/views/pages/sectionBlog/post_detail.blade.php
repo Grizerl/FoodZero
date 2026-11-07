@@ -3,7 +3,7 @@
 @section('meta.description', \Illuminate\Support\Str::limit(strip_tags($post->description), 155))
 
 @section('link.css')
-    <link rel="stylesheet" href="/assets/css/pages/extra.css">
+    <link rel="stylesheet" href="@assetv('assets/css/pages/extra.css')">
 @endsection
 
 @section('content')

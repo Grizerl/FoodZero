@@ -3,7 +3,7 @@
 @section('meta.description', 'Get in touch with FoodZero by phone or email, find us on the map and reserve your table.')
 
 @section('link.css')
-<link rel="stylesheet" href="/assets/css/pages/contact.css">
+<link rel="stylesheet" href="@assetv('assets/css/pages/contact.css')">
 @endsection
 
 @section('content')

@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         burgerMenu.classList.toggle('active', open);
         burgerIcon.setAttribute('aria-expanded', open ? 'true' : 'false');
         burgerMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+        document.documentElement.classList.toggle('menu-open', open);
 
         if ('inert' in burgerMenu) {
             burgerMenu.inert = !open;

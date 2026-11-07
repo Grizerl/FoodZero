@@ -3,7 +3,7 @@
 @section('meta.description', 'Meet the FoodZero team and learn how our chefs prepare every dish, from slicing to baking.')
 
 @section('link.css')
-    <link rel="stylesheet" href="/assets/css/pages/about.css">
+    <link rel="stylesheet" href="@assetv('assets/css/pages/about.css')">
 @endsection
 
 @section('content')

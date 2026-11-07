@@ -3,7 +3,7 @@
 @section('meta.description', 'Browse the complete FoodZero menu by category: brunch, lunch and dinner dishes with prices.')
 
 @section('link.css')
-<link rel="stylesheet" href="/assets/css/pages/full-menu.css">
+<link rel="stylesheet" href="@assetv('assets/css/pages/full-menu.css')">
 @endsection
 
 @section('content')
