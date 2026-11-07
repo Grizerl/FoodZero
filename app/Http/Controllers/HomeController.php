@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Main\ReservationRequest;
+use App\Http\Requests\Main\ReservationSlotsRequest;
 use App\Models\Category;
 use App\Models\Menu;
 use App\Models\Post;
 use App\Models\Reservation;
+use App\Services\ReservationSchedule;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\UniqueConstraintViolationException;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Validation\ValidationException;
 
 class HomeController extends Controller
 {
@@ -86,10 +91,33 @@ class HomeController extends Controller
     /**
      * Summary of reservation
      */
-    public function reservation(ReservationRequest $request): RedirectResponse
+    public function reservation(ReservationRequest $request): RedirectResponse|JsonResponse
     {
-        Reservation::create($request->validated());
+        try {
+            Reservation::create($request->reservationData());
+        } catch (UniqueConstraintViolationException) {
+            // Someone booked the same slot between validation and insert; the unique index decides.
+            throw ValidationException::withMessages(['reservation_slot' => ReservationRequest::TAKEN_MESSAGE]);
+        }
 
-        return redirect()->back()->with('success', 'Your reservation has been successfully added.');
+        $message = 'Your reservation has been successfully added.';
+
+        if ($request->expectsJson()) {
+            return response()->json(['message' => $message], 201);
+        }
+
+        return redirect()->back()->with('success', $message);
+    }
+
+    /**
+     * Free and taken slots of one date, for the reservation form.
+     */
+    public function reservationSlots(ReservationSlotsRequest $request, ReservationSchedule $schedule): JsonResponse
+    {
+        $date = $schedule->parseDate($request->validated('date'));
+
+        return response()
+            ->json(['date' => $date->format('Y-m-d'), 'slots' => $schedule->slotsFor($date)])
+            ->header('Cache-Control', 'no-store');
     }
 }

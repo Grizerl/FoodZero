@@ -19,7 +19,7 @@
                 <h2 class="contact__title">Questions or special requests?</h2>
                 <p class="contact__text">We can be contacted by email at <a class="get_in_touch" href="mailto:info@foodzero.com">info@foodzero.com</a> or by telephone on <a class="get_in_touch" href="tel:+868523460000">+86 852 346 000</a>.</p>
                 <div class="contact__actions">
-                    <a class="btn btn--primary" href="tel:+868523460000">Call us</a>
+                    <a class="btn btn--primary" href="tel:+868523460000" data-call-dialog="call-dialog" aria-haspopup="dialog">Call us</a>
                     <a class="btn btn--outline" href="mailto:info@foodzero.com">Send an email</a>
                 </div>
             </div>
@@ -39,5 +39,19 @@
         </div>
     </div>
 </section>
+<dialog class="call-dialog" id="call-dialog" aria-labelledby="call-dialog-title">
+    <button type="button" class="call-dialog__close" data-call-close aria-label="Close">&times;</button>
+    <h2 class="call-dialog__title" id="call-dialog-title">Call FoodZero</h2>
+    <p class="call-dialog__number" data-call-number>+86 852 346 000</p>
+    <p class="call-dialog__note">We answer Sunday – Friday.</p>
+    <div class="call-dialog__actions">
+        <button type="button" class="btn btn--outline" data-call-copy>Copy number</button>
+        <a class="btn btn--primary" href="tel:+868523460000">Call</a>
+    </div>
+</dialog>
 @include('partials.form')
+@endsection
+
+@section('script.js')
+<script src="@assetv('assets/js/contact-call.js')" defer></script>
 @endsection

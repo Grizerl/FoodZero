@@ -74,9 +74,7 @@
 <section class="cook">
     <div class="container cook__grid">
         <div class="cook__images">
-            <img class="cook__leaf" src="/assets/images/excellent cook/Leaf.png" loading="lazy" alt="">
-            <img class="cook__plate" src="/assets/images/excellent cook/brown-wooden-round-plate-with-food 1.png" loading="lazy" alt="A wooden plate with a salmon dish">
-            <img class="cook__chef" src="/assets/images/excellent cook/man-in-black-crew-neck-t-shirt-eating 1.png" loading="lazy" alt="Our chef plating a dish">
+            <img class="cook__photo" src="/assets/images/excellent cook/chef-plating.jpg" width="1000" height="1500" loading="lazy" alt="A chef plating a dish on a wooden board">
         </div>
         <div class="cook__copy">
             <p class="eyebrow">Our chefs</p>

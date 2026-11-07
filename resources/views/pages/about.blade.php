@@ -59,9 +59,9 @@
     <div class="container video__inner">
         <h2 class="video__title">It looks delicious</h2>
         <p class="video__text">Take a look behind the scenes and see how a dish travels from the market to your table.</p>
-        <button type="button" class="video__play" aria-label="Play video">
+        <a class="video__play" href="/assets/video/behind-the-scenes.mp4" aria-label="Play video" aria-haspopup="dialog" data-video-open="video-dialog">
             <img width="85" height="85" src="/assets/images/about/8666551_play_circle_icon.svg" alt="" loading="lazy">
-        </button>
+        </a>
     </div>
 </section>
 
@@ -107,5 +107,16 @@
     </div>
     <img class="rosemary rosemary--second" src="/assets/images/about/stage/rosemary (1).png" alt="" loading="lazy">
 </section>
+<dialog class="video-dialog" id="video-dialog" aria-label="Behind the scenes video">
+    <button type="button" class="video-dialog__close" data-video-close aria-label="Close video">&times;</button>
+    <video class="video-dialog__player" controls playsinline preload="none" poster="/assets/images/about/FreeFood.png">
+        <source src="/assets/video/behind-the-scenes.mp4" type="video/mp4">
+        Your browser does not support video playback.
+    </video>
+</dialog>
 @include('partials.form')
+@endsection
+
+@section('script.js')
+<script src="@assetv('assets/js/video-modal.js')" defer></script>
 @endsection
