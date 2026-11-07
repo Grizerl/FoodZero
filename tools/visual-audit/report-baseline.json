@@ -1,0 +1,974 @@
+{
+ "report": [
+  {
+   "name": "home",
+   "width": 375,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 375,
+   "clientW": 375,
+   "scrollH": 11371,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 7,
+   "h1Left": 17,
+   "bannerOk": true,
+   "overlaps": [
+    "img[Annie-spratt] x \"Our Menu\"",
+    "img[”] x \"“ Lorem ipsum dolor sit amet\""
+   ],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 2,
+    "malformedClosingTags": 4,
+    "typos": 5,
+    "httpStatus": 200
+   },
+   "problems": []
+  },
+  {
+   "name": "home",
+   "width": 768,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 768,
+   "clientW": 768,
+   "scrollH": 10609,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 7,
+   "h1Left": 17,
+   "bannerOk": true,
+   "overlaps": [
+    "img[Annie-spratt] x \"Our Menu\"",
+    "img[”] x \"“ Lorem ipsum dolor sit amet\""
+   ],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 2,
+    "malformedClosingTags": 4,
+    "typos": 5,
+    "httpStatus": 200
+   },
+   "problems": []
+  },
+  {
+   "name": "home",
+   "width": 1024,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1024,
+   "clientW": 1024,
+   "scrollH": 7695,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 7,
+   "h1Left": 17,
+   "bannerOk": true,
+   "overlaps": [
+    "img[”] x \"“ Lorem ipsum dolor sit amet\""
+   ],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 2,
+    "malformedClosingTags": 4,
+    "typos": 5,
+    "httpStatus": 200
+   },
+   "problems": []
+  },
+  {
+   "name": "home",
+   "width": 1440,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1440,
+   "clientW": 1440,
+   "scrollH": 7330,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 7,
+   "h1Left": 17,
+   "bannerOk": true,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 2,
+    "malformedClosingTags": 4,
+    "typos": 5,
+    "httpStatus": 200
+   },
+   "problems": []
+  },
+  {
+   "name": "menu",
+   "width": 375,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 375,
+   "clientW": 375,
+   "scrollH": 4866,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 5,
+   "h1Left": 0,
+   "bannerOk": false,
+   "overlaps": [
+    "img[Blueberry] x \"Starters\"",
+    "img[Avocado] x \"Pastries & Drinks\""
+   ],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 2,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "menu",
+   "width": 768,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 768,
+   "clientW": 768,
+   "scrollH": 4743,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 5,
+   "h1Left": 84,
+   "bannerOk": true,
+   "overlaps": [
+    "img[Blueberry] x \"Starters\"",
+    "img[Avocado] x \"Pastries & Drinks\""
+   ],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 2,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "menu",
+   "width": 1024,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1024,
+   "clientW": 1024,
+   "scrollH": 4758,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 5,
+   "h1Left": 208,
+   "bannerOk": true,
+   "overlaps": [
+    "img[Blueberry] x \"Starters\"",
+    "img[Avocado] x \"Pastries & Drinks\""
+   ],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 2,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "menu",
+   "width": 1440,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1440,
+   "clientW": 1440,
+   "scrollH": 4866,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 5,
+   "h1Left": 208,
+   "bannerOk": true,
+   "overlaps": [
+    "img[Blueberry] x \"Starters\"",
+    "img[Avocado] x \"Pastries & Drinks\""
+   ],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 2,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "fullmenu",
+   "width": 375,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 375,
+   "clientW": 375,
+   "scrollH": 1872,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 1,
+   "h1Left": 0,
+   "bannerOk": false,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 2,
+    "httpStatus": 200
+   },
+   "problems": [
+    "HTTP 404: http://foodzero.local/foodzero/assets/css/index.css",
+    "console.error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "HTTP 404: http://foodzero.local/foodzero/assets/js/index-slider.js"
+   ]
+  },
+  {
+   "name": "fullmenu",
+   "width": 768,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 768,
+   "clientW": 768,
+   "scrollH": 1759,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 1,
+   "h1Left": 0,
+   "bannerOk": false,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 2,
+    "httpStatus": 200
+   },
+   "problems": [
+    "HTTP 404: http://foodzero.local/foodzero/assets/css/index.css",
+    "console.error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "HTTP 404: http://foodzero.local/foodzero/assets/js/index-slider.js"
+   ]
+  },
+  {
+   "name": "fullmenu",
+   "width": 1024,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1024,
+   "clientW": 1024,
+   "scrollH": 1618,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 1,
+   "h1Left": 0,
+   "bannerOk": true,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 2,
+    "httpStatus": 200
+   },
+   "problems": [
+    "HTTP 404: http://foodzero.local/foodzero/assets/js/index-slider.js",
+    "console.error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "HTTP 404: http://foodzero.local/foodzero/assets/css/index.css"
+   ]
+  },
+  {
+   "name": "fullmenu",
+   "width": 1440,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1440,
+   "clientW": 1440,
+   "scrollH": 1618,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 1,
+   "h1Left": 0,
+   "bannerOk": true,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 2,
+    "httpStatus": 200
+   },
+   "problems": [
+    "HTTP 404: http://foodzero.local/foodzero/assets/css/index.css",
+    "console.error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "HTTP 404: http://foodzero.local/foodzero/assets/js/index-slider.js"
+   ]
+  },
+  {
+   "name": "blog",
+   "width": 375,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 375,
+   "clientW": 375,
+   "scrollH": 1886,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 1,
+   "h1Left": 0,
+   "bannerOk": false,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 3,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "blog",
+   "width": 768,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 768,
+   "clientW": 768,
+   "scrollH": 1723,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 1,
+   "h1Left": 0,
+   "bannerOk": false,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 3,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "blog",
+   "width": 1024,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1024,
+   "clientW": 1024,
+   "scrollH": 1532,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 1,
+   "h1Left": 66,
+   "bannerOk": true,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 3,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "blog",
+   "width": 1440,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1440,
+   "clientW": 1440,
+   "scrollH": 1532,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 1,
+   "h1Left": 274,
+   "bannerOk": true,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 3,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "about",
+   "width": 375,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 375,
+   "clientW": 375,
+   "scrollH": 7077,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 10,
+   "h1Left": 0,
+   "bannerOk": false,
+   "overlaps": [
+    "img.tomato[Tomato] x \"Our Story\"",
+    "img.rosemary[Rosemary] x \"Sophisticated Process\"",
+    "img.rosemary_second[Rosemary] x \"03.Bake\""
+   ],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 4,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "about",
+   "width": 768,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 768,
+   "clientW": 768,
+   "scrollH": 8174,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 10,
+   "h1Left": 168,
+   "bannerOk": true,
+   "overlaps": [
+    "img.tomato[Tomato] x \"Our Story\"",
+    "img.rosemary[Rosemary] x \"Sophisticated Process\"",
+    "img.rosemary_second[Rosemary] x \"03.Bake\""
+   ],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 4,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "about",
+   "width": 1024,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1024,
+   "clientW": 1024,
+   "scrollH": 6151,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 10,
+   "h1Left": 380,
+   "bannerOk": true,
+   "overlaps": [
+    "img.tomato[Tomato] x \"Our Story\"",
+    "img.rosemary[Rosemary] x \"Sophisticated Process\""
+   ],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 4,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "about",
+   "width": 1440,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1440,
+   "clientW": 1440,
+   "scrollH": 6181,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 10,
+   "h1Left": 796,
+   "bannerOk": true,
+   "overlaps": [
+    "img.tomato[Tomato] x \"Our Story\"",
+    "img.rosemary[Rosemary] x \"Sophisticated Process\""
+   ],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 4,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "contact",
+   "width": 375,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 375,
+   "clientW": 375,
+   "scrollH": 3650,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 2,
+   "h1Left": 0,
+   "bannerOk": false,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 2,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "contact",
+   "width": 768,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 768,
+   "clientW": 768,
+   "scrollH": 4094,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 2,
+   "h1Left": 0,
+   "bannerOk": false,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 2,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "contact",
+   "width": 1024,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1024,
+   "clientW": 1024,
+   "scrollH": 3326,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 2,
+   "h1Left": 208,
+   "bannerOk": true,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 2,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "contact",
+   "width": 1440,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1440,
+   "clientW": 1440,
+   "scrollH": 3264,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 2,
+   "h1Left": 208,
+   "bannerOk": true,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [
+    "tel:+86 852 346 000",
+    "tel:+1+86 852 346 000",
+    "tel:+1+86 852 346 000"
+   ],
+   "burgerTag": "SPAN",
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 2,
+    "httpStatus": 200
+   },
+   "problems": [
+    "pageerror: Cannot read properties of undefined (reading 'style')"
+   ]
+  },
+  {
+   "name": "login",
+   "width": 375,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 375,
+   "clientW": 375,
+   "scrollH": 900,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 0,
+   "h1Left": null,
+   "bannerOk": true,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [],
+   "burgerTag": null,
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 0,
+    "httpStatus": 200
+   },
+   "problems": []
+  },
+  {
+   "name": "login",
+   "width": 768,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 768,
+   "clientW": 768,
+   "scrollH": 900,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 0,
+   "h1Left": null,
+   "bannerOk": true,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [],
+   "burgerTag": null,
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 0,
+    "httpStatus": 200
+   },
+   "problems": []
+  },
+  {
+   "name": "login",
+   "width": 1024,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1024,
+   "clientW": 1024,
+   "scrollH": 900,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 0,
+   "h1Left": null,
+   "bannerOk": true,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [],
+   "burgerTag": null,
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 0,
+    "httpStatus": 200
+   },
+   "problems": []
+  },
+  {
+   "name": "login",
+   "width": 1440,
+   "status": 200,
+   "title": "FoodZero-Restaurant and Food",
+   "lang": "en",
+   "description": null,
+   "scrollW": 1440,
+   "clientW": 1440,
+   "scrollH": 900,
+   "hOverflow": false,
+   "wide": [],
+   "h1Count": 0,
+   "h1Left": null,
+   "bannerOk": true,
+   "overlaps": [],
+   "brokenImgs": [],
+   "telLinks": [],
+   "burgerTag": null,
+   "burgerAria": null,
+   "raw": {
+    "nestedAnchors": 0,
+    "malformedClosingTags": 0,
+    "typos": 0,
+    "httpStatus": 200
+   },
+   "problems": []
+  }
+ ],
+ "burger": {
+  "menuScrollH": 856,
+  "menuClientH": 667,
+  "overflowY": "visible",
+  "socialReachable": false,
+  "closeColor": "rgb(0, 0, 0)",
+  "ariaExpanded": null
+ }
+}
