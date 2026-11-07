@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/index.css">
-    <link rel="stylesheet" href="../../../assets/css/app.css">
-    <link rel="website icon" type="png" href="../../../assets/images/Brand.png">
+    <meta name="description" content="@yield('meta.description', 'FoodZero — restaurant with fresh seasonal ingredients, a daily menu, a food blog and online table reservations.')">
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/Brand.png') }}">
     @yield('link.css')
-    <title>FoodZero-Restaurant and Food</title>
+    <title>@yield('title', 'FoodZero-Restaurant and Food')</title>
 </head>
 <body>
 <div class="app">
@@ -19,7 +20,7 @@
     </div>
     @include('partials.footer')
 </div>
-<script src="../assets/js/index-slider.js"></script>
-<script src="../../../assets/js/adaptive-menu.js"></script>
+<script src="{{ asset('assets/js/index-slider.js') }}"></script>
+<script src="{{ asset('assets/js/adaptive-menu.js') }}"></script>
 </body>
 </html>

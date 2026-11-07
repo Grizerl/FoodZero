@@ -6,9 +6,9 @@
 
 ## 2. Підключення ресурсів і JS (без SCSS)
 
-- [ ] 2.1 У `layouts/app.blade.php` замінити відносні шляхи CSS/JS/favicon на `asset()`, додати `lang="en"` через конфіг і `@yield('meta.description')` зі значенням за замовчуванням; перевірити: `/foodzero/menu/full` не дає жодного 404 в audit-звіті
-- [ ] 2.2 Перевести `auth/login.blade.php` на `asset()` для favicon/CSS; перевірити: `/admin/login` без 404
-- [ ] 2.3 Додати в `index-slider.js` ранній вихід за відсутності `.mySlides`, замінити `var` на `const/let`; перевірити: audit-звіт без `Cannot read properties of undefined` на menu/blog/about/contact, слайдер на головній перемикається вперед/назад
+- [x] 2.1 У `layouts/app.blade.php` замінити відносні шляхи CSS/JS/favicon на `asset()`, додати `lang="en"` через конфіг і `@yield('meta.description')` зі значенням за замовчуванням; перевірити: `/foodzero/menu/full` не дає жодного 404 в audit-звіті
+- [x] 2.2 Перевести `auth/login.blade.php` на `asset()` для favicon/CSS; перевірити: `/admin/login` без 404
+- [x] 2.3 Додати в `index-slider.js` ранній вихід за відсутності `.mySlides`, замінити `var` на `const/let`; перевірити: audit-звіт без `Cannot read properties of undefined` на menu/blog/about/contact, слайдер на головній перемикається вперед/назад
 - [ ] 2.4 Переписати `adaptive-menu.js` із перевірками елементів, Escape, закриттям при кліку поза меню, `aria-expanded` та поверненням фокуса; перевірити: ручний прохід Tab/Enter/Escape і відсутність помилок консолі
 - [ ] 2.5 Закомітити крок окремо (`git log` показує окремий коміт для розділу 2)
 
