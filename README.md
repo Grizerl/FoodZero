@@ -6,7 +6,9 @@ Food Zero is a modern and eco-friendly restaurant that offers a healthy, zero-wa
 
 - **Laravel**: Backend framework for routing, models, controllers, and database management.
 - **Blade**: Templating engine used for rendering views.
-- **MySQL**: Database system for storing user and card-related data.
+- **MySQL**: Database system for storing menu, blog, reservation, subscriber and user data.
+- **SCSS**: Styles live in `resources/scss/` and are compiled to committed static CSS in `public/assets/css/` (see [Styles](#styles-scss)).
+- **Sanctum**: Token-protected JSON API (`routes/api.php`).
 
 ## Requirements
 
@@ -72,11 +74,20 @@ Public-site and login styles are written in SCSS (`resources/scss/`) and compile
 - Never edit `public/assets/css/**` by hand: edit the SCSS and rebuild. Every compiled file starts with a "Compiled from …" banner.
 - The build is deterministic: running it twice without changes leaves `git diff` empty.
 - `sass` is pinned (`1.89.2`) because newer releases need a newer Node than the host currently provides.
-- Admin styles (AdminLTE in `public/admin`) are vendor files and are not part of this pipeline.
+- The admin theme is `resources/scss/admin.scss` → `public/assets/css/admin.css`, loaded after AdminLTE's `adminlte.min.css`. Restyle AdminLTE there; the vendor files in `public/admin/**` are never edited.
+- Layout: `abstracts/` (tokens, mixins, breakpoints), `base/`, `components/` (shared partials: buttons, cards, header, footer, banners), `pages/`, `auth/`. Colors, radii and shadows come from `abstracts/_tokens.scss`; breakpoints only through `respond-down(xs|sm|md|lg|xl|xxl)`.
 
 ### Visual audit
 
 `tools/visual-audit` (headless Chrome via `puppeteer-core`) captures every public page at 375/768/1024/1440 px, checks console errors, 404s, horizontal scroll, `h1` count and overlaps, and pixel-diffs two screenshot sets. See the header of `audit.mjs`; run `npm install` inside that folder first.
+
+### Reservations
+
+Guests book through the form on the contact/home pages (`public/assets/js/reservation.js`). Bookable slots, open days and the booking window are set in `config/reservations.php` (one table per slot per date); the logic is in `app/Services/ReservationSchedule.php`.
+
+### Newsletter
+
+The footer form subscribes with double opt-in (signed confirmation link, welcome mail, signed one-click unsubscribe). Admins manage subscribers and send campaigns at `/dashboard/newsletters`. Mails are queued: run `php artisan queue:work` in `workspace-84`. With `MAIL_MAILER=log` (the default in `.env.example`) mails only land in `storage/logs`; configure a real SMTP `MAIL_*` block to deliver them.
 
 ### Demo content and keys
 
