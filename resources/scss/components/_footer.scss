@@ -1,0 +1,169 @@
+// Site footer: brand + short pitch, navigation, contacts, newsletter, copyright strip.
+@use '../abstracts' as *;
+
+@mixin styles {
+    .site-footer {
+        background: $color-main-deep;
+        color: var(--color-navbar-text);
+    }
+
+    .site-footer__grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.8fr 1.1fr 1.4fr;
+        gap: clamp(28px, 4vw, 56px);
+        padding-top: var(--space-section);
+        padding-bottom: clamp(40px, 5vw, 64px);
+    }
+
+    .site-footer__pitch {
+        max-width: 28ch;
+        margin-top: 18px;
+        font-family: var(--font-Lato);
+        font-size: 16px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.72);
+    }
+
+    .footer-section-title {
+        margin-bottom: 18px;
+        font-family: var(--font-Rufina);
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    .site-footer__list li + li {
+        margin-top: 6px;
+    }
+
+    .contact-link {
+        display: inline-block;
+        padding: 4px 0;
+        font-family: var(--font-Lato);
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.78);
+        transition: color 0.2s, transform 0.25s $ease-out;
+
+        &:hover {
+            color: $color-white;
+            transform: translateX(3px);
+        }
+
+        @include focus-ring(2px);
+
+        @include reduce-motion {
+            transition: none;
+
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+
+    .newsletter {
+        display: flex;
+        gap: 8px;
+        max-width: 420px;
+        padding: 6px;
+        border: 1px solid $glass-border;
+        border-radius: $radius-pill;
+        background: $glass-bg;
+
+        &:focus-within {
+            border-color: var(--hover-adaptive);
+        }
+    }
+
+    .recipe-email {
+        flex: 1;
+        min-width: 0;
+        padding: 0 18px;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-family: var(--font-Inter);
+        font-size: 15px;
+        color: var(--color-navbar-text);
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    .recipe-text {
+        max-width: 420px;
+        padding-top: 14px;
+        font-family: var(--font-Lato);
+        font-size: 14px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .site-footer__bottom {
+        border-top: 1px solid $glass-border;
+    }
+
+    .aside-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 22px;
+        padding-bottom: 22px;
+        font-family: var(--font-Inter);
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .media-icon ul {
+        display: flex;
+        gap: 4px;
+    }
+
+    .media-link {
+        display: inline-flex;
+        padding: 8px;
+        border-radius: 50%;
+        transition: background-color 0.25s;
+
+        &:hover {
+            background: $hover-on-dark;
+        }
+
+        @include focus-ring(0);
+    }
+
+    @include respond-down(lg) {
+        .site-footer__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @include respond-down(xs) {
+        .site-footer__grid {
+            grid-template-columns: 1fr;
+        }
+
+        .newsletter {
+            flex-direction: column;
+            border-radius: $radius-md;
+            padding: 8px;
+        }
+
+        .recipe-email {
+            min-height: 48px;
+        }
+
+        .newsletter .btn {
+            width: 100%;
+        }
+
+        .aside-container {
+            justify-content: center;
+            text-align: center;
+        }
+    }
+}

@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Menu;
 use App\Models\Post;
+use Illuminate\Http\JsonResponse;
 
 class ApiController extends Controller
 {
     /**
-     *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function menu()
     {
@@ -23,8 +23,7 @@ class ApiController extends Controller
     }
 
     /**
-     *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function fullmenu()
     {
@@ -32,7 +31,7 @@ class ApiController extends Controller
 
         if ($categories->isEmpty()) {
             return response()->json([
-                'message' => 'Категорії меню не знайдені'
+                'message' => 'Menu categories not found',
             ], 404);
         }
 
@@ -40,7 +39,7 @@ class ApiController extends Controller
     }
 
     /**
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function blog()
     {
@@ -48,7 +47,7 @@ class ApiController extends Controller
 
         if ($post->isEmpty()) {
             return response()->json([
-                'message' => 'Пости не знайдені'
+                'message' => 'Posts not found',
             ], 404);
         }
 
@@ -56,17 +55,15 @@ class ApiController extends Controller
     }
 
     /**
-     *
-     * @param int $id
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function post(int $id)
     {
         $post = Post::findOrFail($id);
 
-        if (!$post) {
+        if (! $post) {
             return response()->json([
-                'message' => 'Post is not found.'
+                'message' => 'Post is not found.',
             ], 404);
         }
 
@@ -77,5 +74,4 @@ class ApiController extends Controller
             'related_posts' => $related_posts,
         ], 200);
     }
-
 }

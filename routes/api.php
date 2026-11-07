@@ -27,7 +27,8 @@ Route::prefix('admin')->group(function (): void {
     Route::post('login', [IncController::class, 'login']);
 });
 
-Route::prefix('dashboard')->middleware(['auth:sanctum'])->group(function (): void {
+// Open without a token only while developing locally; any other APP_ENV still requires a Sanctum token.
+Route::prefix('dashboard')->name('api.dashboard.')->middleware(app()->environment('local') ? [] : ['auth:sanctum'])->group(function (): void {
 
     Route::apiResource('posts', PostController::class);
 

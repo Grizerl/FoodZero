@@ -2,383 +2,291 @@
 
 @use '../abstracts' as *;
 
-.section_about_banner {
-    min-height: 89vh;
-}
-
-.background-img {
-    position: absolute;
-    inset: 0;
-    background: $overlay-black-46 url(#{$img-path}/about/Wooden.png) center / cover no-repeat;
-}
-
-.sc_FDFf {
+/* Our story ------------------------------------------------------------------ */
+.story {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     align-items: center;
-    justify-content: flex-end;
+    gap: clamp(32px, 6vw, 88px);
 }
 
-.background-content {
-    padding-right: 10rem;
-    color: var(--color-navbar-text);
+.story__copy {
+    position: relative;
 }
 
-.background-title {
+.story__lead {
+    margin-top: 20px;
     font-family: var(--font-Rufina);
     font-weight: 700;
-    font-size: 110px;
-    line-height: 152px;
-    letter-spacing: 0px;
-}
-
-.background-text {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 23px;
-    line-height: 40px;
-    letter-spacing: 0px;
-}
-
-.background-text,
-.story_lead,
-.stage_description {
-    max-width: 550px;
-}
-
-/* Section about */
-.section_about {
-    padding-top: 70px;
-    background: var(--color-navbar-text);
-}
-
-.about-content {
-    padding-top: 60px;
-    padding-bottom: 70px;
-    position: relative;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.our_story {
-    position: relative;
+    @include fluid-type(20px, 26px);
+    line-height: 1.5;
     color: var(--color-title-menu);
 }
 
-.story_title {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 70px;
-    line-height: 120px;
-    letter-spacing: 0px;
-}
-
-.story_lead {
+.story__text {
+    max-width: 52ch;
+    margin-top: 16px;
     font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 33.6px;
-    letter-spacing: 0px;
+    font-size: 18px;
+    line-height: 1.75;
     color: var(--color-card-lead);
 }
 
-// Decorative drawings: kept clear of the text boxes and only shown where the layout has room.
+.story__photo {
+    position: relative;
+    text-align: center;
+
+    img {
+        display: block;
+        width: min(100%, 460px);
+        height: auto;
+        margin-inline: auto;
+    }
+}
+
+// Decorative drawing: only where the layout has room for it.
 .tomato {
     position: absolute;
-    top: -123px;
-    left: 100%;
-    margin-left: 20px;
+    right: 4%;
+    bottom: -36px;
+    width: 96px;
+    height: auto;
+    opacity: 0.9;
     pointer-events: none;
 }
 
-/* Aside info */
- .aside-content {
-    padding-top: 80px;
-    padding-bottom: 30px;
+/* Team ----------------------------------------------------------------------- */
+.team {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(24px, 4vw, 48px);
 }
 
-.member_content {
+.member {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
     align-items: center;
-    justify-content: space-around;
+    gap: clamp(16px, 3vw, 32px);
+    overflow: hidden;
+    padding: clamp(16px, 2.5vw, 28px);
+    border-radius: $radius-lg;
+    background: $color-white;
+    box-shadow: $shadow-soft;
 }
 
-.role {
+.member__photo {
+    overflow: hidden;
+    border-radius: $radius-md;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+    }
+}
+
+.member__name {
     font-family: var(--font-Rufina);
     font-weight: 700;
-    font-size: 35px;
-    letter-spacing: 0px;
+    font-size: 26px;
+    line-height: 1.2;
 }
 
-.name {
-    padding-bottom: 10px;
-    display: block;
-    font-family:var(--font-Lato);
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 55px;
-    letter-spacing: 2%;
+.member__role {
+    margin-top: 4px;
+    font-family: var(--font-Inter);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--background-span);
 }
 
-.slogan {
-    max-width: 450px;
+.member__quote {
+    margin-top: 16px;
     font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 33.6px;
-    letter-spacing: 2%;
+    font-size: 17px;
+    line-height: 1.7;
     color: var(--color-card-lead);
-} 
-
-.sc-FvGAS {
-    text-align: right;
 }
 
-.bottom_container {
-    position: relative;
-    bottom: 100px;
-}
-
-/* Section Video */
-.background-foto {
-    position: relative;
-    height: 75vh;
-    background: url(#{$img-path}/about/FreeFood.png) center / cover no-repeat;
-}
-
-.background-foto::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 75vh;
-    width: 100%;
-    background: var(--background-player);
-    opacity: 0.50;
-}
-
-.sc-FhaFD {
-    align-items: center;
-    justify-content: center;
-}
-
-.video_content {
-    position: relative;
-    text-align: center;
+/* Video band ----------------------------------------------------------------- */
+.video {
+    padding-block: clamp(72px, 12vw, 160px);
+    background:
+        linear-gradient(rgba(26, 36, 0, 0.6), rgba(26, 36, 0, 0.6)),
+        url(#{$img-path}/about/FreeFood.png) center / cover no-repeat;
     color: var(--color-navbar-text);
-    z-index: 9999;
+    text-align: center;
 }
 
-.video_name {
+.video__title {
     font-family: var(--font-Rufina);
     font-weight: 700;
-    font-size: 90px;
-    line-height: 120px;
-    letter-spacing: 0px;
+    @include fluid-type(36px, 72px, 375px, 1300px);
+    line-height: 1.1;
 }
 
-.video_description {
+.video__text {
+    max-width: 48ch;
+    margin: 16px auto 0;
     font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 33.6px;
-    letter-spacing: 2%;
+    font-size: 20px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.88);
 }
 
-.video_play_btn {
+.video__play {
+    margin-top: 32px;
+
+    img {
+        display: block;
+        filter: invert(1);
+    }
+
+    padding: 0;
     border: none;
+    border-radius: 50%;
     background: transparent;
-    padding-top: 40px;
-    padding-bottom: 15px;
     cursor: pointer;
+    transition: transform 0.3s $ease-out;
+
+    &:hover {
+        transform: scale(1.08);
+    }
+
+    @include focus-ring(6px);
+
+    @include reduce-motion {
+        transition: none;
+
+        &:hover {
+            transform: none;
+        }
+    }
 }
 
-/* Section stage */
-.section_process {
+/* Process -------------------------------------------------------------------- */
+.process {
     position: relative;
-    background: var(--color-navbar-text);
+    overflow: hidden;
 }
 
 .rosemary {
     position: absolute;
     top: 0;
     right: 0;
-    max-width: min(352px, calc((100vw - 640px) / 2));
-    max-height: 360px;
     width: auto;
-    height: auto;
+    max-width: min(300px, calc((100vw - 1100px) / 2 + 120px));
+    max-height: 320px;
     pointer-events: none;
 }
 
-.headline {
-    max-width: 640px;
-    margin-inline: auto;
-}
-
-.rosemary_second {
-    position: absolute;
-    left: 0;
+.rosemary--second {
+    top: auto;
+    right: auto;
     bottom: 0;
-    padding-bottom: 30px;
+    left: 0;
+    max-height: 280px;
 }
 
-.process_container {
-    padding-top: 80px;
-    padding-bottom: 100px
-}
-
-.headline_content {
-    padding-bottom: 60px;
-}
-
-.headline {
-    text-align: center;
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 55px;
-    line-height: 120px;
-    letter-spacing: 0px;
+.stages {
+    display: grid;
+    gap: clamp(32px, 5vw, 64px);
+    list-style: none;
 }
 
 .stage {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
-    justify-content: space-around;
-    padding-top: 20px;
-}
+    gap: clamp(24px, 5vw, 72px);
 
-.slice_stage {
-    height: 100%;
-    width: 90%;
-    object-fit: cover;
-}
-
-.stage_number {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 60px;
-    line-height: 105.6px;
-    letter-spacing: 0px;
-    color: var(--color-title-menu);
-}
-
-.stage_description {
-    font-family: var(--font-Lato);
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 33.6px;
-    letter-spacing: 2%;
-    color: var(--color-card-lead);
-}
-
-@include respond-down(xxl) {
-    .background-content {
-        padding: 0;
-    }
-
-    .text-end {
-        text-align: end;
+    &:nth-child(even) .stage__photo {
+        order: 2;
     }
 }
 
-@include respond-down(lg) {
-    .bottom_container {
-        bottom: 0;
-    }
+.stage__photo {
+    overflow: hidden;
+    border-radius: $radius-lg;
 
-    .slogan {
-        text-align: right;
-        font-size: 19px;
-    } 
-
-    .sc-FvGAS {
-        text-align: left;
-    }
-}
-
-@include respond-down(md) {
-    .member_content {
-        display: grid;
-    }
-
-    .background-title {
-        font-size: 100px;
-        line-height: 100px;
-    }
-
-    .member-img,.img-chef {
-        height: 100%;
+    img {
+        display: block;
         width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
         object-fit: cover;
     }
-
-    .slogan {
-        text-align: center;
-    }
-
-    .bottom_container {
-        margin-top: 30px;
-    }
-
-    .stage {
-        display: grid;
-    }
-
-    .stage > figure {
-        text-align: center;
-    }
-
-    .background-text,
-    .story_lead,
-    .stage_description {
-        max-width: 600px;
-    }
-
-    .stage_description {
-        padding-bottom: 10px;
-    }
-
-    .video_name {
-        font-size: 70px;
-        line-height: 80px;
-    }
-
-    .video_description,.background-text {
-        font-size: 20px;
-    }
-
-    .about-content {
-        text-align: center;
-        flex-direction: column;
-    }
-
-    .text-end {
-        text-align: center;
-    }
 }
 
-@include respond-down(xs) {
-    .section_about_banner {
-        min-height: 86vh;
-    }
+.stage__number {
+    font-family: var(--font-Inter);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.16em;
+    color: var(--background-span);
+}
 
-    .aside-content {
-        padding-top: 0;
-    }
+.stage__title {
+    margin-top: 6px;
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    @include fluid-type(32px, 48px);
+    line-height: 1.15;
+}
 
-    .headline {
-        font-size: 45px;
-        line-height: 55px;
-    }
+.stage__text {
+    max-width: 46ch;
+    margin-top: 14px;
+    font-family: var(--font-Lato);
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--color-card-lead);
 }
 
 @include respond-down(xl) {
     .tomato,
-    .rosemary,
-    .rosemary_second {
+    .rosemary {
         display: none;
     }
 }
 
-// Keep the banner text off the screen edge on tablets and phones.
+@include respond-down(lg) {
+    .team {
+        grid-template-columns: 1fr;
+    }
+}
+
 @include respond-down(md) {
-    .background-img {
-        padding-inline: $banner-gutter;
+    .story,
+    .stage {
+        grid-template-columns: 1fr;
+    }
+
+    .story__photo {
+        order: -1;
+    }
+
+    .stage:nth-child(even) .stage__photo {
+        order: 0;
+    }
+}
+
+@include respond-down(xs) {
+    .member {
+        grid-template-columns: 1fr;
+    }
+
+    .member__photo img {
+        aspect-ratio: 4 / 3;
+        object-position: top;
+    }
+
+    .story__text,
+    .stage__text {
+        font-size: 17px;
     }
 }

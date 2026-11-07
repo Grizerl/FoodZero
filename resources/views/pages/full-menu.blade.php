@@ -7,42 +7,7 @@
 @endsection
 
 @section('content')
-<section>
-    <div class="section_explore_menu">
-        <div class="banner_section">
-            <div class="background-image d-flex sc-DdgA">
-                <div>
-                    <div class="banner_text">
-                        <h1 class="banner_title">Explore the Menu</h1>
-                        <p class="banner_lead">Daily Fresh Ingredients, Just for You</p>
-                    </div>
-                    <div>
-                        <div class="aside_baner_text d-flex">
-                            <div class="sc-Fcsg d-flex">
-                                <span class="open_time">Open Time</span>
-                                <span class="open_day">Sunday - Friday</span>
-                            </div>
-                            <div class="sc-FDdg d-flex">
-                                <div class="info_container d-flex">
-                                    <span class="Brunch">Brunch</span>
-                                    <span class="time">11:00–12:00</span>
-                                </div>
-                                <div class="info_container d-flex">
-                                    <span class="Lunch">Lunch</span>
-                                    <span class="time">13:00–17:00</span>
-                                </div>
-                                <div class="info_container d-flex">
-                                    <span class="Dinner">Dinner</span>
-                                    <span class="time">18:00–20:00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+@include('partials.page-banner', ['variant' => 'full-menu', 'title' => 'Explore the Menu', 'lead' => 'Daily fresh ingredients, just for you', 'hours' => true])
 <section>
     <div class="section_all_menu">
         <div class="container">

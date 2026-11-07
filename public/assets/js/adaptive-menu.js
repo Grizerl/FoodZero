@@ -20,6 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function open() {
+        // The overlay grows out of the menu button, wherever the header puts it.
+        const rect = burgerIcon.getBoundingClientRect();
+        burgerMenu.style.setProperty('--menu-x', Math.round(rect.left + rect.width / 2) + 'px');
+        burgerMenu.style.setProperty('--menu-y', Math.round(rect.top + rect.height / 2) + 'px');
         setOpen(true);
         (closeButton || burgerMenu).focus?.();
     }

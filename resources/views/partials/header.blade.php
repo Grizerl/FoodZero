@@ -1,30 +1,26 @@
-@php
-    $menuLinks = [
-        ['home.page', 'Home', ['home.page']],
-        ['menu.page', 'Menu', ['menu.page', 'fullMenu.page']],
-        ['blog.page', 'Blogs', ['blog.page', 'post.details.page']],
-        ['about.page', 'About', ['about.page']],
-        ['contact.page', 'Contact', ['contact.page']],
-    ];
-@endphp
-    <header>
-        <div class="navbar-container">
-            <div class="content-left">
-                <h2 class="navbar-logo">FoodZero</h2>
-                <button type="button" class="adaptive-icon" aria-label="Open menu" aria-expanded="false" aria-controls="burger-menu">
-                    <span class="adaptive-icon__bar"></span>
-                    <span class="adaptive-icon__bar"></span>
-                    <span class="adaptive-icon__bar"></span>
-                </button>
-            </div>
-            <div class="content-right">
-                <span class="phone-number"><a href="tel:+868523460000">+86 852 346 000</a></span>
-                    <button class="btn-reservations">
-                        <a href="{{ route('contact.page') }}">Reservations</a>
-                    </button>
-            </div>
+<header class="site-header">
+    <div class="container site-header__inner">
+        <div class="site-header__left">
+            <a class="site-logo" href="{{ route('home.page') }}" aria-label="FoodZero — home">
+                <svg class="site-logo__mark" width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true" focusable="false">
+                    <circle cx="17" cy="17" r="16" stroke="currentColor" stroke-width="2" opacity=".45"/>
+                    <path d="M10 24c-.5-8 4.5-13.5 14-14.5.5 9.5-4.5 14.5-14 14.5Z" fill="currentColor"/>
+                    <path d="M10 24c3.2-4.6 6.6-7.7 10.6-9.8" stroke="#233000" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+                <span>FoodZero</span>
+            </a>
+            <button type="button" class="adaptive-icon" aria-label="Open menu" aria-expanded="false" aria-controls="burger-menu">
+                <span class="adaptive-icon__bar"></span>
+                <span class="adaptive-icon__bar"></span>
+                <span class="adaptive-icon__bar"></span>
+            </button>
         </div>
-    </header>
+        <div class="site-header__right">
+            <span class="phone-number"><a href="tel:+868523460000">+86 852 346 000</a></span>
+            <a class="btn btn--light btn--sm" href="{{ route('contact.page') }}">Reservations</a>
+        </div>
+    </div>
+</header>
     <div class="burger-menu" id="burger-menu" aria-hidden="true">
         <button type="button" class="close-btn" aria-label="Close menu"><span class="close-btn__x" aria-hidden="true"></span></button>
         <div class="burger-container d-flex">

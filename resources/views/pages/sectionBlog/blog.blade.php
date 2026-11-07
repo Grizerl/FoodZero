@@ -7,20 +7,7 @@
 @endsection
 
 @section('content')
-<section>
-    <div class="section_blog_banner">
-        <div class="background_img d-flex sc-CbaHFG">
-            <div class="banner_container">
-                <h1 class="banner_title">
-                    Our Blog
-                </h1>
-                <p class="banner_lead">
-                    Recipes, seasonal ingredients and healthy eating stories from our kitchen
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+@include('partials.page-banner', ['variant' => 'blog', 'title' => 'Our Blog', 'lead' => 'Recipes, seasonal ingredients and healthy eating stories from our kitchen'])
 <section>
     <div class="section-fashion section-blog-list">
         <div class="container">

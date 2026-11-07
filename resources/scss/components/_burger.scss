@@ -61,13 +61,13 @@
         background: linear-gradient(135deg, $overlay-main-90, $overlay-main-60), url(#{$img-path}/CloseUp.png) center / cover no-repeat;
         visibility: hidden;
         opacity: 0;
-        clip-path: circle(0 at 84px 58px);
+        clip-path: circle(0 at var(--menu-x, 84px) var(--menu-y, 58px));
         transition: clip-path 0.7s $ease-out, opacity 0.4s, visibility 0s 0.7s;
 
         &.active {
             visibility: visible;
             opacity: 1;
-            clip-path: circle(150% at 84px 58px);
+            clip-path: circle(150% at var(--menu-x, 84px) var(--menu-y, 58px));
             transition: clip-path 0.8s $ease-out, opacity 0.3s, visibility 0s;
         }
 

@@ -1,0 +1,649 @@
+/*! Compiled from resources/scss/admin.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
+
+// Brand theme for the admin panel. Loaded AFTER adminlte.min.css (layouts/admin.blade.php) and
+// overrides it through selectors only; the files in public/admin/** are never edited.
+@use 'abstracts' as *;
+
+$admin-font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$admin-bg: #f4f6f0;
+$admin-sidebar-width: 250px;
+$admin-text: $color-ink;
+$admin-muted: #5f6b52;
+$admin-danger: #b42318;
+
+/* Base ----------------------------------------------------------------------- */
+body,
+.content-wrapper,
+.main-header,
+.main-sidebar,
+.card,
+.btn,
+.form-control,
+.table {
+    font-family: $admin-font;
+}
+
+body {
+    color: $admin-text;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $admin-font;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: $admin-text;
+}
+
+a {
+    color: $color-accent;
+
+    &:hover {
+        color: $color-main;
+    }
+}
+
+:focus-visible {
+    outline: 3px solid rgba(94, 102, 0, 0.45);
+    outline-offset: 2px;
+}
+
+.content-wrapper {
+    min-height: 100vh;
+    padding: 24px clamp(16px, 3vw, 32px) 40px;
+    background: $admin-bg;
+    color: $admin-text;
+
+    > .pt-3,
+    > .content-header,
+    > section > .content-header {
+        padding-inline: 0;
+    }
+
+    // The views mix bare headings, cards and forms: keep them on one rhythm.
+    h3 {
+        margin-bottom: 16px;
+        font-size: 1.35rem;
+    }
+}
+
+.content-header {
+    padding: 0 0 20px;
+
+    h1 {
+        font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+        line-height: 1.25;
+    }
+}
+
+/* Top bar -------------------------------------------------------------------- */
+.main-header.navbar {
+    border-bottom: 1px solid $color-line;
+    background: $color-white;
+    box-shadow: none;
+
+    .nav-link {
+        border-radius: $radius-sm;
+        font-weight: 500;
+        color: $admin-muted;
+        transition: background-color 0.2s, color 0.2s;
+
+        &:hover,
+        &:focus {
+            background: $admin-bg;
+            color: $color-main;
+        }
+    }
+}
+
+.nav-link--site i {
+    margin-left: 6px;
+    font-size: 0.8em;
+}
+
+/* Sidebar -------------------------------------------------------------------- */
+.main-sidebar,
+.main-sidebar.sidebar-dark-primary {
+    background: linear-gradient(180deg, $color-main 0%, $color-main-deep 100%);
+    box-shadow: none;
+}
+
+.brand-link,
+.sidebar-dark-primary .brand-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 20px;
+    border-bottom: 1px solid $glass-border;
+    color: $color-white;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background: $glass-bg;
+        color: $color-white;
+    }
+}
+
+.brand-mark {
+    flex: none;
+    color: $color-accent-hover;
+}
+
+.brand-text {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+}
+
+.brand-badge {
+    padding: 2px 8px;
+    border-radius: $radius-pill;
+    background: $glass-bg;
+    border: 1px solid $glass-border;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.sidebar {
+    padding: 0 12px;
+}
+
+.user-panel {
+    margin: 16px 0 12px;
+    padding: 0 8px 16px;
+    border-bottom: 1px solid $glass-border;
+
+    .info {
+        padding: 0;
+        line-height: 1.3;
+    }
+
+    .user-name {
+        display: block;
+        font-weight: 600;
+        color: $color-white;
+    }
+
+    .user-role {
+        display: block;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+.nav-sidebar {
+    .nav-link,
+    .nav-treeview > .nav-item > .nav-link {
+        margin-bottom: 4px;
+        padding: 10px 12px;
+        border-radius: $radius-sm;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.74);
+        transition: background-color 0.2s, color 0.2s;
+
+        p {
+            font-size: 0.95rem;
+        }
+
+        > .nav-icon,
+        > i:first-child {
+            width: 1.6rem;
+            margin-right: 8px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        &:hover,
+        &:focus {
+            background: rgba(255, 255, 255, 0.09);
+            color: $color-white;
+        }
+    }
+
+    .nav-treeview {
+        padding-left: 12px;
+    }
+
+    // The sign-out entry is a <button> inside a form.
+    button.nav-link {
+        width: 100%;
+        border: 0;
+        background: transparent;
+        text-align: left;
+        cursor: pointer;
+    }
+}
+
+// The `active` class is set by layouts/admin.blade.php for the current section. AdminLTE colors it
+// blue with a 5-class selector, so this one is spelled out in full to win.
+.main-sidebar .nav-sidebar > .nav-item > .nav-link.active,
+.main-sidebar .nav-sidebar .nav-treeview > .nav-item > .nav-link.active {
+    background: $color-accent;
+    box-shadow: none;
+    color: $color-white;
+}
+
+.sidebar-section-label {
+    margin: 20px 12px 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* Cards ---------------------------------------------------------------------- */
+.card {
+    margin-bottom: 24px;
+    border: 1px solid $color-line;
+    border-radius: $radius-md;
+    background: $color-white;
+    box-shadow: $shadow-soft;
+}
+
+.card-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid $color-line;
+    border-radius: $radius-md $radius-md 0 0;
+    background: transparent;
+
+    .card-title {
+        margin: 0;
+        font-size: 1.05rem;
+        font-weight: 600;
+    }
+}
+
+.card-body {
+    padding: 24px;
+
+    &.p-0 {
+        padding: 0 !important;
+    }
+}
+
+.card-footer {
+    padding: 18px 24px;
+    border-top: 1px solid $color-line;
+    border-radius: 0 0 $radius-md $radius-md;
+    background: $admin-bg;
+}
+
+/* Dashboard stat cards ------------------------------------------------------- */
+.small-box.stat-card {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+    border: 1px solid $color-line;
+    border-radius: $radius-md;
+    background: $color-white !important;
+    box-shadow: $shadow-soft;
+    color: $admin-text !important;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 24px); // cards in one row share a height
+    transition: transform 0.25s $ease-out, box-shadow 0.25s;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: $shadow-card-hover;
+    }
+
+    @include reduce-motion {
+        transition: none;
+
+        &:hover {
+            transform: none;
+        }
+    }
+
+    .inner {
+        flex: 1;
+        padding: 22px 24px 14px;
+    }
+
+    .inner h3 {
+        margin: 0 0 4px;
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1;
+        color: $color-main;
+    }
+
+    .inner h4 {
+        margin: 0;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: $admin-muted;
+    }
+
+    .icon {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        display: grid;
+        place-items: center;
+        width: 52px;
+        height: 52px;
+        border-radius: $radius-md;
+        background: $color-surface;
+
+        > i {
+            position: static;
+            font-size: 1.4rem;
+            color: $color-accent;
+        }
+    }
+
+    .small-box-footer {
+        padding: 10px 24px;
+        border-top: 1px solid $color-line;
+        background: transparent;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-align: left;
+        color: $color-accent;
+
+        &:hover {
+            background: $admin-bg;
+            color: $color-main;
+        }
+    }
+}
+
+/* Tables --------------------------------------------------------------------- */
+.table {
+    margin-bottom: 0;
+    color: $admin-text;
+
+    thead th {
+        padding: 14px 24px;
+        border-top: 0;
+        border-bottom: 1px solid $color-line;
+        background: $admin-bg;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: $admin-muted;
+        white-space: nowrap;
+
+        &.text-center {
+            text-align: left !important;
+        }
+    }
+
+    td {
+        padding: 14px 24px;
+        border-top: 1px solid $color-line;
+        vertical-align: middle;
+    }
+
+    &.table-striped tbody tr:nth-of-type(odd) {
+        background: transparent;
+    }
+
+    tbody tr {
+        transition: background-color 0.15s;
+
+        &:hover {
+            background: rgba(235, 240, 228, 0.55);
+        }
+    }
+
+    // Inline widths and `display: inline-flex` in the views are tuned for the old table.
+    td.project-state {
+        width: auto !important;
+        min-width: 260px;
+        max-width: 420px;
+        text-align: left !important;
+    }
+
+    td.project-actions {
+        display: table-cell !important;
+        white-space: nowrap;
+
+        form {
+            display: inline-block;
+            margin: 0;
+        }
+    }
+}
+
+.card-body:has(> .table) {
+    overflow-x: auto;
+}
+
+/* Buttons -------------------------------------------------------------------- */
+.btn {
+    border-radius: $radius-sm;
+    font-weight: 600;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+.btn-primary,
+.btn-info,
+.btn-success {
+    border-color: $color-main;
+    background: $color-main;
+    color: $color-white;
+
+    &:hover,
+    &:focus,
+    &:not(:disabled):not(.disabled):active {
+        border-color: $color-accent;
+        background: $color-accent;
+        color: $color-white;
+    }
+}
+
+.btn-info {
+    border-color: $color-accent;
+    background: $color-accent;
+
+    &:hover,
+    &:focus {
+        border-color: $color-main;
+        background: $color-main;
+    }
+}
+
+.btn-danger {
+    border-color: $admin-danger;
+    background: transparent;
+    color: $admin-danger;
+
+    &:hover,
+    &:focus {
+        border-color: $admin-danger;
+        background: $admin-danger;
+        color: $color-white;
+    }
+}
+
+.btn-secondary,
+.btn-default {
+    border-color: $color-line;
+    background: $color-white;
+    color: $admin-text;
+
+    &:hover {
+        border-color: $color-accent;
+        background: $admin-bg;
+        color: $color-main;
+    }
+}
+
+/* Forms ---------------------------------------------------------------------- */
+label {
+    margin-bottom: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $admin-text;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control,
+.custom-select {
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1.5px solid $color-line;
+    border-radius: $radius-sm;
+    background-color: $color-white;
+    color: $admin-text;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        border-color: $color-accent;
+    }
+
+    &:focus {
+        border-color: $color-accent;
+        box-shadow: 0 0 0 4px rgba(94, 102, 0, 0.16);
+    }
+
+    &[readonly] {
+        background: $admin-bg;
+    }
+
+    &.is-invalid {
+        border-color: $admin-danger;
+    }
+}
+
+textarea.form-control {
+    min-height: 120px;
+}
+
+.popup_selector {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+// Validation messages (the views render them as `.alert-danger` blocks).
+.alert-danger {
+    margin-top: 8px !important;
+    padding: 10px 14px;
+    border: 1px solid rgba(180, 35, 24, 0.25);
+    border-radius: $radius-sm;
+    background: #fef3f2;
+    font-size: 0.875rem;
+    text-align: left !important;
+    color: $admin-danger;
+}
+
+/* Alerts and pagination ------------------------------------------------------ */
+.alert {
+    border-radius: $radius-md;
+}
+
+.alert-success {
+    border: 1px solid rgba(94, 102, 0, 0.25);
+    background: $color-surface;
+    color: $color-main;
+
+    h4 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: inherit;
+    }
+}
+
+.pagination .page-link {
+    margin: 0 2px;
+    border: 1px solid $color-line;
+    border-radius: $radius-sm;
+    color: $color-main;
+
+    &:hover {
+        background: $color-surface;
+        color: $color-main;
+    }
+}
+
+.pagination .page-item.active .page-link {
+    border-color: $color-main;
+    background: $color-main;
+    color: $color-white;
+}
+
+/* Responsive ----------------------------------------------------------------- */
+@include respond-down(lg) {
+    .main-header.navbar {
+        padding-inline: 8px;
+    }
+
+    .card-header,
+    .card-body,
+    .card-footer {
+        padding-inline: 16px;
+    }
+
+    .table thead th,
+    .table td {
+        padding-inline: 16px;
+    }
+
+    // Wide tables scroll inside their card instead of stretching the page.
+    .card-body > .table {
+        min-width: 640px;
+    }
+
+    .card-body.p-0 {
+        overflow-x: auto;
+    }
+}
+
+@include respond-down(sm) {
+    .content-wrapper {
+        padding-top: 16px;
+    }
+
+    .small-box.stat-card {
+        .inner {
+            padding: 16px 64px 12px 16px;
+            text-align: left;
+        }
+
+        .inner h3 {
+            font-size: 2rem;
+        }
+
+        .icon {
+            top: 14px;
+            right: 12px;
+            width: 40px;
+            height: 40px;
+
+            > i {
+                font-size: 1.1rem;
+            }
+        }
+
+        .small-box-footer {
+            padding-inline: 16px;
+        }
+    }
+
+    .card-footer .btn,
+    .card-body form > .btn {
+        width: 100%;
+    }
+}

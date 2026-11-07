@@ -7,75 +7,53 @@
 @endsection
 
 @section('content')
-<section>
-    <div class="section_detail_banner">
-        <div class="background_img d-flex sc-CbaHFG">
-            <div class="banner_container">
-                <h1 class="banner_title">{{ $post->title }}</h1>
-            </div>
+@include('partials.page-banner', ['variant' => 'post', 'title' => $post->title])
+
+<article class="section section--light post-article">
+    <div class="container post-article__inner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="{{ route('home.page') }}">Home</a></li>
+                <li><a href="{{ route('blog.page') }}">Blog</a></li>
+                <li aria-current="page">{{ $post->title }}</li>
+            </ol>
+        </nav>
+        <div class="post-card__meta post-byline">
+            <img class="post-card__avatar" src="{{ $post->clients_img }}" alt="" width="40" height="40">
+            <span class="post-card__author">{{ $post->clients }}</span>
+            @if ($post->created_at)
+                <time class="post-card__date" datetime="{{ $post->created_at->toDateString() }}">{{ $post->created_at->format('F j, Y') }}</time>
+            @endif
+        </div>
+        <p class="post-article__text">{{ strip_tags($post->description) }}</p>
+        <div class="post-article__images">
+            <figure>
+                <img width="550" height="600" loading="lazy" src="{{ $post['images'] }}" alt="{{ $post['title'] }}">
+            </figure>
+            <figure>
+                <img width="550" height="600" loading="lazy" src="/assets/images/blog/detail/Granules.png" alt="">
+            </figure>
         </div>
     </div>
-</section>
-<section>
-    <div class="section_media_pole">
-        <div class="sc-Fcdg d-flex al-centre just-centre">
-            <div class="container">
-                <div class="section_category d-flex al-centre just-centre">
-                    <ul class="category_navbar d-flex">
-                        <li class="category_items">
-                            <a class="category_links" href="{{ route('home.page') }}">Home</a>/
-                        </li>
-                        <li class="category_items">
-                            <a class="category_links" href="{{ route('blog.page') }}">Blog</a>/
-                        </li>
-                        <li class="category_items">
-                            <a class="category_links">{{ $post['title'] }}</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="text-container d-flex al-centre just-centre">
-                        <div class="post-card__meta post-byline">
-                            <img class="post-card__avatar" src="{{ $post->clients_img }}" alt="" width="40" height="40">
-                            <span class="post-card__author">{{ $post->clients }}</span>
-                            @if ($post->created_at)
-                                <time class="post-card__date" datetime="{{ $post->created_at->toDateString() }}">{{ $post->created_at->format('F j, Y') }}</time>
-                            @endif
-                        </div>
-                        <p class="main-text max-width">{{ strip_tags($post->description) }}</p>
-                    </div>
-                    <div  class="sc-Ccgg d-flex al-centre just-around">
-                        <figure>
-                            <img class="adaptive-img" width="550" height="600" class="media_img" loading="lazy" src="{{ $post['images'] }}" alt="{{ $post['title'] }}">
-                        </figure>
-                        <figure class="sc-FDVC">
-                            <img class="adaptive-img" width="550" height="600" class="media_img" loading="lazy" src="/assets/images/blog/detail/Granules.png" alt="Granules">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<aside>
-    <div class="aside_pole">
-        <div class="background_foto_in_media_pole d-flex al-centre just-centre">
-            <div class="media_container">
-                <p class="foto_text max-text">“ Fresh ingredients, honest cooking and a table that always has room for one more.</p>
-            </div>
-        </div>
+</article>
+
+<aside class="post-quote">
+    <div class="container">
+        <blockquote class="post-quote__text">&ldquo;Fresh ingredients, honest cooking and a table that always has room for one more.&rdquo;</blockquote>
     </div>
 </aside>
-</section>
+
 @if ($related_posts->isNotEmpty())
-<section>
-    <div class="section-fashion">
-        <div class="container">
-            <h2 class="post-grid-heading">More from the blog</h2>
-            <div class="post-grid post-grid--duo">
-                @foreach ($related_posts as $related_post)
-                    @include('partials.post-card', ['post' => $related_post])
-                @endforeach
-            </div>
+<section class="section section--light">
+    <div class="container">
+        <div class="section-head section-head--center">
+            <p class="eyebrow">Keep reading</p>
+            <h2 class="section-heading">More from the blog</h2>
+        </div>
+        <div class="post-grid post-grid--duo">
+            @foreach ($related_posts as $related_post)
+                @include('partials.post-card', ['post' => $related_post])
+            @endforeach
         </div>
     </div>
 </section>

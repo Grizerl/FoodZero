@@ -4,7 +4,7 @@
 @mixin styles {
     .section_all_menu {
         position: relative;
-        padding-bottom: 80px;
+        padding-bottom: var(--space-section);
         background: var(--color-navbar-text);
     }
 
@@ -14,7 +14,7 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 12px;
-        padding: 56px 0 8px;
+        padding: clamp(32px, 5vw, 56px) 0 8px;
     }
 
     .menu-nav__link {
@@ -50,7 +50,7 @@
         padding: 48px 48px 56px;
         border-radius: $radius-lg;
         background: var(--background-cook);
-        scroll-margin-top: 24px;
+        scroll-margin-top: calc(var(--header-height) + 24px);
     }
 
     // Title and lead in the middle column, the decorative drawing in the right one
@@ -90,8 +90,8 @@
     .menu-title {
         font-family: var(--font-Rufina);
         font-weight: 700;
-        font-size: 56px;
-        line-height: 1.25;
+        @include fluid-type(36px, 56px);
+        line-height: 1.2;
         letter-spacing: 0;
         text-align: center;
         color: var(--color-title-menu);
@@ -125,7 +125,7 @@
 
     .menu-figure {
         position: sticky;
-        top: 24px;
+        top: calc(var(--header-height) + 24px);
         overflow: hidden;
         border-radius: $radius-lg;
         box-shadow: $shadow-card;

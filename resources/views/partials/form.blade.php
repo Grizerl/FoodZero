@@ -1,53 +1,44 @@
-<section>
-    <div class="section-reservation">
-        <div>
-            <div class="container">
-                <div class="reservation-container d-flex">
-                    <h2 class="headline-2">Make a Reservation</h2>
-                    <p class="lead">Get in touch with restaurant</p>
-                    <div class="form-group">
-                    <form action="{{ route('reservation.submit') }}" class="reservation-form d-grid" method="post">
-                    @csrf
-                    <div class="sc-FVfd d-flex">
-                        <div class="sc-InpPole">
-                            <input type="text" class="date-pole"  name="guest_name" placeholder="Reservation name" required>
-                            @error('guest_name')
-                                <div style="text-align: center; color: red; margin-top: 10px;" class="alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                       <div class="sc-InpPole">
-                         <input type="datetime-local" class="time-pole"  name="reservation_time" required>
-                            @error('reservation_time')
-                                <div style="text-align: center; color: red; margin-top: 10px;" class="alert-danger">{{ $message }}</div>
-                            @enderror
-                       </div>
-                       <div class="sc-InpPole">
-                        <select class="quantity"  name="guest_count" required>
-                            <option value="1 Person" {{ old('guest_count') == '1 Person' ? 'selected' : '' }}>1 Person</option>
-                            <option value="2 Person" {{ old('guest_count') == '2 Person' ? 'selected' : '' }}>2 Person</option>
-                            <option value="3 Person" {{ old('guest_count') == '3 Person' ? 'selected' : '' }}>3 Person</option>
-                            <option value="4 Person" {{ old('guest_count') == '4 Person' ? 'selected' : '' }}>4 Person</option>
-                            <option value="5 Person" {{ old('guest_count') == '5 Person' ? 'selected' : '' }}>5 Person</option>
-                        </select>
-                            @error('guest_count')
-                                <div style="text-align: center; color: red; margin-top: 10px;" class="alert-danger">{{ $message }}</div>
-                            @enderror
-                       </div>
-                    </div>
-                    <div style="text-align: center;" class="w-100">
-                        <button style="border:none;" type="submit">
-                            <a class="btn-reservation">Book Now</a>
-                        </button>
-                    </div>
-                        @if(session('success'))
-                            <div class="alert alert-success" role="alert">
-                                <h4 style="text-align: center; color: green; margin-top: 20px;" ><i class="icon fa fa-check"></i>{{ session('success') }}</h4>
-                            </div>
-                        @endif
-                    </form>
-                    </div>
-                </div>
+<section class="section-reservation" id="reservation">
+    <div class="container">
+        <div class="reservation-card">
+            <div class="section-head section-head--center">
+                <p class="eyebrow">Reservations</p>
+                <h2 class="section-heading">Make a Reservation</h2>
+                <p class="section-lead">Tell us when you would like to visit and we will keep a table for you.</p>
             </div>
+            <form action="{{ route('reservation.submit') }}" class="reservation-form" method="post">
+                @csrf
+                <div class="field">
+                    <label class="field__label" for="guest_name">Name</label>
+                    <input id="guest_name" type="text" class="field__input" name="guest_name" value="{{ old('guest_name') }}" placeholder="Reservation name" autocomplete="name" required>
+                    @error('guest_name')
+                        <div class="form-error" role="alert">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="field">
+                    <label class="field__label" for="reservation_time">Date and time</label>
+                    <input id="reservation_time" type="datetime-local" class="field__input" name="reservation_time" value="{{ old('reservation_time') }}" required>
+                    @error('reservation_time')
+                        <div class="form-error" role="alert">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="field">
+                    <label class="field__label" for="guest_count">Guests</label>
+                    <select id="guest_count" class="field__input" name="guest_count" required>
+                        @foreach ([1, 2, 3, 4, 5] as $count)
+                            @php($value = $count.' Person')
+                            <option value="{{ $value }}" {{ old('guest_count') == $value ? 'selected' : '' }}>{{ $count }} {{ $count === 1 ? 'person' : 'people' }}</option>
+                        @endforeach
+                    </select>
+                    @error('guest_count')
+                        <div class="form-error" role="alert">{{ $message }}</div>
+                    @enderror
+                </div>
+                <button type="submit" class="btn btn--primary reservation-form__submit">Book now</button>
+            </form>
+            @if (session('success'))
+                <div class="form-success" role="status">{{ session('success') }}</div>
+            @endif
         </div>
     </div>
 </section>

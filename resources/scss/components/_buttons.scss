@@ -1,0 +1,101 @@
+// One button component for the whole public site: .btn + a variant.
+//   .btn--primary  dark green on light backgrounds
+//   .btn--light    white on dark backgrounds
+//   .btn--ghost    transparent with a light outline, on dark backgrounds
+//   .btn--outline  transparent with a dark outline, on light backgrounds
+//   .btn--sm       compact size (header)
+@use '../abstracts' as *;
+
+@mixin styles {
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6em;
+        min-height: 52px;
+        padding: 0 32px;
+        border: 2px solid transparent;
+        border-radius: $radius-pill;
+        font-family: var(--font-Inter);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.2;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: transform 0.25s $ease-out, background-color 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+
+        &:active {
+            transform: none;
+        }
+
+        @include focus-ring(3px);
+
+        @include reduce-motion {
+            transition: none;
+
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+
+    .btn--primary {
+        background: var(--background-color-main);
+        color: $color-white;
+        box-shadow: $shadow-soft;
+
+        &:hover {
+            background: $color-accent;
+            box-shadow: $shadow-card-hover;
+        }
+    }
+
+    .btn--light {
+        background: $color-white;
+        color: var(--background-color-main);
+
+        &:hover {
+            background: $color-surface;
+        }
+    }
+
+    .btn--ghost {
+        border-color: $line-on-dark;
+        color: $color-white;
+
+        &:hover {
+            border-color: $color-white;
+            background: $hover-on-dark;
+        }
+    }
+
+    .btn--outline {
+        border-color: var(--background-color-main);
+        color: var(--background-color-main);
+
+        &:hover {
+            background: var(--background-color-main);
+            color: $color-white;
+        }
+    }
+
+    .btn--sm {
+        min-height: 44px;
+        padding: 0 22px;
+        font-size: 15px;
+    }
+
+    .btn__arrow {
+        transition: transform 0.25s $ease-out;
+    }
+
+    .btn:hover .btn__arrow {
+        transform: translateX(4px);
+    }
+}

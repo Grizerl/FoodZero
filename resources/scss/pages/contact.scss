@@ -1,214 +1,90 @@
 /*! Compiled from resources/scss/pages/contact.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
 
 @use '../abstracts' as *;
-@use '../components/hours-banner';
 
-.section_contact {
-   min-height: 89vh;
+.contact {
+    display: grid;
+    gap: clamp(32px, 6vw, 72px);
 }
 
-.background-image {
-    position: absolute; 
-    inset: 0;
-    background: linear-gradient($overlay-black-45, $overlay-black-45), 
-    url(#{$img-path}/contact/Berry.png) center no-repeat;
-    background-size: cover;
-}
-
-@include hours-banner.styles;
-
-.banner_title {
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 100px;
-    line-height: 130px;
-    letter-spacing: 0px;
-}
-
-.banner_lead{
-    font-family: var(--font-Rufina);
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 48px;
-    letter-spacing: 0px;
-}
-
-/* Section contact */
-.sc-Ffdjh {
-    position: relative;
-    padding-top: 50px;
-    padding-bottom: 60px;
-    background: var(--color-navbar-text);
-}
-
-.top_container,.bottom_container {
-    align-items: flex-end;
-    justify-content: space-evenly;
-    padding-top: 50px;
-    padding-bottom: 30px;
-}
-
-.sc-DSVdv {
-    text-align: left;
-}
-
-.sc-VDFcd {
-    text-align: right;
-}
-
-.bottom_container {
+.contact__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
+    gap: clamp(24px, 5vw, 72px);
 }
 
-.fruit_img {
-    position: relative;
-    width: 90%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 9999;
+.contact__photo {
+    overflow: hidden;
+    border-radius: $radius-lg;
+    background: var(--background-cook);
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
 }
 
-.orange {
-    position: absolute;
-    top: 0;
+.contact__card {
+    padding: clamp(8px, 2vw, 24px) 0;
 }
 
-.img_public_text,.img_text  {
-    max-width: 350px;
+.contact__title {
     font-family: var(--font-Rufina);
     font-weight: 700;
-    font-size: 23px;
-    line-height: 48px;
-    letter-spacing: 0px;
-    color: var(--color-title-menu);
+    @include fluid-type(28px, 44px);
+    line-height: 1.2;
 }
 
-.img_text {
-    padding-bottom: 20px;
-    max-width: 500px;
+.contact__text {
+    max-width: 46ch;
+    margin-top: 16px;
+    font-family: var(--font-Lato);
+    font-size: 19px;
+    line-height: 1.75;
+    color: var(--color-card-lead);
 }
 
 .get_in_touch {
-    padding: 0px 3px;
-    color: var(--background-player);
-    cursor: pointer;
-}
-
-.map_text {
-    position: relative;
-    font-family: var(--font-Rufina);
     font-weight: 700;
-    font-size: 23px;
-    line-height: 48px;
-    letter-spacing: 0px;
-    color: var(--color-title-menu);
-    z-index: 9999;
+    color: var(--background-span);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+        color: var(--background-color-main);
+    }
+
+    @include focus-ring(2px);
 }
 
-.btn_map{
-    position: relative;
-    padding: 2px 30px;
-    background: transparent;
-    border: 2px solid var(--color-title-menu);
-    transition-duration: 0.4s;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.btn_map:after {
-    content: "";
-    background: var(--color-title-menu);
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 400%;
-    margin-left: -33px!important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
-}
-
-.btn_map:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
+.contact__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
 }
 
 @include respond-down(md) {
-    .banner_text {
-        padding: 0
+    .contact__row {
+        grid-template-columns: 1fr;
     }
 
-    .top_container, .bottom_container {
-        display: grid;
-    }
-
-    .orange {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
-    .img_public_text, .img_text {
-        max-width: 600px;
-    }
-
-    .top_container figure,.bottom_container figure{
-        text-align: center;
-    }
-
-    .text_container {
-        text-align: center;
-        padding-bottom: 15px;
-    }
-}
-
-@include respond-down(sm) {
-    .open_time,.open_day,.info_container {
-        padding: 0;
-    }
-
-    .sc-Fcsg,.sc-FDdg {
-        justify-content: space-between;
-    }
-
-    .aside_baner_text {
-        position: relative;
-        right: 0;
-    }
-
-    .section_contact {
-        min-height: 86vh;
-    }
-
-    .banner_title {
-        font-size: 80px;
-        line-height: 100px;
-    }
-
-    .banner_lead {
-        font-size: 20px;
-        line-height: 40px;
+    // The photo always comes first on narrow screens.
+    .contact__row--reverse .contact__photo {
+        order: -1;
     }
 }
 
 @include respond-down(xs) {
-    .banner_title {
-        font-size: 60px;
-        line-height: 87px;
+    .contact__text {
+        font-size: 17px;
     }
 
-    .banner_lead {
-        font-size: 18px;
-        line-height: 30px;
-    }
-}
-
-// Keep the banner text off the screen edge on tablets and phones.
-@include respond-down(md) {
-    .background-image {
-        padding-inline: $banner-gutter;
+    .contact__actions .btn {
+        flex: 1 1 100%;
     }
 }
