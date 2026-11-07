@@ -28,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
 
         // Separate buckets: browsing dates (slots) must never use up the budget of booking itself.
         RateLimiter::for('reservation-submit', fn (Request $request) => Limit::perMinute(10)->by('reservation-submit|'.$request->ip()));
+        RateLimiter::for('newsletter-subscribe', fn (Request $request) => Limit::perMinute(5)->by('newsletter-subscribe|'.$request->ip()));
         RateLimiter::for('reservation-slots', fn (Request $request) => Limit::perMinute(60)->by('reservation-slots|'.$request->ip()));
 
         // @assetv('assets/css/app.css') -> asset URL + ?v=<file mtime>, so browsers never keep stale CSS/JS.

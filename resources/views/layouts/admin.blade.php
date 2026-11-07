@@ -56,6 +56,9 @@
           <a href="{{ route('reservation.index') }}" class="nav-link">Reservation</a>
         </li>
         <li class="nav-item d-none d-md-inline-block">
+          <a href="{{ route('newsletters.index') }}" class="nav-link">Newsletter</a>
+        </li>
+        <li class="nav-item d-none d-md-inline-block">
           <a href="{{ route('members.index') }}" class="nav-link">Users</a>
         </li>
       </ul>
@@ -172,6 +175,12 @@
             <a href="{{ route('reservation.index') }}" class="nav-link @if ($is('reservation.*')) active @endif">
               <i class="nav-icon fa-solid fa-book-bookmark"></i>
               <p>Reservation</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('newsletters.index') }}" class="nav-link @if ($is('newsletters.*')) active @endif">
+              <i class="nav-icon fa-solid fa-envelope"></i>
+              <p>Newsletter</p>
             </a>
           </li>
           <li class="nav-item">

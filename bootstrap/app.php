@@ -15,6 +15,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         // The admin login route is named `admin.login.form`; there is no `login` route.
         $middleware->redirectGuestsTo(fn () => route('admin.login.form'));
+
+        // One-click unsubscribe is POSTed by mail clients without a CSRF token; the URL is signed instead.
+        $middleware->validateCsrfTokens(except: ['newsletter/unsubscribe/*']);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         // API clients always get JSON (401 for guests), even without an `Accept: application/json` header.

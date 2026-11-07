@@ -33,6 +33,7 @@
 <script src="@assetv('assets/js/index-slider.js')"></script>
 <script src="@assetv('assets/js/adaptive-menu.js')"></script>
 <script src="@assetv('assets/js/reservation.js')" defer></script>
+<script src="@assetv('assets/js/newsletter.js')" defer></script>
 @yield('script.js')
 </body>
 </html>

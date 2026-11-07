@@ -76,6 +76,36 @@
         }
     }
 
+    // Honeypot: off-screen, not display:none (some bots skip hidden fields).
+    .newsletter__trap {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    .newsletter-status {
+        max-width: 420px;
+        margin: 10px 0 0;
+        padding: 0 18px;
+        font-family: var(--font-Inter);
+        font-size: 14px;
+        line-height: 1.4;
+
+        &:empty {
+            display: none;
+        }
+
+        &.is-success {
+            color: var(--hover-adaptive);
+        }
+
+        &.is-error {
+            color: #ffb4a9;
+        }
+    }
+
     .recipe-email {
         flex: 1;
         min-width: 0;

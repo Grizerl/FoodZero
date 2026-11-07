@@ -31,11 +31,18 @@
             </div>
             <div class="site-footer__subscribe">
                 <h2 class="footer-section-title">Never Miss a Recipe</h2>
-                <div class="newsletter">
+                <form id="newsletter" class="newsletter" method="POST" action="{{ route('newsletter.subscribe') }}" novalidate data-newsletter-form>
+                    @csrf
                     <label class="sr-only" for="footer-email">Email address</label>
-                    <input id="footer-email" type="email" class="recipe-email" placeholder="Email address" autocomplete="email">
-                    <button type="button" class="btn btn--light btn--sm">Subscribe</button>
-                </div>
+                    <input id="footer-email" name="email" type="email" class="recipe-email" placeholder="Email address" autocomplete="email" required maxlength="254" value="{{ old('email') }}" aria-describedby="newsletter-status">
+                    <div class="newsletter__trap" aria-hidden="true">
+                        <label for="footer-website">Website</label>
+                        <input id="footer-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn btn--light btn--sm">Subscribe</button>
+                </form>
+                @php($newsletterError = $errors->newsletter->first('email'))
+                <p id="newsletter-status" class="newsletter-status{{ session('newsletter_status') ? ' is-success' : ($newsletterError ? ' is-error' : '') }}" role="status" aria-live="polite" data-newsletter-status>{{ session('newsletter_status') ?? $newsletterError }}</p>
                 <p class="recipe-text">Join our subscribers and get the best recipes delivered every week.</p>
             </div>
         </div>
