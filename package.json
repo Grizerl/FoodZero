@@ -3,13 +3,16 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "scss:build": "sass --no-source-map --style=expanded resources/scss:public/assets/css",
+        "scss:watch": "sass --no-source-map --style=expanded --watch resources/scss:public/assets/css"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
         "axios": "^1.7.4",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^1.2.0",
+        "sass": "1.89.2",
         "tailwindcss": "^4.0.0",
         "vite": "^6.0.11"
     }

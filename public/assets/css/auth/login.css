@@ -1,24 +1,24 @@
-@charset "UTF-8";
+/*! Compiled from resources/scss/auth/login.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
 @import "https://fonts.googleapis.com/css2?family=Arial&display=swap";
 :root {
-  --color-logo: #ff5e00; 
+  --color-logo: #ff5e00;
   --background-body: #f0f4f8;
   --color-label: #333;
   --background-input: #f9f9f9;
   --color-error: rgb(221, 10, 10);
   --color-container: #ffffff;
-  --font-Arial: 'Arial', sans-serif;
+  --font-Arial: "Arial", sans-serif;
 }
 
 body {
-  font-family: var(--font-Arial) ;
+  font-family: var(--font-Arial);
   background-color: var(--background-body);
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-*,*::after,*::before {
+*, *::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -141,7 +141,6 @@ a {
     width: 100%;
     max-width: 350px;
   }
-
   .login-btn {
     font-size: 1rem;
   }

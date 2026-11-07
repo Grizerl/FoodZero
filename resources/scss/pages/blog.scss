@@ -1,0 +1,266 @@
+/*! Compiled from resources/scss/pages/blog.scss. Do not edit the .css: edit the SCSS and run `npm run scss:build`. */
+@charset "UTF-8";
+@import "https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
+:root {
+
+    --background-color-main: #233000;
+    --color-navbar-text: #FFFFFF;
+    --color-title-menu: #000000;
+    --color-card-lead: #4D4D4D;
+    --background-cook: #EBF0E4;
+    --background-span: #5E6600;
+    --box-color-label: #00000014;
+    --hover-adaptive: #9CAA00;
+    --font-Rufina: 'Rufina';
+    --font-Lato: 'Lato';
+    --font-Inter: 'Inter';
+    --transition-all: all .3s ease-in-out;
+}
+
+.section_blog_banner {
+    min-height: 89vh;
+}
+
+.background_img {
+    position: absolute;
+    inset: 0;
+    background: url(../../images/blog/Blue_flower.png) center / cover no-repeat;
+}
+
+.background_img::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-title-menu);
+    opacity: 0.40;
+}
+
+.sc-CbaHFG {
+    align-items: center;
+    justify-content: center;
+    color: var(--color-navbar-text);
+}
+
+.banner_container {
+    position: relative;
+    z-index: 9999;
+    text-align: center;
+}
+
+.banner_title {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 120px;
+    letter-spacing: 0px;
+}
+
+.banner_lead {
+    font-family:var(--font-Lato);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 33.6px;
+    letter-spacing: 2%;
+}
+
+/* Section fashion */
+.section-fashion {
+    padding-top: 70px;
+    padding-bottom: 60px;
+    background:var(--color-navbar-text)
+}
+
+.sc-FAvf {
+    justify-content: center;
+}
+
+.fashion-container {
+    grid-template-columns: repeat(2,1fr);   
+    gap: 60px;
+}
+
+.fashion-img {
+    display: inline-block;
+    max-width: max-content;
+    position: relative;
+}
+
+.fashion-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding-top: 8px;
+    padding-right: 35px;
+    padding-left: 35px;
+    padding-bottom: 8px;
+    background: var(--background-span);
+    box-shadow: 1px 1px 12px 0px var(--box-color-label);
+    color: var(--color-navbar-text);
+}
+
+.fashion-label span {
+    font-family: var(--font-Rufina);
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 0px;
+}
+
+.fashion-info-content {
+    padding: 10px 0px 13px 0px;
+    align-items: center;
+}
+
+.navbar-media-content {
+    list-style-type: disc;
+}
+
+.navbar-media-content li:first-child {
+    list-style-type: none;
+}
+
+.media-item {
+    margin: 0px 25px 0px 5px;
+    font-family: var(--font-Lato);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21.6px;
+    letter-spacing: 2%;
+    color: var(--background-span);
+}   
+
+.fashion-title {
+    padding-bottom: 8px;
+    font-family: var(--font-Rufina);
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    border-bottom: 3px dotted var(--color-title-menu);
+    color: var(--color-title-menu);
+}
+
+.fashion-p {
+    padding-top: 10px;
+    font-family: var(--font-Lato);
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 30.8px;
+    letter-spacing: 2%;
+    color: var(--color-card-lead);
+}
+
+.sc-FAfgd {
+    align-items: anchor-center;
+}
+
+.fashion-btn-arrow {
+    padding-right: 8px;
+    font-family:var(--font-Lato);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 33.6px;
+    letter-spacing: 2%;
+    color: var(--color-title-menu);
+}
+
+.arrow {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--background-color-main);
+    cursor: pointer;
+}
+
+.max-text {
+    max-width: 500px;
+}
+
+/* Paginate */
+.paginate {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.paginate .pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 5px;
+}
+
+.paginate .page-item {
+    margin: 0;
+}
+
+.paginate .page-item .page-link {
+    position: relative;
+    display: block;
+    padding: 8px 12px;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.paginate .page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.paginate .page-item .page-link:hover {
+    z-index: 2;
+    color: #0056b3;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.paginate .page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+
+@media screen and (max-width: 650px) {
+    .fashion-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+    .banner_title {
+        font-size: 75px;
+    }
+
+    .banner_lead {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .banner_title {
+        font-size: 65px;
+        line-height: 90px;
+    }
+
+    .section_blog_banner {
+        min-height: 86vh;
+    }
+
+    .navbar-media-content {
+        list-style-type: none;
+    }
+
+    .fashion-title {
+        font-size: 26px;
+    }
+}

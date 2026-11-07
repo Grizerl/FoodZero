@@ -35,13 +35,12 @@
 **2. Структура `resources/scss/` (Sass-модулі, `@use`, без `@import`).**
 ```
 resources/scss/
-  abstracts/ _tokens.scss _breakpoints.scss _mixins.scss _functions.scss
-  base/      _reset.scss _typography.scss _utilities.scss
-  components/ _header.scss _burger.scss _footer.scss _buttons.scss _blog-card.scss _slider.scss _reservation-form.scss _banner.scss
-  pages/     _home.scss _menu.scss _full-menu.scss _blog.scss _about.scss _contact.scss _post.scss
-  app.scss  index.scss  pages/*.scss  auth/login.scss   // тонкі входи
+  abstracts/  _tokens.scss _breakpoints.scss _mixins.scss    // partials only, never compiled alone
+  base/       _reset.scss _utilities.scss ...             // partials
+  components/ _header.scss _burger.scss _footer.scss _blog-card.scss ...   // partials
+  app.scss  index.scss  pages/{about,blog,contact,extra,full-menu,menu}.scss  auth/login.scss   // entries = existing CSS URLs
 ```
-Вхідні файли відповідають наявним URL, тож `@yield('link.css')` і `layouts/app` не змінюють контракт. Дедуплікація: `extra.css` розкладається по `components/_blog-card.scss`/сторінкових файлах. *Альтернатива:* один монолітний `main.css` — гірше для кешу сторінкових стилів і потребує змін у шаблонах.
+Компіляція йде по каталогу (`sass resources/scss:public/assets/css`): файли без `_` — входи, з `_` — часткові. Сторінкові входи (`pages/*.scss`) містять власні стилі сторінки й підключають спільне через `@use`, тому окремих `pages/_*.scss` немає. Вхідні файли відповідають наявним URL, тож `@yield('link.css')` і `layouts/app` не змінюють контракт. Дедуплікація: `extra.css` розкладається по `components/_blog-card.scss`/сторінкових файлах. *Альтернатива:* один монолітний `main.css` — гірше для кешу сторінкових стилів і потребує змін у шаблонах.
 
 **3. Токени — CSS custom properties, згенеровані з Sass-мапи; брейкпоінти й шкала — Sass-змінні.**
 Палітра/шрифти/transition лишаються `--color-*`, `--font-*`, `--transition-all` (існуючі імена зберігаємо для зворотної сумісності й інлайнових стилів у Blade), але виводяться з `_tokens.scss` рівно в `app.css`. Брейкпоінти: `sm 500` → `$bp-sm: 576px`, `md 768px`, `lg 1024px`, `xl 1280px`, використання через `@include respond-down(md)`. Старі 500/700/950/1000/1150 мапляться на найближчий новий; проміжні ширини 820 і 1100 перевіряються вручну. Типографічні розміри — `clamp()` через міксин `fluid-type()` для найбільших заголовків (85/75/55 px), інакше фіксовані значення з шкали.

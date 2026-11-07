@@ -64,3 +64,16 @@ Run tests with `php artisan test` inside the workspace container.
 - `workspace-84` must be attached to the same Docker network as `mysql` (`backend` in the default Laradock compose file); otherwise `DB_HOST=mysql` cannot be resolved.
 - If `composer install` fails with `Could not authenticate against github.com`, the GitHub token in the container's Composer `auth.json` is invalid or expired – replace it with a valid one.
 - Frontend assets are served from `public/`; the Blade views do not use Vite, so Node is not required to run the site (Vite 6 / Tailwind 4 in `package.json` need Node 18+, while the default Laradock workspace ships Node 16).
+### Styles (SCSS)
+
+Public-site and login styles are written in SCSS (`resources/scss/`) and compiled to static CSS in `public/assets/css/` (same paths the Blade views already link). The compiled CSS **is committed**, so the Laradock containers need no Node build.
+
+- Run on the **host** (Node 20+), not in `workspace-84` (Node 16): `npm install`, then `npm run scss:build` (or `npm run scss:watch`).
+- Never edit `public/assets/css/**` by hand: edit the SCSS and rebuild. Every compiled file starts with a "Compiled from …" banner.
+- The build is deterministic: running it twice without changes leaves `git diff` empty.
+- `sass` is pinned (`1.89.2`) because newer releases need a newer Node than the host currently provides.
+- Admin styles (AdminLTE in `public/admin`) are vendor files and are not part of this pipeline.
+
+### Visual audit
+
+`tools/visual-audit` (headless Chrome via `puppeteer-core`) captures every public page at 375/768/1024/1440 px, checks console errors, 404s, horizontal scroll, `h1` count and overlaps, and pixel-diffs two screenshot sets. See the header of `audit.mjs`; run `npm install` inside that folder first.
